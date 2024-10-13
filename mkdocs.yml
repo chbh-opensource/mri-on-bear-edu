@@ -1,0 +1,39 @@
+site_name: MRI in Cognitive Neuroscience
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - General Information:
+    - Resources: resources.md
+    - Contact: contact.md
+  - Week 2 - Introduction to BlueBEAR and Linux:
+    - Accessing the BlueBEAR Portal: week2/accessing-bluebear.md
+    - Using the BlueBEAR GUI: week2/using-bluebear-gui.md
+    - Introduction to Linux: week2/intro-to-linux.md
+  - Week 4 - Basic MRI Skills:
+    - Different MRI file formats: week4/mri-file-formats.md
+    - Visualizing MRI data with fsleyes: week4/visualizing-mri-data.md
+    - Atlases, masks and regions of interest: week4/atlases-masks-roi.md
+  - Week 5 - Basic diffusion MRI analyses:
+    - FSL's diffusion toolbox: week5/fsl-diffusion-toolbox.md
+    - Diffusion tensor fitting: week5/diffusion-tensor-fitting.md
+    - Tract-based spatial statistics (TBSS): week5/tbss.md
+  - Week 6 - MRI demo (optional):
+    - Scanning a pomegranate at the CHBH: week6/scanning-pomegranate.md
+  - Week 7 - Advanced diffusion MRI analyses:
+    - Probabilistic tractography: week7/probabilistic-tractography.md
+    - Brain extraction: week7/brain-extraction.md
+  - Week 8 - First-level fMRI analysis:
+    - Manual and automatic brain extraction: week8/brain-extraction.md
+    - Preprocessing of functional MRI data: week8/preprocessing-fmri.md
+    - Running a first-level analysis: week8/first-level-analysis.md
+  - Week 10 - Higher-level fMRI analysis:
+    - Setting up and running a higher-level analysis using the FSL GUI: week10/higher-level-analysis.md
+  - Week 11 - Bash scripting and statistical analysis of fMRI data:
+    - Scripting FSL commands: week11/scripting-fsl.md
+    - Extracting statistics from region of interests: week11/extracting-statistics.md
+  - Week 12 - Functional connectivity (optional):
+    - Running a higher-level functional connectivity analysis using the FSL GUI: week12/higher-level-functional-connectivity.md
+    - Scripting your analyses using bash: week12/scripting-analyses.md
+    - Identifying regions of interest with atlases and Neurosynth: week12/identifying-roi.md
