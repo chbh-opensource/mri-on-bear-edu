@@ -1,6 +1,19 @@
 site_name: MRI in Cognitive Neuroscience
 theme:
   name: material
+  custom_dir: overrides
+  logo: assets/images/chbh_logo.jpg
+  favicon: assets/images/chbh_logo.jpg
+  features:
+    - navigation.top
+    - toc.integrate
+    - navigation.sections
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: index.md
