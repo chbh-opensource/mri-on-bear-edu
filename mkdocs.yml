@@ -1,5 +1,17 @@
 site_name: MRI in Cognitive Neuroscience
+site_url: https://ajquinn.github.io/chbh-on-bear/
+
+repo_name: CHBH-on-BEAR
+repo_url: https://github.com/AJQuinn/chbh-on-bear
+edit_uri: blob/main/docs
+
 theme:
+  palette:
+    primary: red
+    accent: pink
+  font:
+    text: SF Pro Display
+    code: Mona Sans
   name: material
   custom_dir: overrides
   logo: assets/images/chbh_logo.jpg
@@ -7,13 +19,30 @@ theme:
   features:
     - navigation.top
     - toc.integrate
-    - navigation.sections
+    - search.suggest
+    - search.highlight
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/chbh-on-bear
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your-twitter-handle
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/your-gitlab-handle
 
 extra_css:
   - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+ 
+
 
 nav:
   - Home: index.md
