@@ -1,8 +1,8 @@
-site_name: MRI in Cognitive Neuroscience
-site_url: https://ajquinn.github.io/chbh-on-bear/
+site_name: MRI on BEAR
+site_url: https://chbh-opensource.github.io/mri-on-bear-edu
 
-repo_name: CHBH-on-BEAR
-repo_url: https://github.com/AJQuinn/chbh-on-bear
+repo_name: MRI-on-BEAR
+repo_url: https://github.com/chbh-opensource/mri-on-bear-edu
 edit_uri: blob/main/docs
 
 theme:
@@ -46,9 +46,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - General Information:
+  - Getting Started:
+    - Pre-Workshop Materials: setting-up.md
     - Resources: resources.md
-    - Contact: contact.md
   - Week 2 - Introduction to BlueBEAR and Linux:
     - Accessing the BlueBEAR Portal: week2/accessing-bluebear.md
     - Using the BlueBEAR GUI: week2/using-bluebear-gui.md

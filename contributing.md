@@ -8,8 +8,8 @@ We welcome contributions to improve and expand the course content. This guide wi
 
 2. Clone your fork locally:
 ```bash
-git clone https://github.com/your-username/mricn.git
-cd mricn
+git clone https://github.com/your-username/mri-on-bear.git
+cd mri-on-bear
 ```
 
 3. Set up a remote to the original repository:

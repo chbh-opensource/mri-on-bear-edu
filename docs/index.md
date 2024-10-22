@@ -1,8 +1,10 @@
-# Magnetic Resonance Imaging in Cognitive Neuroscience (MRICN), Spring 2025
+# MRIonBEAR 
 
-Welcome to the website covering the practical workshops for the MRICN module at the University of Birmingham! 
+CHBH-edu/MRIonBEAR is a collection of educational resources created by members of the Centre for Human Brain Health (CHBH) to provide basic introduction to fundamentals in magnetic resonance imaging (MRI) data analysis, data analysis tools and computational resources available to the University of Birmingham research community.
 
-The practicals are two hour workshops scheduled in computer labs on campus to give hands-one experience of using BlueBEAR (university supercomputer), Linux and FSL tools for MRI data analysis. The workshops will be accompanied by pre-session materials, please make sure that you review the relevant materials prior to attending workshops (see week-by-week materials). In some weeks you will be asked to complete simple tasks ahead of workshop and in some weeks complete pre-session readings or review workshop notes.
+## About these materials
+
+This website contains workshop materials created for MSc module Magnetic Resonance Imaging in Cognitive Neuroscience (MRICN) and its earlier version (Fundamentals in Brain Imaging) at the School of Psychology, University of Birmingham. It is a ten-week course consisting of lectures and workshops introducing main techniques of functional and structural brain mapping using MRI with a strong emphasis on functional MRI (fMRI) but not limited to fMRI. Topics include the physics of MRI, and introduction to fMRI experimental design and to analysis of fMRI and other types of MRI data. This website includes only workshop materials aimed at very basic training in analysis of brain imaging data and data visualization. If you are a CHBH member and would like access to MRICN lecture recordings etc please contact one of the teaching staff members listed below.
 
 ## Aims and learning outcomes
 
@@ -17,44 +19,23 @@ At the end of the course you will be able to:
 * Have the ability to work with BlueBEAR in a Linux environment and to use appropriate software to view and interpret MRI data
 * Be able to analyse simple fMRI experiments and conduct basic tractography analysis
 
----
+## Contributors and Teaching Staff
 
-## Note
-
-!!! note "Note"
-    This website is intended for current staff and students at the [Centre for Human Brain Health](https://www.birmingham.ac.uk/research/centre-for-human-brain-health/index.aspx) and [University of Birmingham](https://www.birmingham.ac.uk/). It is not likely to be useful for anyone else...
-
-## Example code block
-
-Here's an example of a basic FSL analysis script:
-
-```bash
-#!/bin/bash
-
-# Set up FSL environment
-. /etc/fsl/5.0/fsl.sh
-
-# Define input and output
-INPUT_FILE="sub-01_func.nii.gz"
-OUTPUT_DIR="fsl_results"
-
-# Create output directory
-mkdir -p $OUTPUT_DIR
-
-# Run brain extraction
-bet $INPUT_FILE $OUTPUT_DIR/brain_extracted -F
-
-# Run motion correction
-mcflirt -in $INPUT_FILE -out $OUTPUT_DIR/motion_corrected
-
-# Run spatial smoothing
-susan $OUTPUT_DIR/motion_corrected $OUTPUT_DIR/smoothed 3 3 3 1 1 1
-
-echo "FSL analysis complete!"
-```
-
-## Example image 
-
-<p align="center">
-  <img src="assets/images/chbh_logo.jpg" alt="CHBH Logo" width="150" height="100">
+<p>
+  <img src="assets/images/main_page/magda.jpg" alt="Magda" width="250" height="200">
 </p>
+
+<b>Role: Course Lead</b>
+
+[Magdalena Chechlacz](https://www.birmingham.ac.uk/staff/profiles/psychology/chechlacz-magda) is an Assistant Professor in Cognition and Ageing at the School of Psychology, University of Birmingham. She initially trained and carried out a doctorate in cellular and molecular biology (2002). After working as a biologist (Larry L. Hillblom Foundation Fellowship at the University of California, San Diego) she decided on a career change to a more human-oriented science and neuroimaging. In order to gain formal training in cognitive neuroscience and neuroimaging, she completed a second doctorate in psychology at the University of Birmingham under the supervision of Glyn Humphreys (2012). From 2013 to 2016, she held a British Academy Postdoctoral Fellowship and EPA Cephalosporin Junior Research Fellowship, Linacre College at the University of Oxford. In 2016 Dr Chechlacz returned to the School of Psychology, University of Birmingham as a Bridge Fellow.
+<br>
+<br>
+<br>
+<br>
+<p>
+  <img src="assets/images/main_page/aamir.png" alt="Aamir" width="250" height="200">
+</p>
+
+<b>Role: Teaching Assistant</b>
+
+[Aamir Sohail](https://sohaamir.github.io/) is an MRC Advanced Interdisciplinary Methods (AIM) DTP PhD student based at the Centre for Human Brain Health (CHBH), University of Birmingham, where he is supervised by Lei Zhang and Patricia Lockwood. He completed a BSc in Biomedical Science at Imperial College London, followed by an MSc in Brain Imaging at the University of Nottingham. He then worked as a Junior Research Fellow at the Centre for Integrative Neuroscience and Neurodynamics (CINN), University of Reading. Outside of research, he is also passionate about facilitating inclusivity and diversity in academia, as well as promoting open and reproducible science.
