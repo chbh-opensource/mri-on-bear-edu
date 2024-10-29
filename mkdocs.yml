@@ -34,48 +34,50 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
 
 markdown_extensions:
   - admonition
   - codehilite
   - footnotes
+  - pymdownx.details
   - toc:
       permalink: true
  
-
+docs_dir: docs
 
 nav:
   - Home: index.md
   - Getting Started:
-    - Pre-Workshop Materials: setting-up.md
+    - Setting up access to BlueBEAR and the BEAR Portal: setting-up.md
     - Resources: resources.md
-  - Week 2 - Introduction to BlueBEAR and Linux:
-    - Accessing the BlueBEAR Portal: week2/accessing-bluebear.md
-    - Using the BlueBEAR GUI: week2/using-bluebear-gui.md
-    - Introduction to Linux: week2/intro-to-linux.md
-  - Week 4 - Basic MRI Skills:
-    - Different MRI file formats: week4/mri-file-formats.md
-    - Visualizing MRI data with fsleyes: week4/visualizing-mri-data.md
-    - Atlases, masks and regions of interest: week4/atlases-masks-roi.md
-  - Week 5 - Basic diffusion MRI analyses:
-    - FSL's diffusion toolbox: week5/fsl-diffusion-toolbox.md
-    - Diffusion tensor fitting: week5/diffusion-tensor-fitting.md
-    - Tract-based spatial statistics (TBSS): week5/tbss.md
-  - Week 6 - MRI demo (optional):
-    - Scanning a pomegranate at the CHBH: week6/scanning-pomegranate.md
-  - Week 7 - Advanced diffusion MRI analyses:
-    - Probabilistic tractography: week7/probabilistic-tractography.md
-    - Brain extraction: week7/brain-extraction.md
-  - Week 8 - First-level fMRI analysis:
-    - Manual and automatic brain extraction: week8/brain-extraction.md
-    - Preprocessing of functional MRI data: week8/preprocessing-fmri.md
-    - Running a first-level analysis: week8/first-level-analysis.md
-  - Week 10 - Higher-level fMRI analysis:
-    - Setting up and running a higher-level analysis using the FSL GUI: week10/higher-level-analysis.md
-  - Week 11 - Bash scripting and statistical analysis of fMRI data:
-    - Scripting FSL commands: week11/scripting-fsl.md
-    - Extracting statistics from region of interests: week11/extracting-statistics.md
-  - Week 12 - Functional connectivity (optional):
-    - Running a higher-level functional connectivity analysis using the FSL GUI: week12/higher-level-functional-connectivity.md
-    - Scripting your analyses using bash: week12/scripting-analyses.md
-    - Identifying regions of interest with atlases and Neurosynth: week12/identifying-roi.md
+  - Workshop 1 - Introduction to BlueBEAR and Linux:
+    - Workshop 1 - Aims and Objectives: workshop1/workshop1-intro.md
+    - Introduction to BlueBEAR: workshop1/intro-to-bluebear.md
+    - Introduction to Linux: workshop1/intro-to-linux.md
+  - Workshop 2 - Basic MRI Skills:
+    - Different MRI file formats: workshop2/mri-file-formats.md
+    - Visualizing MRI data with fsleyes: workshop2/visualizing-mri-data.md
+    - Atlases, masks and regions of interest: workshop2/atlases-masks-roi.md
+  - Workshop 3 - Basic diffusion MRI analyses:
+    - FSL's diffusion toolbox: workshop3/fsl-diffusion-toolbox.md
+    - Diffusion tensor fitting: workshop3/diffusion-tensor-fitting.md
+    - Tract-based spatial statistics (TBSS): workshop3/tbss.md
+  - Workshop 4 - Advanced diffusion MRI analyses:
+    - Probabilistic tractography: workshop4/probabilistic-tractography.md
+    - Brain extraction: workshop4/brain-extraction.md
+  - Workshop 5 - First-level fMRI analysis:
+    - Manual and automatic brain extraction: workshop5/brain-extraction.md
+    - Preprocessing of functional MRI data: workshop5/preprocessing-fmri.md
+    - Running a first-level analysis: workshop5/first-level-analysis.md
+  - Workshop 6 - Higher-level fMRI analysis:
+    - Setting up and running a higher-level analysis using the FSL GUI: workshop6/higher-level-analysis.md
+  - Workshop 7 - Bash scripting and statistical analysis of fMRI data:
+    - Scripting FSL commands: workshop7/scripting-fsl.md
+    - Extracting statistics from region of interests: workshop7/extracting-statistics.md
+  - Workshop 8 - Functional connectivity analysis of resting-state fMRI data:
+    - Running a higher-level functional connectivity analysis using the FSL GUI: workshop8/higher-level-functional-connectivity.md
+    - Scripting your analyses using bash: workshop8/scripting-analyses.md
+    - Identifying regions of interest with atlases and Neurosynth: workshop8/identifying-roi.md
+  - Contributing:
+    - Contributing to the project: contributing/contributing.md
