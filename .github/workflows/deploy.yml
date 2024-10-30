@@ -1,0 +1,26 @@
+name: deploy MRI-on-BEAR documentation (only on push to main branch)
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '>=3.10'   # allow 3.10 and above
+      - name: install mkdocs and dependencies
+        run: |
+            pip install -r requirements.txt
+            mkdocs --version
+      - name: build docs
+        run: mkdocs build --strict
+      - name: deploy docs
+        run: mkdocs gh-deploy --force
