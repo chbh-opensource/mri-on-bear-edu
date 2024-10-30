@@ -1,0 +1,158 @@
+.md-content__inner {
+    padding-bottom: 4rem; /* Add space for the navigation buttons */
+}
+
+.md-footer-nav {
+    background-color: white;
+    color: var(--md-primary-fg-color);
+    padding: 1rem 0.8rem;
+    margin-top: 2rem;
+}
+
+.md-footer-nav__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 61rem;
+    margin: 0 auto;
+}
+
+.md-footer-nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    color: var(--md-primary-fg-color);
+    padding: 0.25rem 0.5rem;
+    border: none;
+    background: none;
+    font-size: 0.8rem; /* Reduced font size */
+}
+
+.md-footer-nav__link:hover {
+    color: var(--md-accent-fg-color);
+}
+
+.md-footer-nav__direction {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    margin-bottom: 0.1rem;
+}
+
+.md-footer-nav__title {
+    font-weight: bold;
+}
+
+.md-footer-nav__link--next {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.md-nav__logo {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.md-nav__logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS for social icons */
+
+.social-links {
+    margin-top: 20px;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-item {
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.social-item a {
+    text-decoration: none;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.social-links i {
+    width: 24px;  /* Fixed width for icons */
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GitHub */
+.social-links a .fa-github {
+    color: #171515;
+}
+
+/* X (Twitter) */
+.social-links a .fa-x-twitter {
+    color: #14171A;
+}
+
+/* ORCID */
+.social-links a .fa-orcid {
+    color: #A6CE39;
+}
+
+.social-links i {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Text color */
+.social-links a {
+    color: #de2222;
+}
+
+/* Hover color */
+.social-links a .fa-envelope {
+    color: #cf810b;
+}
+
+/* Table settings */
+
+.md-typeset table:not([class]) {
+    font-size: 16px !important;
+}
+
+.md-typeset__scrollwrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.md-typeset__table {
+    min-width: 50%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.md-typeset table {
+    width: 100%;
+}
+
+/* Notes and code block settings */
+
+.md-typeset details {
+    font-size: 0.9em;  /* Adjust this value to make text larger or smaller */
+}
+
+.md-typeset details summary {
+    font-size: 1.2em;  /* This is for the dropdown title */
+}
+
+.md-typeset details code {
+    font-size: 1em;    /* This is for the code text specifically */
+}
+
+.md-typeset .admonition p {
+    font-size: 1.1em; /* This is for the text inside the note */
+}
