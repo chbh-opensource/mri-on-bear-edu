@@ -76,8 +76,6 @@ nav:
     - Scripting FSL commands: workshop7/scripting-fsl.md
     - Extracting statistics from region of interests: workshop7/extracting-statistics.md
   - Workshop 8 - Functional connectivity analysis of resting-state fMRI data:
-    - Running a higher-level functional connectivity analysis using the FSL GUI: workshop8/higher-level-functional-connectivity.md
-    - Scripting your analyses using bash: workshop8/scripting-analyses.md
-    - Identifying regions of interest with atlases and Neurosynth: workshop8/identifying-roi.md
+    - Running a functional connectivity analysis using FSL: workshop8/functional-connectivity.md
   - Contributing:
     - Contributing to the project: contributing/contributing.md
