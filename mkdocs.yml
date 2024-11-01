@@ -49,21 +49,21 @@ docs_dir: docs
 nav:
   - Home: index.md
   - Getting Started:
-    - Setting up access to BlueBEAR and the BEAR Portal: setting-up.md
+    - Accessing BlueBEAR and the BEAR Portal: setting-up.md
     - Resources: resources.md
   - Workshop 1 - Introduction to BlueBEAR and Linux:
     - Workshop 1 - Aims and Objectives: workshop1/workshop1-intro.md
     - Introduction to BlueBEAR: workshop1/intro-to-bluebear.md
     - Introduction to Linux: workshop1/intro-to-linux.md
-  - Workshop 2 - Basic MRI Skills:
+  - Workshop 2 - Basic MRI skills:
     - Different MRI file formats: workshop2/mri-file-formats.md
     - Visualizing MRI data with fsleyes: workshop2/visualizing-mri-data.md
     - Atlases, masks and regions of interest: workshop2/atlases-masks-roi.md
-  - Workshop 3 - Basic diffusion MRI analyses:
+  - Workshop 3 - Basic diffusion MRI analysis:
     - FSL's diffusion toolbox: workshop3/fsl-diffusion-toolbox.md
     - Diffusion tensor fitting: workshop3/diffusion-tensor-fitting.md
     - Tract-based spatial statistics (TBSS): workshop3/tbss.md
-  - Workshop 4 - Advanced diffusion MRI analyses:
+  - Workshop 4 - Advanced diffusion MRI analysis:
     - Probabilistic tractography: workshop4/probabilistic-tractography.md
     - Brain extraction: workshop4/brain-extraction.md
   - Workshop 5 - First-level fMRI analysis:
@@ -72,10 +72,10 @@ nav:
     - Running a first-level analysis: workshop5/first-level-analysis.md
   - Workshop 6 - Higher-level fMRI analysis:
     - Setting up and running a higher-level analysis using the FSL GUI: workshop6/higher-level-analysis.md
-  - Workshop 7 - Bash scripting and statistical analysis of fMRI data:
+  - Workshop 7 - Bash scripting and region-of-interest analysis:
     - Scripting FSL commands: workshop7/scripting-fsl.md
     - Extracting statistics from region of interests: workshop7/extracting-statistics.md
-  - Workshop 8 - Functional connectivity analysis of resting-state fMRI data:
-    - Running a functional connectivity analysis using FSL: workshop8/functional-connectivity.md
+  - Workshop 8 - Functional connectivity analysis:
+    - Functional connectivity analysis of resting-state fMRI data using FSL: workshop8/functional-connectivity.md
   - Contributing:
     - Contributing to the project: contributing/contributing.md

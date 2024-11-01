@@ -1,4 +1,4 @@
-# Setting up access to BlueBEAR and the BEAR Portal
+# Accessing BlueBEAR and the BEAR Portal
 
 Before you start with any workshop materials you will need to familiarise yourself with CHBH’s computational resources (BlueBEAR). The following pages are aimed at helping you get started. 
 
@@ -17,7 +17,12 @@ BEAR services and basic resources, such the ones we will be using for the purpos
   <img src="../assets/images/setting-up/bluebear.png" alt="BlueBEAR" width="600" height="200">
 </p>
 
-[BlueBEAR](https://www.birmingham.ac.uk/research/arc/bear/bluebear) refers to the Linux High Performance Computing (HPC) environment which (1) enables researchers to run jobs simultaneously on many servers (thus providing fast and efficient processing capacity for data analysis), and (2) gives easy access to multiple apps, software libraries (e.g., software we will be using in this module to analyse MRI data), as well as various software development tools. As computing resources on BlueBEAR rely on Linux, in Workshop 1 you will learn some basic commands, which you will need to be familiar with to participate in subsequent practical sessions and to complete the module’s main assessment (data analysis assessment). More Linux commands and basic principle of scripting will be introduced in subsequent workshops.
+[BlueBEAR](https://www.birmingham.ac.uk/research/arc/bear/bluebear) refers to the Linux High Performance Computing (HPC) environment which:
+
+1. Enables researchers to run jobs simultaneously on many servers (thus providing fast and efficient processing capacity for data analysis), and 
+2. Gives easy access to multiple apps, software libraries (e.g., software we will be using in this module to analyse MRI data), as well as various software development tools. 
+
+As computing resources on BlueBEAR rely on Linux, in Workshop 1 you will learn some basic commands, which you will need to be familiar with to participate in subsequent practical sessions and to complete the module’s main assessment (data analysis assessment). More Linux commands and basic principle of scripting will be introduced in subsequent workshops.
 
 There are two steps to gaining access to BlueBEAR:
 
@@ -31,13 +36,14 @@ So, you are already a member of a BEAR project giving you BlueBEAR access, but y
 
 <b>Please follow these steps as above to make sure you have a BEAR Linux account before starting with workshop 1 materials.</b> To do this you will need to be on campus or using the [University Remote Access Service (VPN)](https://intranet.birmingham.ac.uk/collaboration/pure/using-pure/remote-access.aspx). 
 
-## Checking access to BEAR Portal
+<h2>Signing in to the BEAR Portal</h2>
 
 - In a web browser navigate to [https://portal.bear.bham.ac.uk](https://portal.bear.bham.ac.uk) to access the BEAR Portal
 - To log in please use your university username and password 
 - First select the ‘University of Birmingham’ button as below and next log in via the University’s Single Sign-On page 
 
-<b>Remember that the BEAR Portal is only available on campus or using the VPN!</b>
+!!! danger "BEAR Portal access requirements"
+    Remember that the BEAR Portal is only available on campus or using the VPN!
 
 <p align="center">
   <img src="../assets/images/setting-up/bluebear_signing_in.png" alt="BEAR Signing in" width="400" height="1200">

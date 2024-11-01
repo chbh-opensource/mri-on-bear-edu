@@ -5,24 +5,24 @@
 
 ![Status](https://img.shields.io/badge/Status-Work%20in%20Progress%20|%20Pre--release-orange)
 
-[MRI on BEAR](https://github.com/chbh-opensource/mri-on-bear-edu) is a collection of educational resources created by members of the [Centre for Human Brain Health (CHBH)](https://www.birmingham.ac.uk/research/centre-for-human-brain-health) to provide basic introduction to fundamentals in magnetic resonance imaging (MRI) data analysis, data analysis tools and computational resources available to the University of Birmingham research community.
+[MRI on BEAR](https://github.com/chbh-opensource/mri-on-bear-edu) is a collection of educational resources created by members of the [Centre for Human Brain Health (CHBH)](https://www.birmingham.ac.uk/research/centre-for-human-brain-health) to provide a basic introduction to fundamentals in magnetic resonance imaging (MRI) data analysis, data analysis tools and computational resources available to the University of Birmingham research community.
 
 ## About this website
 
-This website contains workshop materials created for MSc module Magnetic Resonance Imaging in Cognitive Neuroscience (MRICN) and its earlier version (Fundamentals in Brain Imaging) at the School of Psychology, University of Birmingham. It is a ten-week course consisting of lectures and workshops introducing main techniques of functional and structural brain mapping using MRI with a strong emphasis on functional MRI (fMRI) but not limited to fMRI. Topics include the physics of MRI, and introduction to fMRI experimental design and to analysis of fMRI and other types of MRI data. This website includes only workshop materials aimed at very basic training in analysis of brain imaging data and data visualization. 
+This website contains workshop materials created for the MSc module Magnetic Resonance Imaging in Cognitive Neuroscience (MRICN) and its earlier version (Fundamentals in Brain Imaging) at the School of Psychology, University of Birmingham. It is a ten-week course consisting of lectures and workshops introducing the main techniques of functional and structural brain mapping using MRI with a strong emphasis on - but not limited to - functional MRI (fMRI). Topics include the physics of MRI, experimental design for neuroimaging experiments and the analysis of fMRI and other types of MRI data. This website includes only the workshop materials, which provide a basic training in analysis of brain imaging data and data visualization. 
 
-!!! info "Accessing additional course materials"
-    If you are a CHBH member and would like access to MRICN lecture recordings etc. please contact one of the teaching staff members listed below.
+!!! success "Learning objectives"
+    At the end of the course you will be able to:
 
-## Learning objectives
-At the end of the course you will be able to:
+    - Demonstrate an understanding of the basic concepts involved in MRI
+    - Show an understanding of how to design fMRI experiments
+    - Have the ability to work with BlueBEAR in a Linux environment and to use appropriate software to view and interpret MRI data
+    - Be able to analyse simple fMRI experiments and conduct basic tractography analysis
 
-* Demonstrate an understanding of the basic concepts involved in MRI
-* Show an understanding of how to design fMRI experiments
-* Have the ability to work with BlueBEAR in a Linux environment and to use appropriate software to view and interpret MRI data
-* Be able to analyse simple fMRI experiments and conduct basic tractography analysis
+!!! danger "For externals not on the course"
+    Whilst we have made these resources publicly available for anyone to use, please BEAR in mind that the course has been specifically designed to run on the computing resources at the University of Birmingham.
 
-## Contributors and Teaching Staff
+## Teaching Staff and Contributors
 
 <p>
   <img src="assets/images/main_page/magda.jpg" alt="Magda" width="250" height="200">
@@ -59,6 +59,11 @@ At the end of the course you will be able to:
 
 <br>
 
+!!! info "Accessing additional course materials"
+    If you are a CHBH member and would like access to MRICN lecture recordings etc. please contact one of the teaching staff members listed above.
+
+<br>
+
 Many thanks to our contributors for creating and maintaining these resources!
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -77,9 +82,3 @@ Many thanks to our contributors for creating and maintaining these resources!
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-
-
-<br>
-!!! success "Additional contributors"
-    Thanks to ...

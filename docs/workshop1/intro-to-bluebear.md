@@ -22,7 +22,9 @@ BlueBEAR portal is basically a user friendly alternative to using the command li
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_portal_files.png" alt="BEAR Portal Files" width="900" height="300">
 </p>
 
-To view all files and data you have access to on BlueBEAR, click on “Files” as illustrated above. You will see your home directory (your BEAR Linux home directory), which you will be able to access to from Linux Desktop (see below) and all RDS projects you are member of. You should be able to see there `/rds/projects/c/chechlmy-chbh-mricn` (MRICN module’s RDS project). By selecting the “Home Directory” or any “RDS project” you will open a second browser tab, displaying the content. In the example below, you see the content of one of my projects.
+To view all files and data you have access to on BlueBEAR, click on “Files” as illustrated above. You will see your home directory (your BEAR Linux home directory), which you will be able to access to from the Linux Desktop (see below) and all RDS projects you are member of. 
+
+You should be able to see there `/rds/projects/c/chechlmy-chbh-mricn` (MRICN module’s RDS project). By selecting the “Home Directory” or any “RDS project” you will open a second browser tab, displaying the content. In the example below, you see the content of one of Magda's projects.
 
 <p align="center">
   <img src="../../assets/images/workshop1/intro-to-bluebear/folder_contents.png" alt="BEAR Folder Content" width="900" height="300">
@@ -50,7 +52,7 @@ Finally, from the BlueBEAR Portal menu bar you can select the “Interactive App
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_gui_dropdown.png" alt="BEAR GUI" width="900" height="300">
 </p>
 
-Please select BlueBEAR GUI. This will bring up a page for you to specify options for your job to start BlueBEAR GUI. You can leave some of these options as default. But please <b>change “Number of Hours” to 2</b> (our workshops will last 2 hours; for some other analysis tasks you might need more time) and make sure that the selected “BEAR Project” is `chechlmy-chbh-mricn`. Next click on Launch.
+Please select 'BlueBEAR GUI'. This will bring up a page for you to specify options for your job to start BlueBEAR GUI. You can leave some of these options as default. But please <b>change “Number of Hours” to 2</b> (our workshops will last 2 hours; for some other analysis tasks you might need more time) and make sure that the selected “BEAR Project” is `chechlmy-chbh-mricn`. Next click on Launch.
 
 <p align="center">
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_gui_options.png" alt="BEAR GUI Options" width="400" height="1200">
@@ -62,7 +64,7 @@ It will take few minutes for the job to start. Once it’s ready you’ll see an
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_gui_launch.png" alt="BEAR GUI Launch" width="900" height="300">
 </p>
 
-Once you have launched the BlueBEAR GUI, you are in a Linux environment, on a Linux Desktop. The next sections will introduce you to how navigate and use this environment.
+Once you have launched the BlueBEAR GUI, you are now in a Linux environment, on a Linux Desktop. The following section will guide you on navigating and using this environment effectively.
 
 !!! info "Re-launching the BlueBEAR GUI"
     In the main window of the BlueBEAR portal you will be able to see that you have an Interactive session running (the information above will remain there). This is important as if you close the Linux Desktop by mistake, you can click on Launch BlueBEAR GUI again to open it.

@@ -1,6 +1,6 @@
 # Functional connectivity analysis of resting-state fMRI data using FSL
 
-This tutorial is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial by Dianne Paterson at the University of Arizona, but which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional material.
+This workshop is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial by Dianne Paterson at the University of Arizona, but which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional content covering [Neurosynth](https://neurosynth.org/).
 
 In this session, we will run a group-level functional connectivity analysis on resting-state fMRI data of three participants. We will specifically look at the functional connectivity of the posterior cingulate cortex (PCC), a region of the default mode network (DMN) that is commonly found to be active in resting-state data. 
 
@@ -9,8 +9,7 @@ To do this, we will:
 - extract a mean-timeseries for a PCC seed region for each participant,
 - run single-subject level analyses, one manually and bash scripting the other two, 
 - run a group-level analysis using the single-level results 
-- Finally, we will figure out which brain regions our active voxels are in, using
-  atlases in FSL, and [Neurosynth](https://neurosynth.org/).
+- Finally, we will figure out which brain regions our active voxels are in, using atlases in FSL, and Neurosynth.
 
 ## Preparing the data
 
@@ -239,9 +238,8 @@ To actually examine the output, go to the BEAR Portal and at the menu bar select
 <br>
 Then go into `SBC/sub1.feat`, select `report.html` and click View (top left of the window). Navigate to the 'Post-stats' tab and examine the outputs. It should look like this:
 <br>
-<br>
 <p align="center">
-  <img src="../../assets/images/workshop8/functional-connectivity/sub1_brain.png" alt="Sunject 1 Brain" width="700" height="300">
+  <img src="../../assets/images/workshop8/functional-connectivity/sub1_brain.png" alt="Sunject 1 Brain" width="500" height="300">
 </p>
 
 <h3>Scripting the other two subjects</h3>
@@ -283,57 +281,9 @@ pwd # make sure you are in your SBC directory
 cp /rds/projects/c/chechlmy-chbh-mricn/axs2210/SBC/run_feat.sh .
 ```
 
-This is the script:
-
-```bash
-#!/bin/bash
-
-# Prompt the user for the University account name
-read -p "Please enter your University account name: " account_name
-
-# Define the base directory with the user-provided account name
-base_dir="/rds/projects/c/chechlmy-chbh-mricn/${account_name}/SBC"
-
-echo "Using base directory: $base_dir"
-
-# Loop over each subject's data
-for sub in sub2 sub3; do
-    # Define the input .nii.gz file for the subject
-    input_file="${base_dir}/${sub}/${sub}.nii.gz"
-    
-    # Define the output FEAT directory
-    output_dir="${base_dir}/${sub}.feat"
-    
-    # Define the custom EV file for the subject
-    custom_ev_file="${base_dir}/${sub}/${sub}_PCC.txt"
-    
-    # Define the .fsf file for the subject
-    design_file="${base_dir}/${sub}.fsf"
-    
-    # Copy the template design file from sub1 and modify it for the current subject
-    cp "${base_dir}/sub1.feat/design.fsf" "$design_file"
-    
-    # Replace the input file path in the design file
-    sed -i "s|set feat_files(1) \".*\"|set feat_files(1) \"${input_file}\"|g" "$design_file"
-    
-    # Replace the output FEAT directory in the design file
-    sed -i "s|set fmri(outputdir) \".*\"|set fmri(outputdir) \"${output_dir}\"|g" "$design_file"
-    
-    # Replace the custom EV file in the design file
-    sed -i "s|set fmri(custom1) \".*\"|set fmri(custom1) \"${custom_ev_file}\"|g" "$design_file"
-
-    # Run FEAT analysis
-    feat "$design_file"
-
-    # Remove the .fsf file from the SBC directory after running FEAT
-    rm -f "$design_file"
-done
-
-echo "FEAT analysis completed for sub2 and sub3."
-```
 <b>You can have a look at the script yourself by typing `cat run_bash.sh`.</b>
 
-The first line is always needed to run `bash` scripts. The rest of the code just replaces the 3 things we wanted to change for the defined subs, sub2 and sub3.
+The first line `#!/bin/bash` is always needed to run `bash` scripts. The rest of the code just replaces the 3 things we wanted to change for the defined subjects, `sub2` and `sub3`.
 
 Run the code (from your SBC directory) by typing `bash run_feat.sh`. (It will ask you for your University account name, this is your ADF username (axs2210 for me)).
 
@@ -341,17 +291,16 @@ Run the code (from your SBC directory) by typing `bash run_feat.sh`. (It will as
 
 After the script has finished running, have a look at the `report.html` file for both directories, they should look like this:
 
-**sub2**
-
-<p align="center">
-  <img src="../../assets/images/workshop8/functional-connectivity/sub2_feat.png" alt="Subject 2 FEAT" width="700" height="300">
-</p>
-<br>
-**sub3**
-<br>
-<p align="center">
-  <img src="../../assets/images/workshop8/functional-connectivity/sub3_feat.png" alt="Subject 3 FEAT" width="700" height="300">
-</p>
+<div style="display: flex; justify-content: center; gap: 20px;">
+   <div style="text-align: center;">
+       <p><strong>sub2</strong></p>
+       <img src="../../assets/images/workshop8/functional-connectivity/sub2_feat.png" alt="Subject 2 FEAT" width="400" height="300">
+   </div>
+   <div style="text-align: center;">
+       <p><strong>sub3</strong></p>
+       <img src="../../assets/images/workshop8/functional-connectivity/sub3_feat.png" alt="Subject 3 FEAT" width="395" height="300">
+   </div>
+</div>
 
 ### Group-level analysis
 
@@ -373,11 +322,13 @@ Your window should look like this (before closing the Input window):
 </p>
 <br>
 
-5\. Keep 'Use lower-level copes ticked'.
+&nbsp;&nbsp;&nbsp;&nbsp;5\. Keep 'Use lower-level copes ticked'.
 
-6\. In 'Output directory' stay in your current directory (it should be SBC), and in the bottom bar, type in `PCC_group` at the end of the file path. Don't worry about it being empty, FSL will fill out the file path for us. 
+&nbsp;&nbsp;&nbsp;&nbsp;6\. In 'Output directory' stay in your current directory (SBC), and in the bottom bar, type in `PCC_group` at the end of the file path. 
 
-If you click the folder again, it should look similar to this (with your ADF username instead of `axs2210`: 
+Don't worry about it being empty, FSL will fill out the file path for us. 
+
+If you click the folder again, it should look similar to this (with your ADF username instead of `axs2210`): 
 
 <p align="center">
   <img src="../../assets/images/workshop8/functional-connectivity/selection.png" alt="Selection" width="700" height="300">
