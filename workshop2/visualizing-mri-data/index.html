@@ -11,18 +11,18 @@
         <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/visualizing-mri-data/">
       
       
-        <link rel="prev" href="../mri-file-formats/">
+        <link rel="prev" href="../mri-data-formats/">
       
       
-        <link rel="next" href="../atlases-masks-roi/">
+        <link rel="next" href="../../workshop3/fsl-diffusion-toolbox/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Visualizing MRI data with fsleyes - MRI on BEAR</title>
+        <title>MRI data visualization with FSLeyes - MRI on BEAR</title>
       
     
     
@@ -43,8 +43,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro+Display:300,300i,400,400i,700,700i%7CMona+Sans:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"SF Pro Display";--md-code-font:"Mona Sans"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro+Display:300,300i,400,400i,700,700i%7CSF+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"SF Pro Display";--md-code-font:"SF Mono"}</style>
       
     
     
@@ -74,6 +74,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#mri-data-visualization-with-fsleyes" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualizing MRI data with fsleyes
+              MRI data visualization with FSLeyes
             
           </span>
         </div>
@@ -300,27 +305,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Resources
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -374,7 +358,7 @@
         
   
   <span class="md-ellipsis">
-    Workshop 1 - Aims and Objectives
+    Workshop 1 - Aims and objectives
   </span>
   
 
@@ -395,7 +379,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to BlueBEAR
+    Introduction to the BlueBEAR Portal
   </span>
   
 
@@ -477,11 +461,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../mri-file-formats/" class="md-nav__link">
+      <a href="../workshop2-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Different MRI file formats
+    Workshop 2 - Aims and objectives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mri-data-formats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with MRI Data - Files and Formats
   </span>
   
 
@@ -504,38 +509,85 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MRI data visualization with FSLeyes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Visualizing MRI data with fsleyes
+    MRI data visualization with FSLeyes
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../atlases-masks-roi/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Atlases, masks and regions of interest
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-fsleyes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting started with FSLeyes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atlas-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atlas tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-atlas-tools-to-find-a-brain-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using atlas tools to find a brain structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-atlas-tools-to-create-a-region-of-interest-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using atlas tools to create a region-of-interest mask
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1010,7 +1062,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 8 - Functional connectivity analysis
+    Workshop 8 - Functional connectivity
   </span>
   
 
@@ -1020,7 +1072,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 8 - Functional connectivity analysis
+            Workshop 8 - Functional connectivity
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1058,6 +1110,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Additional Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -1066,24 +1138,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Contributing
+    Contributors
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
-            Contributing
+            Contributors
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1098,7 +1170,7 @@
         
   
   <span class="md-ellipsis">
-    Contributing to the project
+    Contributing to the website
   </span>
   
 
@@ -1136,9 +1208,343 @@
   
 
 
-  <h1>Visualizing MRI data with fsleyes</h1>
+<h1 id="mri-data-visualization-with-fsleyes">MRI data visualization with FSLeyes<a class="headerlink" href="#mri-data-visualization-with-fsleyes" title="Permanent link">&para;</a></h1>
+<p><b>FSL (FMRIB Software Library) is a comprehensive neuroimaging software library for the analysis of structural and functional MRI data.</b> FSL is widely used, freely available, runs on both Linux and Mac OS as well as on Windows via a Virtual Machine. </p>
+<p><b>FSLeyes is the FSL viewer for 3D and 4D data.</b> FSLeyes is available on BlueBEAR, but you need to load it first. You can just load FSLeyes as a standalone software, but as it is often used with other FSL tools, you often want to load both (FSL and FSLeyes). </p>
+<p>In this session we will only be loading FSLeyes by itself, and not with FSL.</p>
+<div class="admonition info">
+<p class="admonition-title">FSL Wiki</p>
+<p>Remember that the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/">FSL Wiki</a> is an important source for all things FSL!</p>
+</div>
+<h2 id="getting-started-with-fsleyes">Getting started with FSLeyes<a class="headerlink" href="#getting-started-with-fsleyes" title="Permanent link">&para;</a></h2>
+<p>Assuming that you have started directly from the previous page, first close your previous terminal (to close <code>dcm2nii</code>). Then open a new terminal and to navigate to the correct folder, type in your terminal:</p>
+<p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH</code></p>
+<p>To open FSLeyes, type:</p>
+<p><code>module load FSL/6.0.5.1-foss-2021a-fslpython</code></p>
+<p>There are different version of FSL on BlueBEAR, however this is the one which you need to use it together with FSLeyes.</p>
+<p>Wait for FSL to load and then type:</p>
+<p><code>module load FSLeyes/1.3.3-foss-2021a</code></p>
+<p>Again, wait for FSLeyes to load (it may take a few minutes). After this, to open FSLeyes, type in your terminal:</p>
+<p><code>fsleyes &amp;</code></p>
+<div class="admonition question">
+<p class="admonition-title">The importance of '&amp;'</p>
+<p>Why do we type <code>fsleyes &amp;</code> instead of <code>fsleyes</code>?</p>
+</div>
+<p><br>
+You should then see the setup below, which is the default FSLeyes viewer without an image loaded.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_default.png" alt="FSLeyes default" width="800" height="300">
+</p>
 
+<p>You can now load/open an image to view. Click 'File' → 'Add from file' (and then select the file in your directory e.g., <code>rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code>).</p>
+<p>You can also type directly in the terminal <code>fsleyes file.nii.gz</code> where you replace <code>file.nii.gz</code> with the name of the actual file you want to open. 
+However, you will need to include the full path to the file if you are not in the same directory when you open the terminal window e.g. <code>fsleyes rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code></p>
+<p>You should now see a T1 scan loaded in ortho view with three canvases corresponding to the sagittal, coronal, and axial planes.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="800" height="300">
+</p>
 
+<p>Please now explore the various settings in the ortho view panel:</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/ortho_panel.png" alt="Ortho Panel" width="700" height="300">
+</p>
+
+<p>Also notice the abbreviations on the three canvases:</p>
+<ul>
+<li>L/R: Left/Right</li>
+<li>S/I: Superior/Inferior</li>
+<li>A/P: Anterior/Posterior</li>
+</ul>
+<p>FSL comes with a collection of <b>NIFTI standard templates</b>, which are used for image registration and normalisation (part of MRI data analysis). You can also load these templates in FSLeyes.</p>
+<p>To load a template, Click 'File' → 'Add Standard' (for example select the file named <code>MNI152_T1_2mm.nii.gz</code>. If you still have the <code>T1.nii</code> image open, first close this image (by selecting 'Overlay' → 'Remove') and then load the template.</p>
+<p>The image below depicts the various tools that you can use on FSLeyes, give them a go!</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_gui.png" alt="FSLeyes GUI" width="900" height="300">
+</p>
+
+<p><br>
+We will now look at fMRI data. First close the previous image ('Overlay' → 'Remove') and then load the fMRI image. To do this, click 'File' → 'Add from file'  and then select the file <code>rds/projects/c/chechlmy-chbhmricn/xxx/CHBH/visualization2.5mm_2000_fMRI.nii.gz</code>.</p>
+<p>Your window should now look like this:</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_fmri.png" alt="FSLeyes fMRI" width="800" height="300">
+</p>
+
+<p><b>Remember this fMRI data file is a 4D image</b> – a set of 90-odd volumes representing a timeseries. To cycle through volumes, use the up/down buttons or type in a volume in the 'Volume' box to step through several volumes.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_arrows.png" alt="FSLeyes arrow" width="500" height="300">
+</p>
+
+<p>Now try playing the 4D file in 'Movie' mode by clicking this button. You should see some slight head movement over time. Click the button again to stop the movie.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_movie.png" alt="FSLeyes movie" width="500" height="300">
+</p>
+
+<p>As the fMRI data is 4D, this means that every voxel in the 3D-brain has a timecourse associated with it. Let's now have a look at this. </p>
+<p>Keeping the same dataset open (<code>2.5mm_2000_fMRI.nii.gz</code>) and now in the FSLeyes menu, select 'View' → 'Time series'. </p>
+<p>FSLeyes should now look like the picture below. </p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_timeseries.png" alt="FSLeyes timeseries" width="800" height="300">
+</p>
+
+<div class="admonition info">
+<p class="admonition-title">What exactly are we looking at?</p>
+<p>The functional image displayed here is the data straight from the scanner, i.e., raw, un-preprocessed data that has not been analyzed. In later workshops we will learn how to view analyzed data e.g., display statistical maps etc. </p>
+</div>
+<p>You should see a timeseries shown at the bottom of the screen corresponding to the voxel that is selected in the main viewer. Move the mouse to select other voxels to investigate how variable the timecourse is. </p>
+<p>Within the timeseries window, hit the '+' button to show the 'Plot List' characteristics for this timeseries.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/timeseries_plus_button.png" alt="FSLeyes timeseries plus button" width="800" height="300">
+</p>
+
+<p>Compare the timeseries in different parts of the brain, just outside the brain (skull and scalp), and in the airspace outside the skull. <b>You should observe that these have very different mean intensities.</b></p>
+<p>The timeseries of multiple different voxels can be compared using the '+' button. Hit '+' and then select a new voxel. Characteristics of the timeseries such as plotting colour can also be changed using the buttons on the lower left of the interface.</p>
+<h2 id="atlas-tools">Atlas tools<a class="headerlink" href="#atlas-tools" title="Permanent link">&para;</a></h2>
+<p>FSL comes not only with a collection of NIFTI standard templates but also with several built-in atlases, both probabilistic and histological (anatomical), comprising cortical, sub-cortical, and white matter parcellations. 
+You can explore the full list of included atlases <a href="https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/atlases.html">here</a>.</p>
+<p>We will now have a look at some of these atlases. </p>
+<p>Firstly, close all open files in FSLeyes (or close FSLeyes altogether and start it up again in your terminal by running <code>fsleyes &amp;</code>).</p>
+<p>In the FSLeyes menu, select 'File' → 'Add Standard' and then choose the file called <code>MNI152_T1_2mm.nii.gz</code>  (this is a template brain in MNI space).</p>
+<div class="admonition info">
+<p class="admonition-title">The MNI152 atlas</p>
+<p>Remember that the MNI152 atlas is a standard brain template created by averaging 152 MRI scans of healthy adults widely used as a reference space in neuroimaging research.</p>
+</div>
+<p>Now select from the menu 'Settings' → 'Ortho View 1' and tick the box for 'Atlases' at the bottom.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/settings_dropdown.png" alt="Settings dropdown" width="500" height="300">
+</p>
+
+<p>You should now see the 'Atlases' panel open as shown below.  </p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_atlas_gui.png" alt="FSLeyes atlas GUI" width="900" height="300">
+</p>
+
+<p>The 'Atlases' panel is organized into three sections: </p>
+<ul>
+<li>Atlas information</li>
+<li>Atlas search</li>
+<li>Atlas management</li>
+</ul>
+<p>The 'Atlas information' tab provides information about the current display location, relative to one or more atlases selected in this tab. We will soon see how to use this information.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/atlas_information.png" alt="Atlas Information" width="900" height="300">
+</p>
+
+<p>The 'Atlas search' tab can be used to search for specific regions by browsing through the atlases. We will later look how to use this tab to create region-of-interest (ROI) masks. </p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/atlas_search.png" alt="Atlas Search" width="900" height="300">
+</p>
+
+<p>The 'Atlas management' tab can be used to add or delete atlases. This is an advanced feature, and we will not be using it during our workshops.</p>
+<p>We will now have a look at how to work with FSL atlases. First we need to choose some atlases to reference. In the 'Atlases' → 'Atlas Information' window (bottom of screen in middle panel) make sure the following are ticked: </p>
+<ul>
+<li>Harvard-Oxford Cortical Structural Atlas</li>
+<li>Harvard-Oxford Subcortical Structural Atlas</li>
+<li>Juelich Histological Atlas</li>
+<li>Talairach Daemon Labels</li>
+</ul>
+<p>Now let's select a point in the standard brain. Move the cursor to the voxel position: <strong>[x=56, y=61, z=27]</strong> or enter the voxel location in the 'Location' window (2nd column). </p>
+<div class="admonition note">
+<p class="admonition-title">MNI Co-ordinate Equivalent</p>
+<p>Note that the equivalent MNI coordinates (shown in the 1st column/Location window) are <strong>[-22,-4,-18]</strong>.</p>
+</div>
+<p>It may not be immediately obvious what part of the brain you are looking at. Look at the 'Atlases' window. The report should say something like:</p>
+<div class="codehilite"><pre><span></span><code>Harvard-Oxford<span class="w"> </span>Cortical<span class="w"> </span>Structural<span class="w"> </span>Atlas<span class="w"> </span>
+Harvard-Oxford<span class="w"> </span>Subcortical<span class="w"> </span>Structural<span class="w"> </span>Atlas<span class="w"> </span>
+<span class="m">98</span>%<span class="w"> </span>Left<span class="w"> </span>Amygdala
+</code></pre></div>
+
+<div class="admonition question">
+<p class="admonition-title">Checking the brain region with other atlases</p>
+<p>What do the Juelich Histological Atlas &amp; Talairach Daemon Labels report?</p>
+</div>
+<p>The Harvard-Oxford and Juelich are both probabilistic atlases. <b>They report the percentage likelihood that the area named matches the point where the cursor is.</b> </p>
+<p>The Talairach Atlas is a simpler labelling atlas. It is based on a single brain (of a 60-year-old French woman) and is an example of a deterministic atlas. <b>it reports the name of the nearest label to the cursor coordinates.</b> </p>
+<p>From the previous reports, particularly the Harvard-Oxford Subcortical Atlas and the Juelich Atlas, it should be obvious that we are most likely in the left amygdala. </p>
+<p>Now click the '(Show/Hide)' link after the Left Amygdala result (as shown below):</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/show_amygdala.png" alt="Show Amygdala" width="900" height="300">
+</p>
+
+<p>This shows the (max) volume that the probabilistic Harvard-Oxford Subcortical Atlas has encoded for the Left Amygdala. The cursor is right in the middle of this volume.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/amygdala_roi.png" alt="Amygdala ROI" width="900" height="300">
+</p>
+
+<p>In the 'Overlay list' click and select the top amygdala overlay. You will note that the min/max ranges are set to 0 and 100. If it’s not, change it to 0 and 100. <b>These reflect the % likelihood of the labelling being correct.</b></p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/roi_thresholding.png" alt="Amygdala ROI" width="700" height="300">
+</p>
+
+<p>If you increase the min value from 0% to 50%, then you will see the size of the probability volume for the left amygdala will decrease. </p>
+<p><b>It now shows only the volume where there is a 50% or greater probability that this label is correct.</b></p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/roi_thresholding_50.png" alt="Amygdala ROI" width="700" height="300">
+</p>
+
+<p>Click the (Show/Hide) link after the Left Amygdala; the amygdala overlay will disappear.</p>
+<div class="admonition example">
+<p class="admonition-title">Exercise: Coordinate Localization</p>
+<p>Have a go at localizing exactly what the appropriate label is for these coordinates: </p>
+<ul>
+<li>Voxel coordinates <strong>[40, 51, 40]</strong> or MNI <strong>[10, -24, 8]</strong></li>
+<li>Voxel coordinates <strong>[40, 51, 40]</strong> or MNI <strong>[10, -24, 8]</strong></li>
+<li>Voxel coordinates <strong>[65, 29, 20]</strong> or MNI <strong>[-41, -68, -32]</strong></li>
+</ul>
+<p>If unsure check your results with someone else, or ask for help! </p>
+</div>
+<p><b>Make sure all overlays are closed (but keep the <code>MNI152_T1_2mm.nii.gz</code> open) before moving to the next section.</b></p>
+<h2 id="using-atlas-tools-to-find-a-brain-structure">Using atlas tools to find a brain structure<a class="headerlink" href="#using-atlas-tools-to-find-a-brain-structure" title="Permanent link">&para;</a></h2>
+<p><b>It is often helpful to locate where a specific structure is in the brain and to visually assess its size and extent.</b></p>
+<p>Let's suppose we want to visualize where <a href="https://radiopaedia.org/articles/heschls-gyrus-1?lang=gb">Heschl's Gyrus</a> is. In the bottom 'Atlases' window, click on the second tab ('Atlas search').</p>
+<p>In the Search box, start typing the word 'Heschl…'. You should find that the system quickly locates an entry for Heschl's Gyrus in the Harvard-Oxford Cortical Atlas. Click on it to select.</p>
+<p>Now if you now the tick box immediately below next to the Heschl's Gyrus, an overlay will be added to the 'Overlay' list on the bottom (see below). Heschl's Gyrus should now be visible in the main image viewer. </p>
+<p>Now click on the '+' button next to the tick box. This will centre the viewing coordinates to be in the middle of the atlas volume (see below).</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/heschls_gyrus.png" alt="Heschls Gyrus" width="800" height="300">
+</p>
+
+<div class="admonition example">
+<p class="admonition-title">Exercise: Atlas visualization</p>
+<p>Now try this for yourself: </p>
+<ul>
+<li><b>Remove the Heschl's Gyrus visualization.</b> You can tick it off in the 'Atlases' window, or select Heschl's Gyrus in the 'Overlay list' window, and then either toggle its visibility off (click the eye icon) or remove it ('Menu' → 'Overlay' → 'Remove').</li>
+<li><b>Visualize the Lingual Gyrus and Left Hippocampus.</b> To avoid confusion, change the colour of the Lingual Gyrus visualization from red/yellow to green and Left Hippocampus to blue.</li>
+</ul>
+</div>
+<p>You can change the colour of the overlays by selecting the option below:</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_colour.png" alt="FSLeyes colour" width="500" height="300">
+</p>
+
+<p>Other options also exist to help you navigate the brain and recognize the different brain structures and their relative positions. </p>
+<p>Make sure you have firstly closed/removed all previous overlays. Now, select the 'Atlas Search' tab in the 'Atlases' window again. 
+This time, in the left panel listing different atlases, tick on the option for only one of the atlases, such as the Harvard-Oxford Cortical Structural Atlas, and make sure all others are unticked. </p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford.png" alt="Harvard Oxford" width="800" height="300">
+</p>
+
+<p>Now you should see all of the areas covered by the Harvard-Oxford cortical atlas shown on the standard brain. You can click around with the cursor, the labels for the different areas can be seen in the bottom right panel.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="800" height="300">
+</p>
+
+<p>In addition to atlases covering various grey matter structures, <b>there are also two white matter atlases</b>: the JHU ICBM-DTI-81 white-matter labels atlas &amp; JHU white-matter tractography atlas. 
+If you tick (select) these atlases as per previous instructions (hint using the 'Atlas search' tab), you will see a list of all included white matter tracts (pathways) as shown below:</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/jhu_atlas.png" alt="JHU Atlas" width="800" height="300">
+</p>
+
+<h2 id="using-atlas-tools-to-create-a-region-of-interest-mask">Using atlas tools to create a region-of-interest mask<a class="headerlink" href="#using-atlas-tools-to-create-a-region-of-interest-mask" title="Permanent link">&para;</a></h2>
+<p><b>You can also use atlas tools in FSLeyes to not only locate specific brain structures but also to create masks for ROI (region-of-interest) analysis.</b> We will now create ROI masks (one grey matter mask and one white matter) using FSL tools and built-in atlases.</p>
+<p>To start, please close 'FSLeyes' entirely, either by clicking 'x' in the right corner of the FSLeyes window or by selecting 'FSLeyes' → 'Close'. Then close your current terminal and open a new terminal window. </p>
+<p>Then do the following:</p>
+<ul>
+<li>Navigate to your project directory and make a new directory called <code>ROImasks</code>. Navigate into this directory. </li>
+<li>Then load <code>fsl</code> and open FSLeyes in the background.</li>
+</ul>
+<p>Here are the commands to do this:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/
+mkdir<span class="w"> </span>ROImasks
+<span class="nb">cd</span><span class="w"> </span>ROImasks
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
+fsleyes<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+</code></pre></div>
+
+<p>Wait for FSLeyes to load, then:</p>
+<ul>
+<li>Load the MNI template by clicking 'File' → 'Add Standard' → 'MNI152_T1_2mm' and open the 'Atlases' panel. </li>
+<li>Go to the 'Atlas search' tab, select the 'Harvard Oxford Cortical Atlas' and tick the 'Middle Frontal Gyrus' (from the list below 'Search' box) to add overlay to the 'Overlay list'. </li>
+<li>Select the 'Middle Frontal Gyrus' (<code>harvardoxford-cortical_prob_Middle_Frontal_Gyrus</code>) from the 'Overlay' list and save it in your <code>ROImasks</code> directory as <code>MFG</code> (select 'Overlay' → 'Save' → Name: MFG).</li>
+</ul>
+<p>You should now see the MFG overlay in the overlay list (as below) and have a <code>MFG.nii.gz</code> file in the <code>ROImasks</code> directory. You can check this by typing <code>ls</code> in the terminal.</p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/mfg_roi.png" alt="MFG ROI" width="800" height="300">
+</p>
+
+<p>We will now create a white matter mask. Here are the steps:</p>
+<ul>
+<li>First, remove the MFG overlay ('Menu' → 'Overlay' → 'Remove').</li>
+<li>Then go to the 'Atlas search' tab, and select the 'JHU white-matter tractography' atlas and tick the 'Forceps minor' (from the list below 'Search' box) to add overlay to the 'Overlay' list. </li>
+<li>Finally, select the added 'Forceps minor' overlay from the 'Overlay' list and save it in your <code>ROImasks</code> directory as FM ('Overlay' → 'Save' → Name: FM). </li>
+</ul>
+<p>You should now see the FM overlay in the overlay list (as below) and also have a <code>FM.nii.gz</code> file in the <code>ROImasks</code> directory. </p>
+<p align="center">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/forceps_roi.png" alt="MFG ROI" width="800" height="300">
+</p>
+
+<p>You now have two “probabilistic ROI masks”. To use these masks for various analyses, you need to first binarize these images.</p>
+<div class="admonition question">
+<p class="admonition-title">Why binarize?</p>
+<p>Why do you think we need to binarize the mask first? There are several reasons, but primarily it creates clear boundaries between regions which simplifies our statistical analysis and reduces computation.</p>
+</div>
+<p>To do this, first close FSLeyes. Make sure that you are in the <code>ROImasks</code> directory and check if you have the two masks. 
+If you type <code>pwd</code> in the terminal, you should get the output <code>rds/projects/c/chechlmy-chbh-mricn/xxx/ROImasks</code> (where XXX=your ADF username) and when you type <code>ls</code>, you should see <code>FM.nii.gz</code> and <code>MFG.nii.gz</code>.</p>
+<p>To binarize the masks, you can use one of the FSL tools for image manipulation, <code>fslmaths</code>. The basic structure of an <code>fslmaths</code> command is: </p>
+<p><code>fslmaths input image [modifiers/options] output</code></p>
+<p>Type in your terminal:</p>
+<div class="codehilite"><pre><span></span><code>fslmaths<span class="w"> </span>FM.nii.gz<span class="w"> </span>-bin<span class="w"> </span>FM_binary
+fslmaths<span class="w"> </span>MFG.nii.gz<span class="w"> </span>-bin<span class="w"> </span>MFG_binary
+</code></pre></div>
+
+<p>This simply takes your ROI mask, binarizes it and saves the binarized mask with the <code>_binary</code> name.</p>
+<p><b>You should now have 4 files in the ROImasks directory.</b></p>
+<p>Now open FSLeyes and examine one of the binary masks you just created. First load a template (Click 'File' → 'Add Standard' → 'MNI152_T1_2mm') and add the binary mask (e.g., Click 'File' → 'Add from file' → 'FM_binary.nii.gz'). </p>
+<p>You can see the difference between the probabilistic and binarized ROI masks below:</p>
+<div style="display: flex; justify-content: center; gap: 20px;">
+   <div style="text-align: center;">
+       <p><strong>Probabilistic ROI mask</strong></p>
+       <img src="../../assets/images/workshop2/visualizing-mri-data/probabilistic_roi_mask.png" alt="Probabilistic ROI Mask" width="500" height="300">
+   </div>
+   <div style="text-align: center;">
+       <p><strong>Binary ROI mask</strong></p>
+       <img src="../../assets/images/workshop2/visualizing-mri-data/binary_roi_mask.png" alt="Binary ROI Mask" width="500" height="300">
+   </div>
+</div>
+
+<p><b>To use ROI masks in your analysis, you might also need to threshold it</b> i.e., to change/restrict the probability of the volume. We previously did this for the amygdala manually (e.g., from 0-100% to 50%-100%). 
+The choice of the threshold might depend on the type of analysis and the type of ROI mask you need to use. The instructions below explain how to threshold and binarize your ROI image in one single step using <code>fslmaths</code>.</p>
+<p>Open your terminal and make sure that you are in the <code>ROImasks</code> directory (<code>pwd</code>). To both threshold and binarize the MFG mask, type:</p>
+<p><code>fslmaths MFG.nii.gz -thr 25 -bin MFGthr_binary</code></p>
+<p>(option <code>-thr</code> is used to threshold the image below a specific number, in this case 25 corresponding to 25% probability)</p>
+<p>Now let's compare the thresholded and unthresholded MFG binarized masks.</p>
+<ul>
+<li>Go back to FSLeyes and add the unthresholded MFG binary mask (e.g., Click 'File' → 'Add from file' → 'MFG_binary.nii.gz'). </li>
+<li>Add the second, thresholded and binarized MFG mask (<code>MFGthr_binary.nii.gz</code>), and to avoid confusion, change the colour of the second mask to blue. You can either toggle its visibility on and off (click the eye icon) to compare mask or use the 'Opacity' button. </li>
+</ul>
+<p>You can see the difference in size between the two below:</p>
+<div style="display: flex; justify-content: center; gap: 20px;">
+   <div style="text-align: center;">
+       <p><strong>Binarized MFG mask</strong></p>
+       <img src="../../assets/images/workshop2/visualizing-mri-data/mfg_bin.png" alt="MFG Binarized" width="500" height="300">
+   </div>
+   <div style="text-align: center;">
+       <p><strong>Binarized and thresholded MFG mask</strong></p>
+       <img src="../../assets/images/workshop2/visualizing-mri-data/mfg_bin_thr.png" alt="MFG Binarized and Thresholded" width="500" height="300">
+   </div>
+</div>
+
+<div class="admonition example">
+<p class="admonition-title">Exercise: Atlases and masks</p>
+<p>Have a go at the following exercises:</p>
+<ul>
+<li>Explore different atlases to localize various cortical, subcortical or white matter structures (take inspiration from your MSc project, recent papers or seminars)</li>
+<li>Using atlas tools, create binary (un-thresholded) masks for the left and right Superior longitudinal fasciculus (hint: use JHU white-matter tractography atlas)</li>
+<li>Using atlas tools, create binary and thresholded (at different levels of probability 5, 25 and 75%) masks for the right thalamus (hint: use Harvard-Oxford Subcortical Structural Atlas)</li>
+</ul>
+<p>If unsure, check your results with someone else or ask for help!</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Workshop 2: Further Reading and Reference Material</p>
+<p>FSLeyes is not the only MRI visualization tool available. Here are some others:</p>
+<ul>
+<li>fslview (older version of FSL viewer) </li>
+<li><a href="https://www.nitrc.org/plugins/mwiki/index.php/mricrogl:MainPage">MRIcroGL</a> (for high quality images)</li>
+<li><a href="https://afni.nimh.nih.gov/">AFNI</a> - Analysis of Functional NeuroImages</li>
+<li>Mango/Papaya</li>
+</ul>
+<p>More details of what is available on BEAR at the CHBH can be found at the <a href="https://chbh-opensource.github.io/chbh-on-bear/">BEAR Technical Docs website</a>.</p>
+</div>
 
 
 
@@ -1157,22 +1563,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../mri-file-formats/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../mri-data-formats/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Different MRI file formats
+              Working with MRI Data - Files and Formats
             </div>
           </a>
         
         
-          <a href="../atlases-masks-roi/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../../workshop3/fsl-diffusion-toolbox/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Atlases, masks and regions of interest
+              FSL's diffusion toolbox
             </div>
           </a>
         
