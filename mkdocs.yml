@@ -11,7 +11,7 @@ theme:
     accent: pink
   font:
     text: SF Pro Display
-    code: Mona Sans
+    code: SF Mono
   name: material
   custom_dir: overrides
   logo: assets/images/chbh_logo.jpg
@@ -50,15 +50,14 @@ nav:
   - Home: index.md
   - Getting Started:
     - Accessing BlueBEAR and the BEAR Portal: setting-up.md
-    - Resources: resources.md
   - Workshop 1 - Introduction to BlueBEAR and Linux:
-    - Workshop 1 - Aims and Objectives: workshop1/workshop1-intro.md
-    - Introduction to BlueBEAR: workshop1/intro-to-bluebear.md
+    - Workshop 1 - Aims and objectives: workshop1/workshop1-intro.md
+    - Introduction to the BlueBEAR Portal: workshop1/intro-to-bluebear.md
     - Introduction to Linux: workshop1/intro-to-linux.md
   - Workshop 2 - Basic MRI skills:
-    - Different MRI file formats: workshop2/mri-file-formats.md
-    - Visualizing MRI data with fsleyes: workshop2/visualizing-mri-data.md
-    - Atlases, masks and regions of interest: workshop2/atlases-masks-roi.md
+    - Workshop 2 - Aims and objectives: workshop2/workshop2-intro.md
+    - Working with MRI Data - Files and Formats: workshop2/mri-data-formats.md
+    - MRI data visualization with FSLeyes: workshop2/visualizing-mri-data.md
   - Workshop 3 - Basic diffusion MRI analysis:
     - FSL's diffusion toolbox: workshop3/fsl-diffusion-toolbox.md
     - Diffusion tensor fitting: workshop3/diffusion-tensor-fitting.md
@@ -75,7 +74,8 @@ nav:
   - Workshop 7 - Bash scripting and region-of-interest analysis:
     - Scripting FSL commands: workshop7/scripting-fsl.md
     - Extracting statistics from region of interests: workshop7/extracting-statistics.md
-  - Workshop 8 - Functional connectivity analysis:
+  - Workshop 8 - Functional connectivity:
     - Functional connectivity analysis of resting-state fMRI data using FSL: workshop8/functional-connectivity.md
-  - Contributing:
-    - Contributing to the project: contributing/contributing.md
+  - Additional Resources: resources.md
+  - Contributors:
+    - Contributing to the website: contributing/contributing.md

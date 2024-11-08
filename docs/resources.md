@@ -1,9 +1,12 @@
-# Resources
+# Additional Resources
 
-Here is a (non-exhaustive) list of links and pages for neuroscientists covering skills related to working with neuroimaging data, both with the concepts and practical application. 
+For those wanting to develop their learning beyond the scope of the module, here is a (non-exhaustive) list of links and pages for neuroscientists covering skills related to working with neuroimaging data, both with the concepts and practical application. 
 
 !!! info "Contributing to the list"
     Feel free to suggest additional resources to the list by opening a thread on the GitHub page!
+
+!!! tip "FSL Wiki"
+    Most relevant to the course is the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/), the comprehensive guide for FSL by the [Wellcome Centre for Integrative Neuroimaging](https://www.win.ox.ac.uk/) at the University of Oxford.
 
 ## Existing lists of resources
 Here are some current 'meta-lists' which already cover a lot of resources themselves: 
