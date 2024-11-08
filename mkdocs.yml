@@ -77,5 +77,4 @@ nav:
   - Workshop 8 - Functional connectivity:
     - Functional connectivity analysis of resting-state fMRI data using FSL: workshop8/functional-connectivity.md
   - Additional Resources: resources.md
-  - Contributors:
-    - Contributing to the website: contributing/contributing.md
+  - Contributors: contributors.md

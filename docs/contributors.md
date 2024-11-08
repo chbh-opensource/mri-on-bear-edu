@@ -1,4 +1,4 @@
-# Contributing
+# Contributors
 
 Many thanks to our contributors for creating and maintaining these resources!
 
@@ -22,7 +22,7 @@ Many thanks to our contributors for creating and maintaining these resources!
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 !!! success "Acknowledgements"
-    Thank you to Charnjit Sidhu, ... for their assistance with running the course!
+    Thank you to Charnjit Sidhu for their assistance with running the course!
 
 MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear-edu). If you have any questions, comments, or suggestions for the website, please open an issue or feel free to fork the repository and make the changes directly!
 
