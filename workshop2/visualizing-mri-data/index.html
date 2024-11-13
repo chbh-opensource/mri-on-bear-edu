@@ -14,7 +14,7 @@
         <link rel="prev" href="../mri-data-formats/">
       
       
-        <link rel="next" href="../../workshop3/fsl-diffusion-toolbox/">
+        <link rel="next" href="../../workshop3/workshop3-intro/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
@@ -642,11 +642,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop3/fsl-diffusion-toolbox/" class="md-nav__link">
+      <a href="../../workshop3/workshop3-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FSL's diffusion toolbox
+    Workshop 3 - Aims and objectives
   </span>
   
 
@@ -663,11 +663,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop3/diffusion-tensor-fitting/" class="md-nav__link">
+      <a href="../../workshop3/diffusion-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Diffusion tensor fitting
+    Diffusion MRI basics - visualization and preprocessing
   </span>
   
 
@@ -684,11 +684,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop3/tbss/" class="md-nav__link">
+      <a href="../../workshop3/diffusion-mri-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tract-based spatial statistics (TBSS)
+    Diffusion tensor fitting and Tract-Based Spatial Statistics
   </span>
   
 
@@ -1198,7 +1198,7 @@ You should then see the setup below, which is the default FSLeyes viewer without
 However, you will need to include the full path to the file if you are not in the same directory when you open the terminal window e.g. <code>fsleyes rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code></p>
 <p>You should now see a T1 scan loaded in ortho view with three canvases corresponding to the sagittal, coronal, and axial planes.</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="900" height="300">
 </p>
 
 <p>Please now explore the various settings in the ortho view panel:</p>
@@ -1240,7 +1240,7 @@ We will now look at fMRI data. First close the previous image ('Overlay' → 'Re
 <p>Keeping the same dataset open (<code>2.5mm_2000_fMRI.nii.gz</code>) and now in the FSLeyes menu, select 'View' → 'Time series'. </p>
 <p>FSLeyes should now look like the picture below. </p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_timeseries.png" alt="FSLeyes timeseries" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_timeseries.png" alt="FSLeyes timeseries" width="900" height="300">
 </p>
 
 <div class="admonition info">
@@ -1250,7 +1250,7 @@ We will now look at fMRI data. First close the previous image ('Overlay' → 'Re
 <p>You should see a timeseries shown at the bottom of the screen corresponding to the voxel that is selected in the main viewer. Move the mouse to select other voxels to investigate how variable the timecourse is. </p>
 <p>Within the timeseries window, hit the '+' button to show the 'Plot List' characteristics for this timeseries.</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/timeseries_plus_button.png" alt="FSLeyes timeseries plus button" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/timeseries_plus_button.png" alt="FSLeyes timeseries plus button" width="700" height="300">
 </p>
 
 <p>Compare the timeseries in different parts of the brain, just outside the brain (skull and scalp), and in the airspace outside the skull. <b>You should observe that these have very different mean intensities.</b></p>
@@ -1357,7 +1357,7 @@ Harvard-Oxford<span class="w"> </span>Subcortical<span class="w"> </span>Structu
 <p>Now if you now the tick box immediately below next to the Heschl's Gyrus, an overlay will be added to the 'Overlay' list on the bottom (see below). Heschl's Gyrus should now be visible in the main image viewer. </p>
 <p>Now click on the '+' button next to the tick box. This will centre the viewing coordinates to be in the middle of the atlas volume (see below).</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/heschls_gyrus.png" alt="Heschls Gyrus" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/heschls_gyrus.png" alt="Heschls Gyrus" width="900" height="300">
 </p>
 
 <div class="admonition example">
@@ -1380,15 +1380,17 @@ This time, in the left panel listing different atlases, tick on the option for o
   <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford.png" alt="Harvard Oxford" width="800" height="300">
 </p>
 
+<p><br></p>
 <p>Now you should see all of the areas covered by the Harvard-Oxford cortical atlas shown on the standard brain. You can click around with the cursor, the labels for the different areas can be seen in the bottom right panel.</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="900" height="300">
 </p>
 
+<p><br></p>
 <p>In addition to atlases covering various grey matter structures, <b>there are also two white matter atlases</b>: the JHU ICBM-DTI-81 white-matter labels atlas &amp; JHU white-matter tractography atlas. 
 If you tick (select) these atlases as per previous instructions (hint using the 'Atlas search' tab), you will see a list of all included white matter tracts (pathways) as shown below:</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/jhu_atlas.png" alt="JHU Atlas" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/jhu_atlas.png" alt="JHU Atlas" width="900" height="300">
 </p>
 
 <h2 id="using-atlas-tools-to-create-a-region-of-interest-mask">Using atlas tools to create a region-of-interest mask<a class="headerlink" href="#using-atlas-tools-to-create-a-region-of-interest-mask" title="Permanent link">&para;</a></h2>
@@ -1530,12 +1532,12 @@ The choice of the threshold might depend on the type of analysis and the type of
           </a>
         
         
-          <a href="../../workshop3/fsl-diffusion-toolbox/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../../workshop3/workshop3-intro/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              FSL's diffusion toolbox
+              Workshop 3 - Aims and objectives
             </div>
           </a>
         
@@ -1588,7 +1590,7 @@ The choice of the threshold might depend on the type of analysis and the type of
       
       
     
-    <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+    <a href="https://twitter.com/TheCHBH" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
     </a>
   
@@ -1599,7 +1601,7 @@ The choice of the threshold might depend on the type of analysis and the type of
       
       
     
-    <a href="https://gitlab.com/your-gitlab-handle" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
+    <a href="https://gitlab.com/ajquinn" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
     </a>
   

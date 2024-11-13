@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/tbss/">
+        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/diffusion-mri-analysis/">
       
       
-        <link rel="prev" href="../diffusion-tensor-fitting/">
+        <link rel="prev" href="../diffusion-intro/">
       
       
         <link rel="next" href="../../workshop4/probabilistic-tractography/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Tract-based spatial statistics (TBSS) - MRI on BEAR</title>
+        <title>Diffusion tensor fitting and Tract-Based Spatial Statistics - MRI on BEAR</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#diffusion-tensor-fitting-and-tract-based-spatial-statistics" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tract-based spatial statistics (TBSS)
+              Diffusion tensor fitting and Tract-Based Spatial Statistics
             
           </span>
         </div>
@@ -561,11 +566,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsl-diffusion-toolbox/" class="md-nav__link">
+      <a href="../workshop3-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FSL's diffusion toolbox
+    Workshop 3 - Aims and objectives
   </span>
   
 
@@ -582,11 +587,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../diffusion-tensor-fitting/" class="md-nav__link">
+      <a href="../diffusion-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Diffusion tensor fitting
+    Diffusion MRI basics - visualization and preprocessing
   </span>
   
 
@@ -609,16 +614,66 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Diffusion tensor fitting and Tract-Based Spatial Statistics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Tract-based spatial statistics (TBSS)
+    Diffusion tensor fitting and Tract-Based Spatial Statistics
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-tensor-fitting-dtifit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diffusion tensor fitting (DTIfit)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tract-based-spatial-statistics-tbss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tract-Based Spatial Statistics (TBSS)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1092,9 +1147,318 @@
   
 
 
-  <h1>Tract-based spatial statistics (TBSS)</h1>
+<h1 id="diffusion-tensor-fitting-and-tract-based-spatial-statistics">Diffusion tensor fitting and Tract-Based Spatial Statistics<a class="headerlink" href="#diffusion-tensor-fitting-and-tract-based-spatial-statistics" title="Permanent link">&para;</a></h1>
+<h2 id="diffusion-tensor-fitting-dtifit">Diffusion tensor fitting (DTIfit)<a class="headerlink" href="#diffusion-tensor-fitting-dtifit" title="Permanent link">&para;</a></h2>
+<p><b>The next thing we will do is to look at how to run and examine the results of diffusion tensor fitting. </b></p>
+<p>First close FSLeyes, and to make sure you do not have any processes running in the background, close the current terminal.</p>
+<p>Open a new terminal window, navigate to the <code>p01</code> subdirectory, load FSL and FSLeyes again, and finally open FSL (with &amp; to background it):</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
+fsl<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+</code></pre></div>
 
+<p>To run the diffusion tensor fit, you need 4 files as specified below:</p>
+<ol>
+<li>Distortion corrected diffusion data: <code>data.nii.gz</code></li>
+<li>Binary brain mask: <code>nodif_brain_mask.nii.gz</code></li>
+<li>Gradient directions: <code>bvecs</code> (test file with gradient directions)</li>
+<li>b-values: <code>bvals</code> (text file with list of b-values)</li>
+</ol>
+<p><b>All these files are included inside the data subdirectory <code>p01/data</code>.</b> You will later learn how to create a binary brain mask but first we will run DTIfit.</p>
+<p>In the FSL GUI, first click on 'FDT diffusion', and in the FDT window, select 'DTIFIT Reconstruct diffusion tensors'. Now choose as 'Input directory' the <code>data</code> subdirectory located inside <code>p01</code> and click 'Go'. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_gui.png" alt="DTIfit GUI" width="900" height="300">
+</p>
 
+<p>You should see something happening in the terminal and once you see 'Done!' you are ready to view the results.</p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_done.png" alt="DTIfit Done" width="100" height="300">
+</p>
+
+<p>Click 'OK' when the message appears.</p>
+<h3>Different ways of running DTIfit</h3>
+
+<p>Instead of running DTIfit by choosing the 'Input' directory, you can also run it by specifying the input file manually. If you click it now, the files would be auto-filled but otherwise you would need to provide inputs as below.       </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_manual.png" alt="DTIfit Manual" width="600" height="300">
+</p>
+
+<p><br></p>
+<div class="admonition warning">
+<p class="admonition-title">Running DTIfit in your own time</p>
+<p>Please do NOT run it now, but instead try it in your own time with data in the <code>p02</code> folder.</p>
+</div>
+<p>Finally, you can also run DTIfit directly from the terminal. To do this, you would need to type <code>dtifit</code> in the terminal and choose the <code>dtifit</code> compulsory arguments:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-k, --data</td>
+<td>dti data file</td>
+</tr>
+<tr>
+<td>-o, --out</td>
+<td>Output basename</td>
+</tr>
+<tr>
+<td>-m, --mask</td>
+<td>Bet binary mask file</td>
+</tr>
+<tr>
+<td>-r, --bvecs</td>
+<td>b vectors file</td>
+</tr>
+<tr>
+<td>-b, --bvals</td>
+<td>b values file</td>
+</tr>
+</tbody>
+</table>
+<p>To run DTIfit from the terminal, you would need to navigate inside the <code>subdirectory/folder</code> with all the data and type the full <code>dtifit</code> command, specifying compulsory arguments as below:</p>
+<p><code>dtifit --data=data --mask=nodif_brain_mask --bvecs=bvecs --bvals=bvals --out=dti</code></p>
+<p>This command only works when running it from inside a folder where all the data is located, otherwise you will need to specify the full path with the data location. 
+This would be useful if you want to write a script; we will look at it in the later workshops.</p>
+<div class="admonition warning">
+<p class="admonition-title">Running DTIfit from the terminal in your own time</p>
+<p>Again, please do NOT run it now but try it in your own time with data in the <code>p02</code> folder.</p>
+</div>
+<p>The results of running DTIfit are several output files as specified below. <b>We will look closer at the highlighted files in bold.</b> 
+All of these files should be located in the <code>data</code> subdirectory, i.e. within <code>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01/data/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Output File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dti_V1</strong> (V2, V3)</td>
+<td>1st, 2nd, 3rd eigenvectors</td>
+</tr>
+<tr>
+<td>dti_L1 (L2, L3)</td>
+<td>1st, 2nd, 3rd eigenvalues</td>
+</tr>
+<tr>
+<td><strong>dti_FA</strong></td>
+<td><strong>Fractional Anisotropy map</strong></td>
+</tr>
+<tr>
+<td><strong>dti_MD</strong></td>
+<td><strong>Mean Diffusivity map</strong></td>
+</tr>
+<tr>
+<td>dti_MO</td>
+<td>Mode of anisotropy (linear versus planar)</td>
+</tr>
+<tr>
+<td>dti_SO</td>
+<td>Raw T2 signal with no diffusion weighting</td>
+</tr>
+</tbody>
+</table>
+<p>To do this, firstly close the FSL GUI, open FSLeyes and load the FA map ('File' → 'Add from file' → <code>dti_FA</code>)</p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dti_fa.png" alt="DTI FA" width="900" height="300">
+</p>
+
+<p>Next add the principal eigenvector map (<code>dti_V1</code>) to your display ('File' → 'Add from file' → <code>dti_V1</code>).</p>
+<p>FSLeyes will open the image <code>dti_V1</code> as a 3-direction vector image (RGB) with diffusion direction coded by colour. 
+To display the standard PDD colour coded orientation map (as below), you need to modulate the colour intensity with the FA map so that the anisotropic voxels appear bright. </p>
+<p>In the display panel (click on 'Settings' (the Cog icon)) and change 'Modulate' by setting it to <code>dti_FA</code>.</p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dti_v1.png" alt="DTI V1" width="900" height="300">
+</p>
+
+<p>Finally, compare the FA and MD maps (<code>dti_FA</code> and <code>dti_MD</code>). To do this, load the FA map and add the MD map. 
+By contrast to the FA map, the MD map appears uniform in both gray and white matter, plus higher intensities are in the CSF-filled ventricles and indicate higher diffusivity. This is opposed to dark ventricles in the FA map. </p>
+<div class="admonition question">
+<p class="admonition-title">Differences between the FA and MD maps</p>
+<p>Why are there such differences?</p>
+</div>
+<h2 id="tract-based-spatial-statistics-tbss">Tract-Based Spatial Statistics (TBSS)<a class="headerlink" href="#tract-based-spatial-statistics-tbss" title="Permanent link">&para;</a></h2>
+<p>In the next part of the workshop, we will look at running TBSS, Tract-Based Spatial Statistics.</p>
+<p><b>TBSS is used for a whole brain “voxelwise” cross-subject analysis of diffusion-derived measures, usually FA (fractional anisotropy).</b></p>
+<p>We will look at an example TBSS analysis of a small dataset consisting of FA maps from ten younger (y1-y10) and five older (o1-o5) participants. 
+<b>Specifically, you will learn how to run the second stage of TBSS analysis, “voxelwise” statistics, and learn how to display results using FSLeyes.</b> 
+The statistical analysis that you will run <b>aims to examine where on the tract skeleton younger versus older (two groups) participants have significantly different FA values.</b></p>
+<p>Before that, let's shortly recap TBSS as it was covered in the lecture. </p>
+<p>The steps for Tract-Based Spatial Statistics are:</p>
+<ol>
+<li>Fitting the diffusion tensor (DTIfit)</li>
+<li>Alignment of  all study participants’ FA maps to standard space using non-linear registration</li>
+<li>Merging all participants’ nonlinearly aligned FA maps into a single 4D image file and creating the mean FA image </li>
+<li>FA “skeletonization” (the mean FA skeleton representing the centres of major tracts specific to all participants is created)</li>
+<li>Each participant’s aligned FA map is then projected back onto the skeleton prior to statistical analysis </li>
+<li>Hypothesis testing (voxelwise statistics)</li>
+</ol>
+<p>To save time, some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you and all outputs are included in the <code>data</code> folder you have copied at the start of this workshop. </p>
+<h2><div align="center"><b>Tract-Based Spatial Statistics pipeline in FSL</b></div></h2>
+
+<p align="center">
+ <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_pipeline.png" alt="TBSS Pipieline" width="700" height="300">
+</p>
+
+<p><b>You will only run the TBSS statistical analysis to explore group differences in FA values based upon age (younger versus older participants).</b></p>
+<p>First close FSLeyes (if you still have it open) and make sure that you do not have any processes running in the background by closing your current terminal.</p>
+<p>Then open a new terminal window, navigate to the subdirectory where pre-processed data are located and load both FSL and FSLeyes:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/TBSS/TBSS_analysis_p2/
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a<span class="w"> </span>
+</code></pre></div>
+
+<p>Once you have loaded all the required software, <b>we will start with exploring the pre-processed data.</b> If you correctly followed the previous steps, you should be inside the subdirectory <code>TBSS_analysis_p2</code>. 
+Confirm that, and then check the content of that subdirectory by typing:</p>
+<p><code>pwd</code> (answer <code>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/TBSS/TBSS_analysis_p2/</code>)</p>
+<p><code>ls</code> (you should see 3 data folders listed: <code>FA</code>, <code>origdata</code>, <code>stats</code>)</p>
+<p>We need to firstly check if all the pre-processing steps have been run correctly and that we have all the required files. </p>
+<p>Navigate inside the <code>stats</code> folder and check the files inside by typing in your terminal:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>stats
+ls
+</code></pre></div>
+
+<p>You should find inside the files listed below. </p>
+<ul>
+<li><code>all_FA</code> (4D image file with all participants’ FA maps registered into standard space)</li>
+<li><code>mean_FA</code> (3D image file mean of all participants FA maps)</li>
+<li><code>all_FA_skeletonised</code> (4D image file with all participants skeletonised FA data)</li>
+<li><code>mean_FA_skeleton</code> (3D image file mean FA skeleton)</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exploring the data</p>
+<p>If this is the case, open FSLeyes and explore these files one by one to make sure you understand what each represents. You might need to change the colour to visualise some image files. </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Remember to ask for help!</p>
+<p>If you are unsure about something, or need help, please ask!</p>
+</div>
+<p>Once you have finished taking a look, close FSLeyes.</p>
+<p>Before using the General Linear Model (GLM) GUI to set up the statistical model, you need to determine the order in which participants’ files have been entered into the single 4D skeletonized file (i.e., the data order in the <code>all_FA_skeletonised</code> file). 
+The easiest way to determine the alphabetical order of participants in the the final 4D file (<code>all_FA_skeletonised</code>), is to check in which order FSL lists the pre-processed FA maps inside the FA folder. You can do this in the terminal with the commands below</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..<span class="w"> </span>
+<span class="nb">cd</span><span class="w"> </span>FA<span class="w"> </span>
+imglob<span class="w"> </span>*_FA.*
+</code></pre></div>
+
+<p>You should see data from the 5 older (o1-o5) followed by data fromthe  10 (y1-y10) younger participants.</p>
+<p>Next navigate back to the <code>stats</code> folder and open FSL:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>stats
+fsl<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+
+<p>Click on 'Miscellaneous tools' and select 'GLM Setup' to open the GLM GUI. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm.png" alt="TBSS GUI" width="250" height="300">
+</p>
+
+<p><b>In the workshop we will set up a simple group analysis (a two sample unpaired t-test).</b></p>
+<div class="admonition info">
+<p class="admonition-title">How to set up more complex models</p>
+<p>To find information re how to set up more complex models, using GUI, click on this link: <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/statistics/glm">https://fsl.fmrib.ox.ac.uk/fsl/docs/#/statistics/glm</a></p>
+</div>
+<p>In the 'GLM Setup' window, change 'Timeseries design' to 'Higher-level/non-timeseries design' and '# inputs' to 15.</p>
+<p>Then click on 'Wizard' and select 'two groups, unpaired' and set 'Number of subjects in first group' to 5. Then click 'Process'.</p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm_timeseries.png" alt="TBSS GLM" width="500" height="300">
+</p>
+
+<p>In the 'EVs' tab, name 'EV1' and 'EV2' as per your groups (old, young).</p>
+<p>In the contrast window set number of contrasts to 2 and re-name them accordingly to the image below: </p>
+<p><b>(C1: old &gt; young, [1 -1]) (C2: young &gt; old, [-1 1])</b></p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm_evs.png" alt="TBSS GLM EVs" width="700" height="300">
+</p>
+
+<p>Click 'View Design', close the image and then go back to the GLM set window and save your design with the filename <code>design</code>. Click 'Exit' and close FSL.</p>
+<p>To run the TBSS statistical analysis FSL's <code>randomise</code> tool is used.</p>
+<div class="admonition info">
+<p class="admonition-title">FSL's randomise</p>
+<p>Randomise is FSL's tool for nonparametric permutation inference on various types of neuroimaging data (statistical analysis tool). For more information click on this link: <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/statistics/randomise">https://fsl.fmrib.ox.ac.uk/fsl/docs/#/statistics/randomise</a></p>
+</div>
+<p>The basic command line to use this tool is:</p>
+<p><code>randomise -i &lt;input&gt; -o &lt;input&gt; -d &lt;design.mat&gt; -t &lt;design.con&gt; [options]</code></p>
+<p>You can explore options and the set up by typing <code>randomise</code> in your terminal.</p>
+<p>The basic command line to use randomise for TBSS is below:</p>
+<p><code>randomise -i all_FA_skeletonised -o tbss -m mean_FA_skeleton_mask -d design.mat -t design.con -n 500 --T2</code></p>
+<p>Check if you are inside the <code>stats</code> folder and run the command above in terminal to run your TBSS group analysis:</p>
+<p>The elements of this command are explained below:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>input image</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>output image basename</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>mask</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>design matrix</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>design contrast</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>number of permutations</td>
+</tr>
+<tr>
+<td>--T2</td>
+<td>TFCE</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Why so few permutations?</p>
+<p>To save time we only run 500 permutations; this number will vary depending on the type of analysis, but usually it is between 5,000 to 10,000 or higher.</p>
+</div>
+<p><b>The output from <code>randomise</code> will include two raw (unthresholded) tstat images, <code>tbss_tstat1</code> and <code>tbss_tstat2</code>. </b></p>
+<p>The TFCE p-value images (fully corrected for multiple comparisons across space) will be <code>tbss_tfce_corrp_tstat1</code> and <code>tbss_tfce_corrp_tstat2</code>.</p>
+<p>Based on the set up of your design, contrast 1 gives the <strong>older &gt; young</strong> test and contrast 2 gives the <strong>young &gt; older</strong> test; the contrast which will likely give significant results is the 2nd contrast i.e., we are expecting higher FA in younger participants (due to the age related decline in FA).</p>
+<p>To check that, use FSLeyes to view results of your TBSS analysis. Open FSLeyes, load <code>mean_FA</code> plus the <code>mean_FA_skeleton</code> template and add your display TFCE corrected stats-2 image:</p>
+<ol>
+<li>'File' -&gt; 'Add from file' -&gt; <code>mean_FA.nii.gz</code></li>
+<li>File -&gt; 'Add from file' -&gt; <code>mean_FA_skeleton.nii.gz</code> (change greyscale to green)</li>
+<li>File -&gt; 'Add from file' -&gt; <code>tbss_tfce_corrp_tstat2.nii.gz</code> (change greyscale to red-yellow and set up Max to 1, and Min to 0.95 or 0.99)</li>
+</ol>
+<p><b>Please note that TFCE-corrected images, are actually 1-p for convenience of display, so thresholding at 0.95 gives significant clusters at p corrected &lt; 0.05, and 0.99 gives significant clusters at p corrected &lt; 0.01.</b></p>
+<p>You should see the same results as below:</p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_results.png" alt="TBSS Results" width="900" height="300">
+</p>
+
+<div class="admonition question">
+<p class="admonition-title">Interpreting the results</p>
+<p>Are the results as expected? Why/why not?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Reviewing the tstat1 image</p>
+<p>Next review the <code>tbss_tfce_corrp_tstat1.nii.gz</code> </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Further information on TBSS</p>
+<p>The main source of information is the 'TBSS' section of the FSL Wiki: <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss">https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss</a></p>
+</div>
 
 
 
@@ -1113,12 +1477,12 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../diffusion-tensor-fitting/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../diffusion-intro/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Diffusion tensor fitting
+              Diffusion MRI basics - visualization and preprocessing
             </div>
           </a>
         
@@ -1181,7 +1545,7 @@
       
       
     
-    <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+    <a href="https://twitter.com/TheCHBH" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
     </a>
   
@@ -1192,7 +1556,7 @@
       
       
     
-    <a href="https://gitlab.com/your-gitlab-handle" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
+    <a href="https://gitlab.com/ajquinn" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
     </a>
   

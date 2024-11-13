@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/fsl-diffusion-toolbox/">
+        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/diffusion-intro/">
       
       
-        <link rel="prev" href="../../workshop2/visualizing-mri-data/">
+        <link rel="prev" href="../workshop3-intro/">
       
       
-        <link rel="next" href="../diffusion-tensor-fitting/">
+        <link rel="next" href="../diffusion-mri-analysis/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>FSL's diffusion toolbox - MRI on BEAR</title>
+        <title>Diffusion MRI basics - visualization and preprocessing - MRI on BEAR</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#diffusion-mri-basics-visualization-and-preprocessing" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FSL's diffusion toolbox
+              Diffusion MRI basics - visualization and preprocessing
             
           </span>
         </div>
@@ -558,6 +563,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop3-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop 3 - Aims and objectives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -567,16 +593,66 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Diffusion MRI basics - visualization and preprocessing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    FSL's diffusion toolbox
+    Diffusion MRI basics - visualization and preprocessing
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-diffusion-data-using-fsleyes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing diffusion data using FSLeyes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brain-extraction-using-fsls-brain-extraction-tool-bet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brain extraction using FSL's Brain Extraction Tool (BET)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -590,32 +666,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../diffusion-tensor-fitting/" class="md-nav__link">
+      <a href="../diffusion-mri-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Diffusion tensor fitting
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tbss/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tract-based spatial statistics (TBSS)
+    Diffusion tensor fitting and Tract-Based Spatial Statistics
   </span>
   
 
@@ -1092,9 +1147,179 @@
   
 
 
-  <h1>FSL's diffusion toolbox</h1>
+<h1 id="diffusion-mri-basics-visualization-and-preprocessing">Diffusion MRI basics - visualization and preprocessing<a class="headerlink" href="#diffusion-mri-basics-visualization-and-preprocessing" title="Permanent link">&para;</a></h1>
+<h2>Example of a Diffusion MRI analysis pipeline</h2>
 
+<p>In this workshop and the workshop next week, we will follow some basic steps in the diffusion MRI analysis pipeline below. 
+<b>The instructions here are specific to tools available in FSL,</b> however other neuroimaging software packages can be used to perform similar analyses. 
+You might also recall from lectures that models other than diffusion tensor and methods other than probabilistic tractography are also often used. </p>
+<h2><div align="center"><b>FSL diffusion MRI analysis pipeline</b></div></h2>
 
+<p align="center">
+ <img src="../../assets/images/workshop3/diffusion-intro/diffusion_pipeline.png" alt="Diffusion Pipeline" width="900" height="300">
+</p>
+<p><br></p>
+<p><b>First, if you have not already, log in into the BlueBEAR Portal and start a BlueBEAR GUI session (2 hours).</b> You should know how to do it from the previous workshops. 
+Open a new terminal window and navigate to your MRICN project folder:</p>
+<p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx</code> [where XXX=your ADF username] </p>
+<p>Please check your directory by typing <code>pwd</code>. This should return: <code>/rds/projects/c/chechlmy-chbh-mricn/xxx</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Where has all my data gone?</p>
+<p>Before this workshop, any old directories and files from previous workshops have been removed (you will not need it for subsequent workshops and storing unnecessary data would result in exceeding allocated quota). 
+Your XXX directory should therefore be empty. </p>
+</div>
+<p>Next you need to copy over the data for this workshop.</p>
+<p><code>cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/diffusionMRI/ .</code>    (make sure you do not omit spaces and .)</p>
+<p>This might take a while, but once it has completed, change into that downloaded directory:</p>
+<p><code>cd diffusionMRI</code> (your <code>XXX</code> subdirectory you should now have the folder <code>diffusionMRI</code>)</p>
+<p>Type <code>ls</code>. You should now see three subdirectories/folders (<code>DTIfit</code>, <code>TBSS</code> and <code>tractography</code>). Change into the <code>DTIfit</code> folder:</p>
+<p><code>cd DTIfit</code></p>
+<p><b>We will first look at what diffusion images look like and explore text files which contain information about gradient strength and gradient directions.</b></p>
+<p>In your terminal type <code>ls</code>. This should return:</p>
+<div class="codehilite"><pre><span></span><code>p01/
+p02/
+</code></pre></div>
+
+<p>So, the folder <code>DTIfit</code> contains data from two participants contained within the <code>p01</code> and <code>p02</code> folders. </p>
+<p>Inside each folder (<code>p01</code> and <code>p02</code>) you will find a T1 scan, uncorrected diffusion data (<code>blip_up.nii.gz</code>, <code>blip_down.nii.gz</code>) acquired with two opposing PE-directions (<code>AP/blip_up</code> and <code>PA/blip_down</code>) and corresponding <code>bvals</code> (e.g., <code>blip_up.bval</code>) and <code>bvecs</code> (e.g., <code>blip_up.bvec</code>) files. </p>
+<ul>
+<li>The <code>bvals</code> files contain b-values (scalar values for each applied gradient). </li>
+<li>The <code>bvecs</code> files contain a list of gradient directions (diffusion encoding directions), including a [3x1] vector for each gradient. </li>
+</ul>
+<p>The number of entries in <code>bvals</code> and <code>bvecs</code> files equals the number of volumes in the diffusion data files. </p>
+<p>Finally, inside <code>p01</code> and <code>p02</code> there is also subdirectory data with distortion-corrected diffusion images.</p>
+<h2 id="viewing-diffusion-data-using-fsleyes">Viewing diffusion data using FSLeyes<a class="headerlink" href="#viewing-diffusion-data-using-fsleyes" title="Permanent link">&para;</a></h2>
+<p><b>We will start with viewing the uncorrected data.</b> Please navigate inside the <code>p01</code> folder, open FSLeyes and then load one of the uncorrected diffusion images:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>p01
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
+fsleyes<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+
+<p>The image you have loaded is 4D and consists of 64 volumes acquired with different diffusion encoding directions. Some of the volumes are non-diffusion images (b-value = 0), while most are diffusion weighted images. 
+The first volume, which you can see after loading the file, is a non-diffusion weighted image as demonstrated below. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/fsleyes_diffusion_volumes.png" alt="Diffusion Volumes" width="900" height="300">
+</p>
+
+<div class="admonition note">
+<p class="admonition-title">Viewing separate volumes</p>
+<p>You can view the separate volumes by changing the number in the Volume box or playing movie mode. Note that the volume count starts from 0. 
+You should also note that there are significant differences in the image intensity between different volumes. </p>
+</div>
+<p>Now go back to volume 0 and - if needed - stop movie mode. In the non-diffusion weighted image, the ventricles containing CSF are bright and the rest of the image is relatively dark. 
+Now change the volume number to 2, which is a diffusion weighted image (with a b-value of approximately 1500). </p>
+<p>The intensity of this volume is different. To see anything, please change max. intensity to 400. Now the ventricles are dark and you can see some contrast between different voxels. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/fsleyes_diffusion_intensity.png" alt="Diffusion Intensity" width="900" height="300">
+</p>
+
+<p>Let's view the content of the <code>bvals</code> and <code>bvecs</code> files by using the <code>cat</code> command. In your terminal type:</p>
+<p><code>cat blip_down.bval</code></p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/cat_bval.png" alt="Cat bval" width="700" height="300">
+</p>
+
+<p>The first number is 0. This indicates that indeed the first volume (volume 0) is a non-diffusion weighted image and the third volume (volume 2) is diffusion weighted volume with b=1500. 
+Based on the content of this <code>bval</code> file, you should be able to tell how many diffusion-weighted volumes were acquired and how many without any diffusion weighting (b0 volumes). </p>
+<div class="admonition example">
+<p class="admonition-title">Comparing diffusion-weighted volumes</p>
+<p>Please compare this with the file you loaded into FSLeyes. </p>
+</div>
+<p>Now type:</p>
+<p><code>cat blip_down.bvec</code></p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/cat_bvec.png" alt="Cat bvec" width="700" height="300">
+</p>
+
+<p>You should now see 3 separate rows of numbers representing the diffusion encoding directions (3x1 vector for each acquired volume; x,y,z directions) and that for volume 2 the diffusion encoding is represented by the vector <strong>[0.578, 0.671, 0.464]</strong>. </p>
+<h3>Distortion correction</h3>
+
+<p>As explained in the lectures, diffusion imaging suffers from various distortions (susceptibility, eddy-currents and movement induced distortions). <b>These need to be corrected before further analysis.</b> 
+The most most noticeable geometric distortions are susceptibility-induced distortions caused by field inhomogeneities, and so we will have a closer look at these.</p>
+<p>All types of distortions need correction during pre-processing steps in diffusion imaging analysis. FSL includes two tools used for distortion correction, topup and eddy. 
+The processing with these two tools is time and computing intensive. <b>Therefore we will not run the distortion correction steps in the workshop but instead explore some principles behind it.</b> </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/distortion_types.png" alt="Distortion Types" width="700" height="300">
+</p>
+
+<p>For this, you are given distortion corrected data to conduct further analysis, diffusion tensor fitting and probabilistic tractography.  </p>
+<p>First close the current image in FSLeyes ('Overlay' → 'Remove') and load both uncorrected images (<code>blip_up.nii.gz</code>, <code>blip_down.nii.gz</code>) acquired with two opposing PE-directions (PE=phase encoding). </p>
+<p><b>Compare the first volumes in each file.</b> To do that you can either toggle the visibility on and off (click the eye icon) or use the 'Opacity' button (you should remember from the previous workshop how to do this). </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/distortion_uncorrected.png" alt="Distortion Uncorrected" width="1000" height="300">
+</p>
+
+<p>The circled area indicates the differences in susceptibility-induced distortions between the two images acquired with two opposing PE-directions. </p>
+<p>Now change the max. intensity to 400 and compare the third volumes in each file. Again, the circled area indicate the differences in distortions between the two images acquired with the two opposing PE-directions. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/distortion_uncorrected_2.png" alt="Distortion Uncorrected 2" width="1000" height="300">
+</p>
+
+<p><b>Finally, we will look at distortion corrected data.</b> First close the current image ('Overlay' → 'Remove').</p>
+<p>Now in FSLeyes load <code>data.nii.gz</code> (the distortion-corrected diffusion image located inside the data subdirectory) and have a look at one of the the non-diffusion weighted and diffusion-weighted volumes. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/distortion_corrected.png" alt="Distortion Corrected" width="1000" height="300">
+</p>
+
+<div class="admonition question">
+<p class="admonition-title">Comparing corrected to uncorrected diffusion-weighted volumes</p>
+<p>Can you tell the difference in the corrected compared to the uncorrected diffusion images?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Further examining the difference between uncorrected and corrected diffusion data</p>
+<p>In your own time (outside of this workshop as part of independent study), load both the corrected and uncorrected data for <code>p01</code> and compare using the 'Volume' box or 'Movie' mode. Also explore the data in <code>p02</code> folder using the instructions above. </p>
+</div>
+<h2 id="brain-extraction-using-fsls-brain-extraction-tool-bet">Brain extraction using FSL's Brain Extraction Tool (BET)<a class="headerlink" href="#brain-extraction-using-fsls-brain-extraction-tool-bet" title="Permanent link">&para;</a></h2>
+<p>In the next part of the workshop, we will look FSL's Brain Extraction Tool (BET).</p>
+<p>Brain extraction is a necessary pre-processing step, which removes non-brain tissue from the image. <b>It is applied to structural images prior to tissue segmentation and is needed to prepare anatomical scans for registration of functional MRI or diffusion scans to MNI space.</b> BET can be also used to create binary brain masks (e.g., brain masks needed to run diffusion tensor fitting, DTIfit). </p>
+<p><b>In this workshop we will look at only at creating a binary brain mask as required for DTIfit.</b> In subsequent workshops we will look at using BET for removing non-brain tissues from diffusion and T1 scans (“skull-stripping”) in preparation for registration.</p>
+<p>First close FSLeyes and to make sure you do not have any processes running in the background, close your current terminal.</p>
+<p>Open a new terminal window, navigate to the <code>p02</code> subdirectory, and load FSL and FSLeyes again:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p02
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a<span class="w"> </span>
+</code></pre></div>
+
+<p>Now check the content of the <code>p02</code> subdirectory by typing <code>ls</code>. You should get the response <code>bvals</code>, <code>bvecs</code> and <code>data.nii.gz</code>.</p>
+<p>From the <code>data.nii.gz</code> (distortion corrected diffusion 4D image) we will extract a single volume without diffusion weighting (e.g. the first volume). You can extract it using one of FSL's utility commands, <code>fslroi</code>. </p>
+<div class="admonition info">
+<p class="admonition-title">What is <code>fslroi</code> used for?</p>
+<p><code>fslroi</code>is used to extract a region of interest (ROI) or subset of data from a larger 3D or 4D image file.</p>
+</div>
+<p>In the terminal, type:</p>
+<p><code>fslroi data.nii.gz nodif 0 1</code></p>
+<p>where: </p>
+<ul>
+<li><code>data.nii.gz</code> is your input image, </li>
+<li><code>nodif</code> is your output image (3D non-diffusion weighted volume), </li>
+<li>0 and 1 indicate that you are extracting volume 0 and the you only want to extract one (1) volume</li>
+</ul>
+<p>You should have a new file <code>nodif.nii.gz</code> (type <code>ls</code> to confirm) and can now create a binary brain mask using BET.</p>
+<p>To do this, first open BET in terminal. You can open the BET GUI directly in a terminal window by typing:</p>
+<p><code>Bet &amp;</code></p>
+<p>Or by runnning FSL in a terminal window and accessing BET from the FSL GUI. To do it this way, type:</p>
+<p><code>fsl &amp;</code></p>
+<p>and then open the 'BET brain extraction tool' by clicking on it in the GUI.</p>
+<p>In either case, once BET is opened, click on advanced options and make sure the first two outputs are selected ('brain extracted image' and 'binary brain mask') as below. Select as the 'Input' image the previously created <code>nodif.nii.gz</code> and change 'Fractional Intensity Threshold' to 0.4. Then click the 'Go' button. </p>
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui.png" alt="BET GUI" width="600" height="300">
+</p>
+
+<p align="center">
+  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui_detailed.png" alt="BET GUI Detailed" width="600" height="300">
+</p>
+
+<div class="admonition tip">
+<p class="admonition-title">Completing BET in the terminal</p>
+<p>After running BET you may need to hit return to get a visible prompt back after seeing "Finished” in the terminal!</p>
+</div>
+<p>You will see 'Finished' in the terminal when you are ready to inspect the results. Close BET and open FSLeyes and load three files (<code>nodif.nii.gz</code>, <code>nodif_brain.nii.gz</code> and <code>nodif_brain_mask</code>). <b>Compare the files.</b> To do that you can either toggle the visibility on and off (click the eye icon) or use 'Opacity button' (you should remember from previous workshop how to do it).</p>
+<p>The <code>nodif_brain_mask</code> is a single binarized image with ones inside the brain and zeroes outside the brain. You need this image both for DTIfit and tractography.</p>
+<div class="admonition question">
+<p class="admonition-title">Comparing between BET and normal images</p>
+<p>Can you tell the difference between <code>nodif.nii.gz</code> and <code>nodif_brain.nii.gz</code>? It might be easier to compare these images if you change max intensity to 1500 and <code>nodif_brain</code> colour to green.</p>
+</div>
 
 
 
@@ -1113,22 +1338,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../../workshop2/visualizing-mri-data/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../workshop3-intro/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              MRI data visualization with FSLeyes
+              Workshop 3 - Aims and objectives
             </div>
           </a>
         
         
-          <a href="../diffusion-tensor-fitting/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../diffusion-mri-analysis/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Diffusion tensor fitting
+              Diffusion tensor fitting and Tract-Based Spatial Statistics
             </div>
           </a>
         
@@ -1181,7 +1406,7 @@
       
       
     
-    <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+    <a href="https://twitter.com/TheCHBH" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
     </a>
   
@@ -1192,7 +1417,7 @@
       
       
     
-    <a href="https://gitlab.com/your-gitlab-handle" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
+    <a href="https://gitlab.com/ajquinn" target="_blank" rel="noopener" title="gitlab.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
     </a>
   
