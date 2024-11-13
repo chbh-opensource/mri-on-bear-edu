@@ -24,9 +24,5 @@ Many thanks to our contributors for creating and maintaining these resources!
 !!! success "Acknowledgements"
     Thank you to Charnjit Sidhu for their assistance with running the course!
 
-MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear-edu). If you have any questions, comments, or suggestions for the website, please open an issue or feel free to fork the repository and make the changes directly!
-
-A rough guide on how to do so are found on the repository's `README`, whereas more detailed information of making changes are located within the `contributing_guide.md` file within the repository's `root`.
-
-## License
-All content in this book (ie, any files and content in the `docs/` folder) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license. Please see the `LICENSE` file in the `GitHub` repository for more details.
+<h2>License</h2>
+MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear-edu). All content in this book (ie, any files and content in the `docs/` folder) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license. Please see the `LICENSE` file in the GitHub repository for more details.

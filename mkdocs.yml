@@ -28,10 +28,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/chbh-on-bear
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/your-twitter-handle
+      link: https://twitter.com/TheCHBH
     - icon: fontawesome/brands/gitlab
-      link: https://gitlab.com/your-gitlab-handle
-
+      link: https://gitlab.com/ajquinn
 extra_css:
   - stylesheets/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
@@ -59,9 +58,9 @@ nav:
     - Working with MRI Data - Files and Formats: workshop2/mri-data-formats.md
     - MRI data visualization with FSLeyes: workshop2/visualizing-mri-data.md
   - Workshop 3 - Basic diffusion MRI analysis:
-    - FSL's diffusion toolbox: workshop3/fsl-diffusion-toolbox.md
-    - Diffusion tensor fitting: workshop3/diffusion-tensor-fitting.md
-    - Tract-based spatial statistics (TBSS): workshop3/tbss.md
+    - Workshop 3 - Aims and objectives: workshop3/workshop3-intro.md
+    - Diffusion MRI basics - visualization and preprocessing: workshop3/diffusion-intro.md
+    - Diffusion tensor fitting and Tract-Based Spatial Statistics: workshop3/diffusion-mri-analysis.md
   - Workshop 4 - Advanced diffusion MRI analysis:
     - Probabilistic tractography: workshop4/probabilistic-tractography.md
     - Brain extraction: workshop4/brain-extraction.md

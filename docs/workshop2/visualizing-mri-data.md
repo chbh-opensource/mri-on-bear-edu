@@ -47,7 +47,7 @@ However, you will need to include the full path to the file if you are not in th
 You should now see a T1 scan loaded in ortho view with three canvases corresponding to the sagittal, coronal, and axial planes.
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="900" height="300">
 </p>
 
 Please now explore the various settings in the ortho view panel:
@@ -100,7 +100,7 @@ Keeping the same dataset open (`2.5mm_2000_fMRI.nii.gz`) and now in the FSLeyes 
 FSLeyes should now look like the picture below. 
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_timeseries.png" alt="FSLeyes timeseries" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_timeseries.png" alt="FSLeyes timeseries" width="900" height="300">
 </p>
 
 !!! info "What exactly are we looking at?"
@@ -111,7 +111,7 @@ You should see a timeseries shown at the bottom of the screen corresponding to t
 Within the timeseries window, hit the '+' button to show the 'Plot List' characteristics for this timeseries.
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/timeseries_plus_button.png" alt="FSLeyes timeseries plus button" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/timeseries_plus_button.png" alt="FSLeyes timeseries plus button" width="700" height="300">
 </p>
 
 Compare the timeseries in different parts of the brain, just outside the brain (skull and scalp), and in the airspace outside the skull. <b>You should observe that these have very different mean intensities.</b>
@@ -247,7 +247,7 @@ Now if you now the tick box immediately below next to the Heschl's Gyrus, an ove
 Now click on the '+' button next to the tick box. This will centre the viewing coordinates to be in the middle of the atlas volume (see below).
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/heschls_gyrus.png" alt="Heschls Gyrus" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/heschls_gyrus.png" alt="Heschls Gyrus" width="900" height="300">
 </p>
 
 !!! example "Exercise: Atlas visualization"
@@ -271,17 +271,21 @@ This time, in the left panel listing different atlases, tick on the option for o
   <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford.png" alt="Harvard Oxford" width="800" height="300">
 </p>
 
+<br>
+
 Now you should see all of the areas covered by the Harvard-Oxford cortical atlas shown on the standard brain. You can click around with the cursor, the labels for the different areas can be seen in the bottom right panel.
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="900" height="300">
 </p>
+
+<br>
 
 In addition to atlases covering various grey matter structures, <b>there are also two white matter atlases</b>: the JHU ICBM-DTI-81 white-matter labels atlas & JHU white-matter tractography atlas. 
 If you tick (select) these atlases as per previous instructions (hint using the 'Atlas search' tab), you will see a list of all included white matter tracts (pathways) as shown below:
 
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/jhu_atlas.png" alt="JHU Atlas" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/jhu_atlas.png" alt="JHU Atlas" width="900" height="300">
 </p>
 
 ## Using atlas tools to create a region-of-interest mask

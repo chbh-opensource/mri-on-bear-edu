@@ -17,7 +17,7 @@ In this workshop we will explore, MRI image fundamentals, MRI data formats, data
 For the purpose of the module we will be using BlueBEAR. You should remember from [Workshop 1](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/intro-to-bluebear/), how to access the BlueBEAR Portal and use the BlueBEAR GUI. 
 
 <p align="center">
-  <img src="../../assets/images/workshop2/workshop2-intro/bluebear_setup.png" alt="BlueBEAR Setup" width="900" height="300">
+  <img src="../../assets/images/workshop2/workshop2-intro/bluebear_setup.png" alt="BlueBEAR Setup" width="1000" height="300">
 </p>
 
 You have already been given access to the RDS project, `rds/projects/c/chechlmy-chbh-mricn`. Inside the module’s RDS project, you will find that you have a folder labelled `xxx` (`xxx` = University of Birmingham ADF username). 

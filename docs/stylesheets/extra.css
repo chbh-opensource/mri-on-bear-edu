@@ -139,6 +139,14 @@
     width: 100%;
 }
 
+/* Centering tables */
+
+table {
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 /* Notes and code block settings */
 
 .md-typeset details {

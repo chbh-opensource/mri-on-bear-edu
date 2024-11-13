@@ -16,19 +16,19 @@ BlueBEAR GUI enables to load various apps and applications by using the Linux en
 Either by selecting from the drop-down menu:
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal1.png" alt="Open Terminal" width="900" height="300">
+  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal1.png" alt="Open Terminal" width="700" height="300">
 </p>
 <br>
 Or by selecting the folder at the bottom of the screen:
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal2.png" alt="Open Terminal 2" width="900" height="300">
+  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal2.png" alt="Open Terminal 2" width="700" height="300">
 </p>
 <br>
 In either case you will load the terminal:
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/terminal.png" alt="Terminal Open" width="900" height="300">
+  <img src="../../assets/images/workshop1/intro-to-linux/terminal.png" alt="Terminal Open" width="700" height="300">
 </p>
 <br>
 Once you have started the terminal you, you will be able to load required applications (e.g., to start the FSL GUI). <b>FSL (FMRIB Software Library)</b> is a neuroimaging software package we will be using in our workshops for MRI data analysis. 
