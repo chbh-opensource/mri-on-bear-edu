@@ -642,9 +642,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brain-extraction-using-fsls-brain-extraction-tool-bet" class="md-nav__link">
+  <a href="#creating-a-binary-mask-using-fsls-brain-extraction-tool" class="md-nav__link">
     <span class="md-ellipsis">
-      Brain extraction using FSL's Brain Extraction Tool (BET)
+      Creating a binary mask using FSL's Brain Extraction Tool
     </span>
   </a>
   
@@ -1148,8 +1148,6 @@
 
 
 <h1 id="diffusion-mri-basics-visualization-and-preprocessing">Diffusion MRI basics - visualization and preprocessing<a class="headerlink" href="#diffusion-mri-basics-visualization-and-preprocessing" title="Permanent link">&para;</a></h1>
-<h2>Example of a Diffusion MRI analysis pipeline</h2>
-
 <p>In this workshop and the workshop next week, we will follow some basic steps in the diffusion MRI analysis pipeline below. 
 <b>The instructions here are specific to tools available in FSL,</b> however other neuroimaging software packages can be used to perform similar analyses. 
 You might also recall from lectures that models other than diffusion tensor and methods other than probabilistic tractography are also often used. </p>
@@ -1174,6 +1172,7 @@ Your XXX directory should therefore be empty. </p>
 <p><code>cd diffusionMRI</code> (your <code>XXX</code> subdirectory you should now have the folder <code>diffusionMRI</code>)</p>
 <p>Type <code>ls</code>. You should now see three subdirectories/folders (<code>DTIfit</code>, <code>TBSS</code> and <code>tractography</code>). Change into the <code>DTIfit</code> folder:</p>
 <p><code>cd DTIfit</code></p>
+<h2 id="viewing-diffusion-data-using-fsleyes">Viewing diffusion data using FSLeyes<a class="headerlink" href="#viewing-diffusion-data-using-fsleyes" title="Permanent link">&para;</a></h2>
 <p><b>We will first look at what diffusion images look like and explore text files which contain information about gradient strength and gradient directions.</b></p>
 <p>In your terminal type <code>ls</code>. This should return:</p>
 <div class="codehilite"><pre><span></span><code>p01/
@@ -1188,7 +1187,6 @@ p02/
 </ul>
 <p>The number of entries in <code>bvals</code> and <code>bvecs</code> files equals the number of volumes in the diffusion data files. </p>
 <p>Finally, inside <code>p01</code> and <code>p02</code> there is also subdirectory data with distortion-corrected diffusion images.</p>
-<h2 id="viewing-diffusion-data-using-fsleyes">Viewing diffusion data using FSLeyes<a class="headerlink" href="#viewing-diffusion-data-using-fsleyes" title="Permanent link">&para;</a></h2>
 <p><b>We will start with viewing the uncorrected data.</b> Please navigate inside the <code>p01</code> folder, open FSLeyes and then load one of the uncorrected diffusion images:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>p01
 module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
@@ -1270,7 +1268,7 @@ The processing with these two tools is time and computing intensive. <b>Therefor
 <p class="admonition-title">Further examining the difference between uncorrected and corrected diffusion data</p>
 <p>In your own time (outside of this workshop as part of independent study), load both the corrected and uncorrected data for <code>p01</code> and compare using the 'Volume' box or 'Movie' mode. Also explore the data in <code>p02</code> folder using the instructions above. </p>
 </div>
-<h2 id="brain-extraction-using-fsls-brain-extraction-tool-bet">Brain extraction using FSL's Brain Extraction Tool (BET)<a class="headerlink" href="#brain-extraction-using-fsls-brain-extraction-tool-bet" title="Permanent link">&para;</a></h2>
+<h2 id="creating-a-binary-mask-using-fsls-brain-extraction-tool">Creating a binary mask using FSL's Brain Extraction Tool<a class="headerlink" href="#creating-a-binary-mask-using-fsls-brain-extraction-tool" title="Permanent link">&para;</a></h2>
 <p>In the next part of the workshop, we will look FSL's Brain Extraction Tool (BET).</p>
 <p>Brain extraction is a necessary pre-processing step, which removes non-brain tissue from the image. <b>It is applied to structural images prior to tissue segmentation and is needed to prepare anatomical scans for registration of functional MRI or diffusion scans to MNI space.</b> BET can be also used to create binary brain masks (e.g., brain masks needed to run diffusion tensor fitting, DTIfit). </p>
 <p><b>In this workshop we will look at only at creating a binary brain mask as required for DTIfit.</b> In subsequent workshops we will look at using BET for removing non-brain tissues from diffusion and T1 scans (“skull-stripping”) in preparation for registration.</p>
