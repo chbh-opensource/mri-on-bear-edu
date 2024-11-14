@@ -1,7 +1,5 @@
 # Diffusion MRI basics - visualization and preprocessing 
 
-<h2>Example of a Diffusion MRI analysis pipeline</h2>
-
 In this workshop and the workshop next week, we will follow some basic steps in the diffusion MRI analysis pipeline below. 
 <b>The instructions here are specific to tools available in FSL,</b> however other neuroimaging software packages can be used to perform similar analyses. 
 You might also recall from lectures that models other than diffusion tensor and methods other than probabilistic tractography are also often used. 
@@ -36,6 +34,8 @@ Type `ls`. You should now see three subdirectories/folders (`DTIfit`, `TBSS` and
 
 `cd DTIfit`
 
+## Viewing diffusion data using FSLeyes
+
 <b>We will first look at what diffusion images look like and explore text files which contain information about gradient strength and gradient directions.</b>
 
 In your terminal type `ls`. This should return:
@@ -55,8 +55,6 @@ Inside each folder (`p01` and `p02`) you will find a T1 scan, uncorrected diffus
 The number of entries in `bvals` and `bvecs` files equals the number of volumes in the diffusion data files. 
 
 Finally, inside `p01` and `p02` there is also subdirectory data with distortion-corrected diffusion images.
-
-## Viewing diffusion data using FSLeyes
 
 <b>We will start with viewing the uncorrected data.</b> Please navigate inside the `p01` folder, open FSLeyes and then load one of the uncorrected diffusion images:
 
@@ -155,7 +153,7 @@ Now in FSLeyes load `data.nii.gz` (the distortion-corrected diffusion image loca
 !!! example "Further examining the difference between uncorrected and corrected diffusion data"
     In your own time (outside of this workshop as part of independent study), load both the corrected and uncorrected data for `p01` and compare using the 'Volume' box or 'Movie' mode. Also explore the data in `p02` folder using the instructions above. 
 
-## Brain extraction using FSL's Brain Extraction Tool (BET)
+## Creating a binary mask using FSL's Brain Extraction Tool
 
 In the next part of the workshop, we will look FSL's Brain Extraction Tool (BET).
 

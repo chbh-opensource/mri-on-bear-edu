@@ -287,4 +287,4 @@ You should see the same results as below:
     Next review the `tbss_tfce_corrp_tstat1.nii.gz` 
 
 !!! info "Further information on TBSS"
-    The main source of information is the 'TBSS' section of the FSL Wiki: [https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss)
+    More information on TBSS, can be found on the 'TBSS' section of the FSL Wiki: [https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss)
