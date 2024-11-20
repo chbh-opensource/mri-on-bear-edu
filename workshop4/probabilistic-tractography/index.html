@@ -11,14 +11,14 @@
         <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/probabilistic-tractography/">
       
       
-        <link rel="prev" href="../../workshop3/diffusion-mri-analysis/">
+        <link rel="prev" href="../workshop4-intro/">
       
       
-        <link rel="next" href="../brain-extraction/">
+        <link rel="next" href="../../workshop5/brain-extraction/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -74,6 +74,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#probabilistic-tractography" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -663,6 +668,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop4-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop 4 - Aims and objectives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -672,6 +698,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Probabilistic tractography
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -683,27 +722,52 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../brain-extraction/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Brain extraction
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#skull-stripping-our-data-using-bet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skull-stripping our data using BET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-our-data-with-bedpostx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing our data with BEDPOSTX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probabilistic-tractography-using-probtrackx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probabilistic tractography using PROBTRACKX
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1092,9 +1156,193 @@
   
 
 
-  <h1>Probabilistic tractography</h1>
+<h1 id="probabilistic-tractography">Probabilistic Tractography<a class="headerlink" href="#probabilistic-tractography" title="Permanent link">&para;</a></h1>
+<p>In the first part of the workshop, we will look again at BET, FSL's Brain Extraction Tool.</p>
+<p>Brain extraction is a necessary pre-processing step which allows us to remove non-brain tissue from the image. 
+It is applied to structural images prior to tissue segmentation and is needed to prepare anatomical scans for the registration of functional MRI or diffusion scans to MNI space. 
+BET can be also used to create binary brain masks (e.g., brain masks needed to run diffusion tensor fitting, DTIfit). </p>
+<h2 id="skull-stripping-our-data-using-bet">Skull-stripping our data using BET<a class="headerlink" href="#skull-stripping-our-data-using-bet" title="Permanent link">&para;</a></h2>
+<p><b>In this workshop we will first look at a very simple example of removing non-brain tissues from diffusion and T1 scans (“skull-stripping”) in preparation for the registration of diffusion data to MNI space.</b></p>
+<p>Log into the BlueBEAR Portal and start a BlueBEAR GUI session (2 hours). </p>
+<p>In your session, open a new terminal window and navigate to the <code>diffusionMRI</code> data in your <code>MRICN</code> folder:</p>
+<p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI</code>  [where XXX=your ADF username]</p>
+<div class="admonition warning">
+<p class="admonition-title">In case you missed the previous workshop</p>
+<p>You were instructed to copy the <code>diffusionMRI</code> data in the previous workshop. If you have not completed last week's workshop, you either need to find details on how to copy the data in the <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/diffusion-intro/">'Workshop 3: Basic diffusion MRI analysis'</a> materials or work with someone who has completed the previous workshop.</p>
+</div>
+<p>Then load FSL and FSLeyes:</p>
+<div class="codehilite"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
+</code></pre></div>
 
+<p>We will now look at how to ”skull-strip” the T1 image (remove skull and non-brain areas); this step is needed for the registration step in both fMRI and diffusion MRI analysis pipelines.  </p>
+<p>We will do this using BET on the command line. The basic command-line version of BET is:</p>
+<p><code>bet &lt;input&gt; &lt;output&gt; [options]</code></p>
+<ul>
+<li>input = the input image (e.g., T1 scan)</li>
+<li>output = the filename of BET output (e.g., T1_brain)</li>
+<li>options = enable to control how to run BET</li>
+</ul>
+<p>In this workshop we will look at a simple brain extraction i.e., <b>performed without changing any default options.</b></p>
+<p>To do this, navigate inside the <code>p01</code> folder:</p>
+<p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01</code></p>
+<p>Then in your terminal type:</p>
+<p><code>bet T1.nii.gz T1_brain</code></p>
+<p>Once BET has completed (should only take a few seconds at most), open FSLeyes (with &amp; to background it). 
+Then in FSLeyes: </p>
+<ul>
+<li>Load up <code>T1.nii.gz</code> and add the <code>T1_brain</code> image</li>
+<li>Change the colour for the <code>T1_brain</code> to 'Red' or 'Green'</li>
+</ul>
+<p>This will likely show that in this case the default brain extraction was good. <b>The reason behind such a good brain extraction with default options is a small FOV and data from a young healthy adult.</b> This is not always the case e.g., when we have a large FOV or data from older participants. </p>
+<div class="admonition note">
+<p class="admonition-title">More brain extraction to come? You BET!</p>
+<p>In the next workshop (Workshop 5) we will explore different BET [options] and how to troubleshoot brain extraction.</p>
+</div>
+<h2 id="preparing-our-data-with-bedpostx">Preparing our data with BEDPOSTX<a class="headerlink" href="#preparing-our-data-with-bedpostx" title="Permanent link">&para;</a></h2>
+<p><b>BEDPOSTX is an FSL tool used for a step in the diffusion MRI analysis pipeline, which prepares the data for probabilistic tractography.</b> BEDPOSTX (Bayesian Estimation of Diffusion Parameters Obtained using Sampling Techniques, X = modelling Crossing Fibres) estimates fibre orientation in each voxel within the brain. BEDPOSTX employs Markov Chain Monte Carlo (MCMC) sampling to reconstruct distributions of diffusion parameters at each voxel.</p>
+<p><b>We will not run it during this workshop as it takes a long time. The data has been processed for you, and you copied it at the start of the previous workshop.</b></p>
+<p>To run it, you would need to open FSL GUI, click on FDT diffusion and from drop down menu select 'BEDPOSTX'. The input directory must contain the distortion corrected diffusion file (<code>data.nii.gz</code>), binary brain mask (<code>nodif_brain_mask.nii.gz</code>) and two text files with the b-values (<code>bvals</code>) and gradient orientations (<code>bvecs</code>). </p>
+<p align="center">
+  <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx_single_shell.png" alt="BEDPOSTX Shell" width="800" height="300">
+  <br>
+  <em><span style="font-size: 1.1em;">In case of the data being used for this workshop with a single b-value, we need to specify the single-shell model.</span></em>
+</p>
 
+<p>After the workshop, in your own time, you could run it using the provided data (see Tractography Exercises section at the end of workshop notes).</p>
+<p>BEDPOSTX outputs a directory at the same level as the input directory called <code>[inputdir].bedpostX</code> (e.g. <code>data.bedpostX</code>). 
+It contains various files (including mean fibre orientation and diffusion parameter distributions) needed to run probabilistic tractography.</p>
+<p>As we will look at tractography in different spaces, we also need the output from registration. The concept of different image spaces has been introduced in <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/">Workshop 2</a>. 
+The registration step can be run from the FDT diffusion toolbox after BEDPOSTX has been run. 
+Typically, registration will be run between three spaces: </p>
+<ol>
+<li>Diffusion space (<code>nodif_brain</code> image) </li>
+<li>Structural space (T1 image for the same participant)</li>
+<li>Standard space (the MNI152 template)</li>
+</ol>
+<p><b>This step has been again run for you.</b> To run it, you would need to open FSL GUI, click on 'FDT diffusion' and from the drop down menu select 'Registration'. 
+The main structural image would be your ”skull-stripped” T1 (<code>T1_brain</code>) and non-betted structural image would be T1. Plus you need to select <code>data.bedpostX</code> as the 'BEDPOSTX directory'.</p>
+<p><br></p>
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx.png" alt="BEDPOSTX" width="700" height="300">
+</p>
+
+<p>After the workshop, you can try running it in your own time (see Tractography Exercises section at the end of workshop notes).</p>
+<div class="admonition tip">
+<p class="admonition-title">Registration output directory</p>
+<p>The outputs from registration needed for probabilistic tractography are stored in the <code>xfms</code> subdirectory. </p>
+</div>
+<h2 id="probabilistic-tractography-using-probtrackx">Probabilistic tractography using PROBTRACKX<a class="headerlink" href="#probabilistic-tractography-using-probtrackx" title="Permanent link">&para;</a></h2>
+<p>PROBTRACKX (probabilistic tracking with crossing fibres) is an FSL tool used for probabilistic tractography. To run it, you need to open FSL GUI, click on FDT diffusion and from the drop down menu select PROBTRACKX (it should default to it). </p>
+<p>PROBTRACKX can be used to run tractography either in diffusion or non-diffusion space (e.g., standard or structural). 
+If running it in non-diffusion space you will need to provide a reference image. You can also run tractography from a single seed (voxel), single mask (ROI) or from multiple masks which can be specified in either diffusion or non-diffusion space. </p>
+<p><b>We will look at some examples of different ways of running tractography.</b></p>
+<p>First close any processes still running and open a new terminal. Next navigate inside where all the files to run tractography have been prepared for you:</p>
+<p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/tractography/p01</code></p>
+<p><b>As you may recall, on BlueBEAR there are different versions of FSL available.</b> These correspond to different FSL software releases and have been compiled in a different way. The different versions of FSL are suitable for different purposes i.e., used for different MRI data analyses. </p>
+<p>To run BEDPOSTX and PROBTRACKX, you need to use a specific version of FSL (FSL 6.0.7.6), which you can load by typing in your terminal:</p>
+<div class="codehilite"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>bear-apps/2022b
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.7.6
+<span class="nb">source</span><span class="w"> </span><span class="nv">$FSLDIR</span>/etc/fslconf/fsl.sh
+</code></pre></div>
+
+<p>Once you have loaded FSL using these commands, open the FDT toolbox from either the FSL GUI or directly typing in your terminal:</p>
+<p><code>Fdt &amp;</code></p>
+<p><b>We will start with tractography from a single voxel in diffusion space.</b> Specifically, we will run it from a voxel with coordinates <strong>[47, 37, 29]</strong> located within the forceps major of the corpus callosum, a white matter fibre bundle which connects the occipital lobes. </p>
+<div class="admonition tip">
+<p class="admonition-title">Running tractography on another voxel</p>
+<p>Later, you can use the FA map (<code>dti_FA</code> inside the <code>p01/data</code> folder) loaded to FSLeyes to check the location of the selected voxel, choose another voxel within a different white matter pathway, and run the tractography again. </p>
+</div>
+<p>You should have the FDT Toolbox window open as below:</p>
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_settings.png" alt="PROBTRACKX Settings" width="600" height="300">
+</p>
+
+<p>From here do the following: </p>
+<ol>
+<li>Select <code>data.bedpostX</code> as the 'BEDPOSTX directory'</li>
+<li>Enter voxel coordinates <strong>[47, 37, 29]</strong> (X, Y, Z)</li>
+<li>Enter output file name 'corpus' - this we be the name of directory that contains the output files</li>
+<li>Press Go (you will see something happening in the terminal, once you see window Done!/OK, you are ready to view results. Before proceeding click OK)</li>
+</ol>
+<p>After the tractography has finished, check the contents of subdirectory <code>/corpus</code> with the tractography output files. It should contain:</p>
+<ul>
+<li><code>probtrackx.log</code> with the <code>probtrackx</code> command that was run </li>
+<li><code>fdt_coordinates.text</code> with used coordinates  </li>
+<li><code>corpus_47_37_29.nii.gz</code> (general structure <code>outputname_X_Y_Z.nii.gz</code>; where outputname = name of the subdirectory and X, Y, and Z = the seed voxel coordinates). This file contains for each voxel a count of how many of the streamlines intersected with that voxel. </li>
+</ul>
+<p>We will explore the results later. <b>First, you will learn how to run tractography in the standard (MNI) space.</b></p>
+<p>Close FDT toolbox and then open it again from the terminal to make sure you don’t have anything running in the background.</p>
+<p><b>We will now run tractography using a combination of masks (ROIs) in standard space to reconstruct tracts connecting the right motor thalamus (portion of the thalamus involved in motor function) with the right primary motor cortex.</b> The ROI masks have been prepared for you and put inside the mask subdirectory <code>~/diffusionMRI/tractography/masks</code>. The ROIs have been created using FSL's ATLAS tools (you’ve learnt in a previous workshop how to do this) and are in standard/MNI space, thus we will run tractography in MNI (standard) space and not in diffusion space.</p>
+<p><b>This is the most typical design of tractography studies.</b></p>
+<p>In the FDT Toolbox window - before you select your input in the 'Data' tab - go to the 'Options' tab (as below) and reduce the number of samples to 500 under 'Options'. You would normally run 5000 (default) but reducing this number will speed up processing and is useful for exploratory analyses.</p>
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_options.png" alt="PROBTRACKX Options" width="400" height="300">
+</p>
+
+<p>Now going back to the 'Data' tab (as below) do the following:</p>
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_data.png" alt="PROBTRACKX Data" width="400" height="300">
+</p>
+
+<ol>
+<li>Select <code>data.bedpostX</code> as 'BEDPOSTX directory'</li>
+<li>In 'Seed Space', change 'Single voxel' to 'Single mask'</li>
+<li>As 'Seed Image' choose <code>Thalamus_motor_RH.nii.gz</code> from the <code>masks</code> subdirectory</li>
+<li>Tick both 'Seed space is not diffusion' and 'nonlinear'</li>
+<li>You have to use the warp fields between standard space and diffusion space created during registration, which are inside the <code>data.bedpost/xfms</code> directory. Select <code>standard2diff_warp</code> as 'Seed to diff transform' and <code>diff2standard_warp</code> as 'diff to Seed transform'. These files are generated during registration.</li>
+<li>As a waypoint mask choose <code>cortex_M1_right.nii.gz</code> from the <code>masks</code> subdirectory to isolate only those tracts that reach from the motor thalamus. Use this mask also as a termination mask to avoid tracking to other parts of the brain.</li>
+<li>Enter output file name <code>MotorThalamusM1</code></li>
+<li>Press Go!</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Specifying masks</p>
+<p>Without selecting the waypoint and termination masks, you would also get other tracts passing via motor thalamus, including random offshoots with low probability (noise). This is expected for probabilistic tractography, as the random sampling without specifying direction can result in spurious offshoots into nearby tracts and give low probability noise. </p>
+</div>
+<p>It will take significantly longer this time to run the tractography in standard space. However, once it has finished, you will see the window 'Done!/OK'. Before proceeding, click 'OK'. </p>
+<p>A new subdirectory will be created with the chosen output name <code>MotorThalamusM1</code>. Check the contents of this subdirectory. It contains slightly different files compared to the previous tractography output. The main output, the streamline density map is called <code>fdt_paths.nii.gz</code>. There is also a file called <code>waytotal</code> that contains the total number of valid streamlines runs.</p>
+<p><b>We will now explore the results from both tractography runs.</b> First close FDT and your terminal as we need FSLeyes, which cannot be loaded together with the current version of FSL.</p>
+<p>Next navigate inside where all the tractography results have been generated and load/open FSLeyes:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/tractography/p01
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
+fsleyes<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+
+<p>We will start with our results from tractography in seed space. In FSLeyes, do the following:</p>
+<ol>
+<li>Load the FA map (<code>~/diffusionMRI/tractography/p01/data/dti_FA.nii.gz</code>) and tractography output file (<code>~/corpus/corpus_47_37_29.nii.gz</code>)</li>
+<li>Change the colour of tractography output to 'Red-Yellow'</li>
+<li>Change the 'Min' display thresholds to 50 to remove voxels with low probability of being in the tract. The displayed values denote a number of streamlines running through a voxel. If we use default settings, 5000 samples are generated, thus 50 represents a 1% probability, meaning that the voxels that are not shown when "Min" is set to 50 are voxels with a probability (of being part of the tract) of less than 1%. </li>
+</ol>
+<p>Your window should look like this:</p>
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_fsleyes.png" alt="PROBTRACKX FSLeyes" width="900" height="300">
+</p>
+
+<p>Once you have finished reviewing results of tractography in see space, close the results ('Overlay → Remove all').</p>
+<p>We will now explore the results from our tractography ran in MNI space, but to do so we need a standard template. Assuming you have closed all previous images:</p>
+<ol>
+<li>Load in the MNI template (<code>~/diffusionMRI/tractography/MNI152T1_brain.nii.gz</code>) and tractography output file (<code>/MotorThalamusM1/fdt_paths.nii.gz.</code>)</li>
+<li>Change the colour of tractography output to 'Red-Yellow'</li>
+<li>You might want to add/load the ROI masks ('motor thalamus' and 'M1')</li>
+<li>Adjust the min and max display thresholds to explore the reconstructed tract. Change the Min display thresholds to 50 to remove voxels with low probability of being in the tract. There is no gold standard for thresholding tractography outputs. It will depend on study design, parameter set up and further analysis.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Tractography exercises</p>
+<p>In your own time, you should try the exercises below to consolidate your tractography skills. If you have any problems completing or any further questions, you can ask for help during one of the upcoming workshops.  </p>
+<ul>
+<li><b>Exercise 1:</b> Run tractography using only a single mask i.e., as during the workshop but without waypoint and termination masks (use only <code>Thalamus_motor_RH.nii.gz</code> mask as seed image). Compare the results to the output from our tractography we ran during the workshop.</li>
+<li><b>Exercise 2:</b> Run tractography with <code>cortex_M1_right.nii.gz</code> mask as the seed image and without <code>Thalamus_motor_RH.nii.gz</code> as waypoint and termination masks. Compare these results to previous outputs (from thw tractography we ran during the workshop). Are the results the same? Why not? </li>
+<li><b>Exercise 3:</b> In the <code>mask</code> subdirectory, you will find two other masks: <code>LGN_left.nii.gz</code> and <code>V1_left.nii.gz</code>. You can use a combination of these two masks to reconstruct portion of the left hemispheric optic radiation connecting the left lateral geniculate nucleus (LGN) and left primary visual cortex (V1). Hint: use LGN as the seed image and the V1 mask as waypoint and termination masks. </li>
+<li><b>Exercise 4:</b> Use FSL's ATLAS tools to create your own mask(s) and use them for tractography. </li>
+<li><b>Exercise 5:</b> During the workshop there was not enough time to run BEDPOSTX. As suggested earlier try running it using the provided data for participant <code>p02</code> (<code>~/diffusionMRI/tractography/p02/</code>). It might take ~60-90 minutes to run.</li>
+<li><b>Exercise 6:</b> During the workshop there was also not enough time to run the registration needed to perform tractography in non-diffusion space. As suggested earlier try running it using the provided instructions and data for participant <code>p02</code> (<code>~/diffusionMRI/tractography/p02/</code>). To run it you first need to complete Exercise 5. It will take ~15min to complete registration.  </li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Help and further information</p>
+<p>As always, more information on diffusion analyses in FSL, can be found on the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/index">'diffusion' section of the FSL Wiki</a> and this <a href="https://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/lectures/FDT/fdt2.html">practical course</a> ran by FMRIB (the creators of FSL).</p>
+</div>
 
 
 
@@ -1113,22 +1361,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../../workshop3/diffusion-mri-analysis/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../workshop4-intro/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Diffusion tensor fitting and Tract-Based Spatial Statistics
+              Workshop 4 - Aims and objectives
             </div>
           </a>
         
         
-          <a href="../brain-extraction/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../../workshop5/brain-extraction/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Brain extraction
+              Manual and automatic brain extraction
             </div>
           </a>
         

@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/brain-extraction/">
+        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/">
       
       
-        <link rel="prev" href="../probabilistic-tractography/">
+        <link rel="prev" href="../../workshop3/diffusion-mri-analysis/">
       
       
-        <link rel="next" href="../../workshop5/brain-extraction/">
+        <link rel="next" href="../probabilistic-tractography/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
-        <title>Brain extraction - MRI on BEAR</title>
+        <title>Workshop 4 - Aims and objectives - MRI on BEAR</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#workshop-4-advanced-diffusion-mri-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Brain extraction
+              Workshop 4 - Aims and objectives
             
           </span>
         </div>
@@ -663,6 +668,37 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Workshop 4 - Aims and objectives
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -675,35 +711,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Brain extraction
-  </span>
-  
-
-      </a>
-      
     </li>
   
 
@@ -1092,9 +1099,33 @@
   
 
 
-  <h1>Brain extraction</h1>
+<h1 id="workshop-4-advanced-diffusion-mri-analysis">Workshop 4 - Advanced diffusion MRI analysis<a class="headerlink" href="#workshop-4-advanced-diffusion-mri-analysis" title="Permanent link">&para;</a></h1>
+<p>Welcome to the fourth workshop of the MRICN course! </p>
+<p>In the previous workshop we started exploring different elements of the FMRIB's Diffusion Toolbox (FDT).
+This week we will continue with the different applications of the FDT toolbox and the use of Brain Extraction Tool (BET).</p>
+<div class="admonition success">
+<p class="admonition-title">Overview of Workshop 4</p>
+<p>Topics for this workshop include:</p>
+<ul>
+<li>Preparing MRI images for diffusion analysis by skull-stripping using BET</li>
+<li>Using BEDPOSTX to estimate fiber orientations in each brain voxel</li>
+<li>Running probabilistic tractography with PROBTRACKX to trace white matter pathways between brain regions</li>
+<li>Visualizing and evaluating tractography results using FSLeyes</li>
+</ul>
+</div>
+<p>We will be working with various previously acquired datasets (similar to the data acquired during the CHBH MRI Demonstration/Site visit). 
+We will not go into details as to why and how specific sequence parameters and specific values of the default settings have been chosen. 
+Some values should be clear to you from the lectures or assigned on Canvas readings, please check there, or if you are still unclear, feel free to ask. </p>
+<p>Note that for your own projects, you are very likely to want to change some of these settings/parameters depending on your study aims and design. </p>
+<p>In this workshop we will follow basic steps in the diffusion MRI analysis pipeline, specifically with running tractography. 
+<b>The instructions here are specific to tools available in FSL. Other neuroimaging software packages can be used to perform similar analyses.</b></p>
+<h2><div align="center"><b>Example of Diffusion MRI analysis pipeline</b></div></h2>
 
+<p align="center">
+ <img src="../../assets/images/workshop4/intro/diffusion_mri_pipeline.png" alt="TBSS Pipeline" width="800" height="300">
+</p>
 
+<p><b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 04 workshop materials.</b></p>
 
 
 
@@ -1113,22 +1144,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../probabilistic-tractography/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../../workshop3/diffusion-mri-analysis/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Probabilistic tractography
+              Diffusion tensor fitting and Tract-Based Spatial Statistics
             </div>
           </a>
         
         
-          <a href="../../workshop5/brain-extraction/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../probabilistic-tractography/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Manual and automatic brain extraction
+              Probabilistic tractography
             </div>
           </a>
         
