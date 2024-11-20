@@ -9,7 +9,7 @@
 
 ## About this website
 
-This website contains workshop materials created for the MSc module 'Magnetic Resonance Imaging in Cognitive Neuroscience' (MRICN) and its earlier version (Fundamentals in Brain Imaging) at the School of Psychology, University of Birmingham. It is a ten-week course consisting of lectures and workshops introducing the main techniques of functional and structural brain mapping using MRI with a strong emphasis on - but not limited to - functional MRI (fMRI). Topics include the physics of MRI, experimental design for neuroimaging experiments and the analysis of fMRI, and other types of MRI data. This website includes only the workshop materials, which provide a basic training in analysis of brain imaging data and data visualization. 
+This website contains workshop materials created for the MSc module 'Magnetic Resonance Imaging in Cognitive Neuroscience' (MRICN) and its earlier version - Fundamentals in Brain Imaging taught by Dr Peter C. Hansen - at the School of Psychology, University of Birmingham. It is a ten-week course consisting of lectures and workshops introducing the main techniques of functional and structural brain mapping using MRI with a strong emphasis on - but not limited to - functional MRI (fMRI). Topics include the physics of MRI, experimental design for neuroimaging experiments and the analysis of fMRI, and other types of MRI data. This website includes only the workshop materials, which provide a basic training in analysis of brain imaging data and data visualization. 
 
 !!! success "Learning objectives"
     At the end of the course you will be able to:
