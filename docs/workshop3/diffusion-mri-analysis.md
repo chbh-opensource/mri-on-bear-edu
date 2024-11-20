@@ -129,10 +129,10 @@ The steps for Tract-Based Spatial Statistics are:
 
 To save time, some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you and all outputs are included in the `data` folder you have copied at the start of this workshop. 
 
-<h2><div align="center"><b>Tract-Based Spatial Statistics pipeline in FSL</b></div></h2>
+<h2><div align="center"><b>Tract-Based Spatial Statistics analysis pipeline</b></div></h2>
 
 <p align="center">
- <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_pipeline.png" alt="TBSS Pipieline" width="700" height="300">
+ <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_pipeline.png" alt="TBSS Pipeline" width="700" height="300">
 </p>
 
 <b>You will only run the TBSS statistical analysis to explore group differences in FA values based upon age (younger versus older participants).</b>

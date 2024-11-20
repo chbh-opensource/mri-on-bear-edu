@@ -62,8 +62,8 @@ nav:
     - Diffusion MRI basics - visualization and preprocessing: workshop3/diffusion-intro.md
     - Diffusion tensor fitting and Tract-Based Spatial Statistics: workshop3/diffusion-mri-analysis.md
   - Workshop 4 - Advanced diffusion MRI analysis:
+    - Workshop 4 - Aims and objectives: workshop4/workshop4-intro.md
     - Probabilistic tractography: workshop4/probabilistic-tractography.md
-    - Brain extraction: workshop4/brain-extraction.md
   - Workshop 5 - First-level fMRI analysis:
     - Manual and automatic brain extraction: workshop5/brain-extraction.md
     - Preprocessing of functional MRI data: workshop5/preprocessing-fmri.md
