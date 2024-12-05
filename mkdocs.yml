@@ -66,7 +66,7 @@ nav:
     - Probabilistic tractography: workshop4/probabilistic-tractography.md
   - Workshop 5 - First-level fMRI analysis:
     - Workshop 5 - Aims and objectives: workshop5/workshop5-intro.md
-    - Pre-processing the fMRI data: workshop5/preprocessing.md
+    - Troubleshooting brain extraction with BET: workshop5/preprocessing.md
     - Running a first-level analysis: workshop5/first-level-analysis.md
   - Workshop 6 - Higher-level fMRI analysis:
     - Setting up and running a higher-level analysis using the FSL GUI: workshop6/higher-level-analysis.md

@@ -1,6 +1,6 @@
-# Pre-processing the functional MRI data
+# Troubleshooting brain extraction with BET
 
-In the first part of the workshop, 
+In the first part of the workshop, you will learn the proper skull-stripping of T1 scans using FSL's Brain Extraction Tool (BET), including troubleshooting techniques for problematic cases, as well as organizing neuroimaging data files through proper naming conventions. 
 
 <h2>Background and set-up</h2>
 
@@ -151,6 +151,7 @@ The directory structure should look like this:
                               ├── p14/
                               └── p15/
 ```
+
 !!! warning "Verifying the data structure"
     Please verify that you have this directory structure before proceeding!
 
