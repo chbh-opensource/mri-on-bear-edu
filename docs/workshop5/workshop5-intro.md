@@ -1,4 +1,4 @@
-# Workshop 5 - First level fMRI analysis
+# Workshop 5 - First-level fMRI analysis
 
 Welcome to the fifth workshop of the MRICN course! 
 

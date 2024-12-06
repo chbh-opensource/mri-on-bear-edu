@@ -67,9 +67,10 @@ nav:
   - Workshop 5 - First-level fMRI analysis:
     - Workshop 5 - Aims and objectives: workshop5/workshop5-intro.md
     - Troubleshooting brain extraction with BET: workshop5/preprocessing.md
-    - Running a first-level analysis: workshop5/first-level-analysis.md
+    - Running the first-level analysis: workshop5/first-level-analysis.md
   - Workshop 6 - Higher-level fMRI analysis:
-    - Setting up and running a higher-level analysis using the FSL GUI: workshop6/higher-level-analysis.md
+    - Workshop 6 - Aims and objectives: workshop6/workshop6-intro.md
+    - Running the higher-level analysis: workshop6/higher-level-analysis.md
   - Workshop 7 - Bash scripting and region-of-interest analysis:
     - Scripting FSL commands: workshop7/scripting-fsl.md
     - Extracting statistics from region of interests: workshop7/extracting-statistics.md
