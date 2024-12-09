@@ -57,7 +57,7 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 
 ## Course Overview
 
-| Workshop | Key Concepts/Tools Used |
+| Workshop | Key Concepts/Tools |
 |----------|-------------------|
 | [Getting Started](https://chbh-opensource.github.io/mri-on-bear-edu/setting-up/) | BEAR Portal, BEAR Storage, BlueBEAR |
 | [Workshop 1](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) | BlueBEAR GUI, Linux commands, Terminal basics |

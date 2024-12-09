@@ -22,7 +22,7 @@ Many thanks to our contributors for creating and maintaining these resources!
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 !!! success "Acknowledgements"
-    Thank you to Charnjit Sidhu for their assistance with running the course!
+    Thank you to Charnjit Sidhu for their help and support in developing these materials!
 
 <h2>License</h2>
 MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear-edu). All content in this book (ie, any files and content in the `docs/` folder) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license. Please see the `LICENSE` file in the GitHub repository for more details.
