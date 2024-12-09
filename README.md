@@ -43,17 +43,17 @@ The MRICN course during Spring Term 2024-25 will have the following dates (subje
 | **Week** | **Workshop** |
 |:--------:|:------------:|
 | Week 1 | No workshop |
-| Week 2 | Introduction to BlueBEAR and Linux |
+| Week 2 | [Introduction to BlueBEAR and Linux](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) |
 | Week 3 | No workshop |
-| Week 4 | Basic MRI Skills |
-| Week 5 | Basic diffusion MRI analyses |
+| Week 4 | [Basic MRI Skills](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) |
+| Week 5 | [Basic diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) |
 | Week 6 | MRI demo (optional) |
-| Week 7 | Advanced diffusion MRI analyses |
-| Week 8 | First-level fMRI analysis |
+| Week 7 | [Advanced diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) |
+| Week 8 | [First-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) |
 | Week 9 | No workshop (Reading Week) |
-| Week 10 | Higher-level fMRI analysis |
-| Week 11 | Bash scripting and statistical analysis of fMRI data |
-| Week 12 | Functional connectivity (optional) |
+| Week 10 | [Higher-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) |
+| Week 11 | [Bash scripting and statistical analysis of fMRI data](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) |
+| Week 12 | [Functional connectivity](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) (optional) |
 
 </div>
 
@@ -64,7 +64,6 @@ Workshops will be held at Computer Room G19, Gisbert Kapp, at the School of Psyc
 > ⚠️ **Important:** Before the first workshop, it is important that you have access to the BlueBEAR system. Instructions on how do do so can be found on the website (see the 'Getting Started' page). 
 
 Whilst not mandatory, additional resources related to the course can also be found on the website (see the 'Resources' page).
-
 
 ## Support and contact
 
@@ -79,7 +78,7 @@ If you encounter any issues or have questions please contact the following:
   - 📧 [c.sidhu@bham.ac.uk](mailto:c.sidhu@bham.ac.uk)
 
 ### 🌐 Website/GitHub enquiries
-- **Aamir Sohail** (PhD Student)
+- **Aamir Sohail** (Module Teaching Assistant)
   - 📧 [axs2210@bham.ac.uk](mailto:axs2210@bham.ac.uk)
 
 > ⏰ Please contact us during working hours (9am-5pm)!
