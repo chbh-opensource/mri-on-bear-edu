@@ -169,7 +169,7 @@ The model should now be set up with all the correct details and be ready to be a
 !!! note "Running FSL on BlueBEAR"
     FSL jobs are now submitted in an automated way to a back-end high performance computing cluster on BlueBEAR for execution. Processing time for this analysis will vary but will probably be about 5 mins per run.
 
-## Monitoring and viewing the data
+## Monitoring and viewing the results
 
 FEAT has a built-in progress watcher, the 'FEAT Report', which you can open in a web browser. 
 
@@ -185,8 +185,6 @@ Watch the webpage for progress. Refresh the page to update and click the links (
 <img src="../../assets/images/workshop5/first-level/feat_progress.png" alt="FEAT Progress" width="1000" height="300">
 </p>
 <p align="center"><i style="font-size: 1.2em;">Example FEAT Reports for processes that are still running, and which have completed.</i></p>
-
-<br>
 
 After it has completed, first look at the webpage, click on the various links and try to understand what each part means.
 

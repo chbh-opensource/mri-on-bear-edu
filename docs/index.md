@@ -55,6 +55,20 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 <div class="social-item"><a href="https://sohaamir.github.io/" target="_blank"><i class="fa-solid fa-globe fa-xl" style="color: #87CEEB;"></i> sohaamir.github.io</a></div>
 </div>
 
+## Course Overview
+
+| Workshop | Key Concepts/Tools Used |
+|----------|-------------------|
+| [Getting Started](https://chbh-opensource.github.io/mri-on-bear-edu/setting-up/) | BEAR Portal, BEAR Storage, BlueBEAR |
+| [Workshop 1](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) | BlueBEAR GUI, Linux commands, Terminal basics |
+| [Workshop 2](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) | NIFTI/DICOM format, FSLeyes viewer, MRI atlases |
+| [Workshop 3](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) | DTI preprocessing, DTIfit, TBSS, BET |
+| [Workshop 4](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) | Probabilistic tractography, BEDPOSTX, PROBTRACKX |
+| [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | Advanced BET, FEAT, First-level GLM |
+| [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) | Group-level analysis, Fixed/Random effects |
+| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Bash scripting, ROI analysis, Automated processing |
+| [Workshop 8](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) | Resting-state fMRI, Functional connectivity, Neurosynth |
+
 <br>
 
 !!! info "Accessing additional course materials"

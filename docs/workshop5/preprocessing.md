@@ -43,7 +43,7 @@ You now need to create a copy of the reconstructed fMRI data to be analysed duri
 
 <br>
 
-# Skull-stripping T1 scans using BET on the command-line
+## Skull-stripping T1 scans using BET on the command-line
 We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
 We will do this using FSL's BET on the command line. As you should know from previous workshops the basic command-line version of BET is: 
 
