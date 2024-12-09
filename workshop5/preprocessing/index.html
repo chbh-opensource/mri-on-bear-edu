@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
@@ -785,6 +785,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Troubleshooting brain extraction with BET
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -794,6 +805,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#skull-stripping-t1-scans-using-bet-on-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skull-stripping T1 scans using BET on the command-line
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-the-data-and-renaming-the-mri-scan-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploring the data and renaming the MRI scan files
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1153,7 +1201,7 @@ However, in this case we can see different parameters being used which reflect s
 <p><code>cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/recon/ .</code></p>
 <p><b>Be patient as this might take few minutes to copy over.</b> In the meantime, we will revisit BET and learn how to troubleshoot the often problematic process of ”skull-stripping”.</p>
 <p><br></p>
-<h1 id="skull-stripping-t1-scans-using-bet-on-the-command-line">Skull-stripping T1 scans using BET on the command-line<a class="headerlink" href="#skull-stripping-t1-scans-using-bet-on-the-command-line" title="Permanent link">&para;</a></h1>
+<h2 id="skull-stripping-t1-scans-using-bet-on-the-command-line">Skull-stripping T1 scans using BET on the command-line<a class="headerlink" href="#skull-stripping-t1-scans-using-bet-on-the-command-line" title="Permanent link">&para;</a></h2>
 <p>We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
 We will do this using FSL's BET on the command line. As you should know from previous workshops the basic command-line version of BET is: </p>
 <p>(do not type this command, this is just a reminder)</p>
