@@ -29,31 +29,34 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 </p>
 
 <h3>Dr Magdalena Chechlacz</h3>
-<b>Role: Course Lead</b>
+<b style="display: block; margin-bottom: 20px;">Role: Course Lead</b>
+<div class="social-links" style="display: flex; flex-direction: row; gap: 5px; justify-content: flex-start;">
+<div class="social-item"><a href="mailto:m.chechlacz@bham.ac.uk"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
+<div class="social-item"><a href="https://orcid.org/0000-0003-1811-3946" target="_blank"><i class="fa-brands fa-orcid fa-xl"></i></a></div>
+</div>
+
+<div style="margin-top: 30px;"></div>
 
 [Magdalena Chechlacz](https://www.birmingham.ac.uk/staff/profiles/psychology/chechlacz-magda) is an Assistant Professor in Cognition and Ageing at the School of Psychology, University of Birmingham. She initially trained and carried out a doctorate in cellular and molecular biology (2002). After working as a biologist (Larry L. Hillblom Foundation Fellowship at the University of California, San Diego) she decided on a career change to a more human-oriented science and neuroimaging. In order to gain formal training in cognitive neuroscience and neuroimaging, she completed a second doctorate in psychology at the University of Birmingham under the supervision of Glyn Humphreys (2012). From 2013 to 2016, she held a British Academy Postdoctoral Fellowship and EPA Cephalosporin Junior Research Fellowship, Linacre College at the University of Oxford. In 2016, Dr Chechlacz returned to the School of Psychology, University of Birmingham as a Bridge Fellow.
 
-<div class="social-links">
-<div class="social-item"><a href="mailto:m.chechlacz@bham.ac.uk"><i class="fa-solid fa-envelope fa-xl"></i> m.chechlacz@bham.ac.uk</a></div>
-<div class="social-item"><a href="https://orcid.org/0000-0003-1811-3946" target="_blank"><i class="fa-brands fa-orcid fa-xl"></i> 0000-0003-1811-3946</a></div>
-</div>
 <br>
 <p>
   <img src="assets/images/main_page/aamir.png" alt="Aamir" width="250" height="200">
 </p>
 
 <h3>Aamir Sohail</h3>
-<b>Role: Teaching Assistant</b>
+<b style="display: block; margin-bottom: 20px;">Role: Teaching Assistant</b>
+<div class="social-links" style="display: flex; flex-direction: row; gap: 5px; justify-content: flex-start;">
+<div class="social-item"><a href="mailto:axs2210@bham.ac.uk"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
+<div class="social-item"><a href="https://github.com/sohaamir" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a></div>
+<div class="social-item"><a href="https://twitter.com/AamirNSohail" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a></div>
+<div class="social-item"><a href="https://orcid.org/0009-0000-6584-4579" target="_blank"><i class="fa-brands fa-orcid fa-xl"></i></a></div>
+<div class="social-item"><a href="https://sohaamir.github.io/" target="_blank"><i class="fa-solid fa-globe fa-xl" style="color: #87CEEB;"></i></a></div>
+</div>
+
+<div style="margin-top: 30px;"></div>
 
 [Aamir Sohail](https://sohaamir.github.io/) is an MRC Advanced Interdisciplinary Methods (AIM) DTP PhD student based at the Centre for Human Brain Health (CHBH), University of Birmingham, where he is supervised by Lei Zhang and Patricia Lockwood. He completed a BSc in Biomedical Science at Imperial College London, followed by an MSc in Brain Imaging at the University of Nottingham. He then worked as a Junior Research Fellow at the Centre for Integrative Neuroscience and Neurodynamics (CINN), University of Reading. Outside of research, he is also passionate about facilitating inclusivity and diversity in academia, as well as promoting open and reproducible science.
-
-<div class="social-links">
-<div class="social-item"><a href="mailto:axs2210@bham.ac.uk"><i class="fa-solid fa-envelope fa-xl"></i> axs2210@bham.ac.uk</a></div>
-<div class="social-item"><a href="https://github.com/sohaamir" target="_blank"><i class="fa-brands fa-github fa-xl"></i> sohaamir</a></div>
-<div class="social-item"><a href="https://twitter.com/AamirNSohail" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i> AamirNSohail</a></div>
-<div class="social-item"><a href="https://orcid.org/0009-0000-6584-4579" target="_blank"><i class="fa-brands fa-orcid fa-xl"></i> 0009-0000-6584-4579</a></div>
-<div class="social-item"><a href="https://sohaamir.github.io/" target="_blank"><i class="fa-solid fa-globe fa-xl" style="color: #87CEEB;"></i> sohaamir.github.io</a></div>
-</div>
 
 ## Course Overview
 

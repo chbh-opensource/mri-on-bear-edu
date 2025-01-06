@@ -68,12 +68,12 @@ nav:
     - Workshop 5 - Aims and objectives: workshop5/workshop5-intro.md
     - Troubleshooting brain extraction with BET: workshop5/preprocessing.md
     - Running the first-level analysis: workshop5/first-level-analysis.md
-  - Workshop 6 - Higher-level fMRI analysis:
+  - Workshop 6 - Scripts, containers and running jobs on the cluster:
     - Workshop 6 - Aims and objectives: workshop6/workshop6-intro.md
-    - Running the higher-level analysis: workshop6/higher-level-analysis.md
-  - Workshop 7 - Bash scripting and region-of-interest analysis:
-    - Scripting FSL commands: workshop7/scripting-fsl.md
-    - Extracting statistics from region of interests: workshop7/extracting-statistics.md
+    - Scripting analyses, running jobs on the cluster and working with containers: workshop6/running-containers.md
+  - Workshop 7 - Higher-level fMRI analysis:
+    - Workshop 7 - Aims and objectives: workshop7/workshop7-intro.md
+    - Running the higher-level analysis: workshop7/higher-level-analysis.md
   - Workshop 8 - Functional connectivity:
     - Functional connectivity analysis of resting-state fMRI data using FSL: workshop8/functional-connectivity.md
   - Additional Resources: resources.md

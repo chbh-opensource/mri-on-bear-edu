@@ -23,8 +23,9 @@ If you would like to use the FEAT Report, select the report (called `report.html
 and either open it in a new tab or in a new window. 
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/feat_report.png" alt="FEAT Report" width="900" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_report.png" alt="FEAT Report" width="900" height="300">
 </p>
+<p align="center"><i style="font-size: 1.2em;">Selecting a participant's first-level FEAT output (left) and examining the FEAT Report (right).</i></p>
 
 Check all of the reports and click on each of the sub-pages in turn:
 
@@ -43,7 +44,7 @@ Most of our participants did the experiment twice – a repeated measurement. Ho
 
 <b>The simplest way is to combine the data within participant before generating group statistics across the entire group of participants.</b> This corresponds with what you might do if you are analysing data as you go along. 
 Here, we will average their data over the two fMRI runs so that we can benefit from the extra power. Participant 5 did the experiment 3 times. 
-For the moment, for this participant, we will choose only the two scans where they moved less for further analysis. 
+For the moment, for this participant, we will <b>choose only the two scans where they moved less for further analysis.</b> 
 
 Choose one of the participants that did the experiment twice (not participant 1 or 2), such as participant 3. Open a terminal and load FSL:
 
@@ -74,7 +75,7 @@ Note that choosing 'Fixed effects' will ignore cross scan variance, which is fin
 <h3>Data</h3>
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/data.png" alt="FEAT Data" width="400" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/data.png" alt="FEAT Data" width="400" height="300">
 </p>
 
 - On the data tab select 'Inputs are lower-level FEAT directories’. 
@@ -84,14 +85,14 @@ Note that choosing 'Fixed effects' will ignore cross scan variance, which is fin
 
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/feat_folders.png" alt="FEAT Folders" width="600" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_folders.png" alt="FEAT Folders" width="600" height="300">
 </p>
 
 <br>
 
 Once you have selected the FEAT directories for input, the GUI will update to show what COPE files (contrasts) are available for analysis. 
 
-- There is only one COPE (contrast) in this data so leave the 'Use lower level copes:' line as it is (with the single COPE 1 selected).
+- There is only one COPE (contrast) in this data so leave the 'Use lower level copes' line as it is (with the single COPE 1 selected).
 - You should now enter a name for the output analysis directory. Use the Output directory option to choose a directory to put the results in. 
 
 <b>The naming scheme here (as with your raw data directories, reconstruction directories and your first level analysis directories) needs to be clear and logical. </b>
@@ -111,7 +112,7 @@ For example, you can then put the second level analysis for participant 3 in the
 - On the Contrasts and F-tests tab, check that there is one contrast, titled 'group mean', weighted 1 for EV1 (see picture below)
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/glm.png" alt="GLM" width="800" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm.png" alt="GLM" width="800" height="300">
 </p>
 
 Click the 'Done' button. This will produce a schematic of your design. Check it makes sense and close its window.
@@ -125,21 +126,21 @@ As with the first-level analysis, select the 'Thresholding' pull down option and
 
 Click the 'Go' button. Repeat for the other participants. 
 
-In the web browser look at the results in the FEAT report (i.e., by opening the `report.html`). Note that the output folder is called `p03.gfeat`. You will have to click on the link marked 'Results' and then on the link labelled 'Lower-level contrast 1 (vision)' on that page and then on the 'Post-stats' link. 
+In the web browser look at the results in the FEAT report (i.e., by opening the `report.html`). <b>Note that the output folder is called `p03.gfeat`.</b> You will have to click on the link marked 'Results' and then on the link labelled 'Lower-level contrast 1 (vision)' on that page and then on the 'Post-stats' link. 
 
 !!! question "Comparing second-level and first-level results"
     Are the results better than for just one scan from `p03`? 
 
 ## Third-level analysis - combining data across participants from the second level 
 
-In FSL the procedure for setting up an analysis across participants is very similar to averaging within a participant. The main difference is that we specifically need to set up the analysis to model the inter-subject variance. <b>This allows us to generalise beyond our specific group of participants and to interpret the results as being typical of the wider population.</b>
+In FSL, the procedure for setting up an analysis across participants is very similar to averaging within a participant. The main difference is that we specifically need to set up the analysis to model the inter-subject variance. <b>This allows us to generalise beyond our specific group of participants and to interpret the results as being typical of the wider population.</b>
 
 In this demonstration experiment, 12 participants did the scan twice, 1 was scanned three times, and 2 did the scan only once. (Note that it should be rather obvious that this is not an ideal design for a real experiment). In our case, we have averaged within participants and <b>now we will combine these second level analyses with the first level analyses from those participants who were only scanned once.</b>
 
 Close FEAT if you still have it open. Then open it again by typing `Feat &`
 
-!!! note "Closing the terminal"
-    Please note that if you close terminal you will first need to load FSL again and navigate back to your folder!
+!!! note "Don't close the terminal if you don't have to!"
+    Please note that if you close the terminal here you will first need to load FSL again and navigate back to your folder!
 
 At the top left of the GUI select the pull down menu labelled 'First-level analysis’ and choose 'Higher-level analysis'.
 
@@ -188,12 +189,12 @@ For example, you can then put this current 3rd level output in the subdirectory:
 
 - On the Top Pull down menu, Select 'Mixed Effects: Flame 1'. (Remember, mixed effects means that we can generalise beyond our participants)
 - Click on the 'Full model setup' button
-- For all the inputs, set 'EV1' to 1 (see the left picture below) and name it 'vision’.
-- On the Contrasts and F-tests tab set EV1 to 1 and name the contrast 'group mean' (as on the right image below). 
-- Click the Done button. Check and dismiss the pop-up window.
+- For all the inputs, set 'EV1' to 1 (see the left picture below) and name it 'vision’
+- On the Contrasts and F-tests tab set EV1 to 1 and name the contrast 'group mean' (as on the right image below)
+- Click the Done button. Check and dismiss the pop-up window
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/glm_third_level.png" alt="GLM Third Level" width="600" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_third_level.png" alt="GLM Third Level" width="600" height="300">
 </p>
 
 <h3>Post-Stats</h3>
@@ -232,7 +233,7 @@ Now complete the tabs following the instructions below:
 - In the form that appears fill in the lines with the `.feat` directory from the first level analysis from the first participant (scan 1), followed by the second participant (scan 1), followed by the third participant (scan 1, and then scan 2) and so on down to participant 15, scan 2. It is important that you enter these in strict logical order, starting with `p01` as in this example below:
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/feat_directory.png" alt="FEAT Directories" width="400" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_directory.png" alt="FEAT Directories" width="400" height="300">
 </p>
 
 - When this is done, hit the OK button. 
@@ -250,28 +251,28 @@ and should be meaningfully named. For example, you could call it:
 <h3>Stats</h3>
 
 - Choose 'Fixed Effects' from the pull down menu at the top.
-- Click the 'Full model setup' button
-- On the 'EVs' tab set the “Number of main EVs” to be 15 (This corresponds to the 15 participants in the experiment)
+- Click the 'Full model setup' button.
+- On the 'EVs' tab set the “Number of main EVs” to be 15 (This corresponds to the 15 participants in the experiment).
 - Going across the columns, label each EV as participant `p01` to `p15` as per below.
 - Going down the columns, for each participant, put a 1 in any row of the EV column for which the participant has a matching scan. Each EV should pick out the scans that correspond to a particular participant. There are 28 rows, corresponding to the 28 first level feat inputs. There should therefore be 28 ones in the design matrix overall (as below).
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/glm_evs.png" alt="GLM EVs" width="850" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_evs.png" alt="GLM EVs" width="850" height="300">
 </p>
 
 On the 'Contrasts and F-tests' tab, we also need 15 contrasts to represent the 15 subject means. Fill in the tab as below: 
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/glm_contrasts.png" alt="GLM Contrasts" width="800" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_contrasts.png" alt="GLM Contrasts" width="800" height="300">
 </p>
 
 !!! caution "Check boxes in FSL"
-    In the older versions of FSL after selecting an option you will see a yellow checkbox, however in the newer versions of FSL such as the one we are using, the checkbox is yellow to start with, and after selecting option you will see a tick ✔️ inside the yellow checkbox
+    In the older versions of FSL after selecting an option you will see a yellow checkbox, however in the newer versions of FSL such as the one we are using, the checkbox is yellow to start with, and after selecting option you will see a tick ✔️ inside the yellow checkbox.
 
 Click the Done button. This will produce a schematic of your new second level design. 
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/design_matrix.png" alt="Design Matrix" width="700" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/design_matrix.png" alt="Design Matrix" width="700" height="300">
 </p>
 
 Check it makes sense, and that you understand what it is showing, then close its window.
@@ -303,7 +304,7 @@ In the second-level analysis we just performed we combined data over both partic
 
 To do this, follow the steps below:
 
-- On the top button change the default setting from 'Inputs are lower-level FEAT directories' to instead select 'Inputs are 3D cope images from FEAT directories'.
+- On the top button change the default setting from 'Inputs are lower-level FEAT directories' and select 'Inputs are 3D cope images from FEAT directories'.
 - Change 'Number of inputs' to be 15 (because we have 15 participant data sets we want to combine)
 - Press the button marked 'Select cope images'
 - In the dialogue that appears you need to add in the path to the COPE image for each of the participants in the second level analysis we have just performed. 
@@ -332,7 +333,7 @@ and should be meaningfully named. For example, you can then put this current 3rd
 - For all the inputs, set EV1 to 1 (see picture below) and name it 'vision'.
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/glm_third_evs.png" alt="GLM EVs" width="400" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_third_evs.png" alt="GLM EVs" width="400" height="300">
 </p>
 
 - On the 'Contrasts and F-tests' tab set EV1 to 1 and name the contrast 'group mean'
@@ -351,7 +352,7 @@ Now click the 'Go' button!
 If you followed the instructions in workshop materials, you should be able to replicate and see the results as above in the `report.html` file inside the respective third level analysis folders ('GroupAnalysis1' and 'GroupAnalysis2').
 
 <p align="center">
- <img src="../../assets/images/workshop6/higher-level-analysis/third_level_results.png" alt="Results" width="1000" height="300">
+ <img src="../../assets/images/workshop7/higher-level-analysis/third_level_results.png" alt="Results" width="1000" height="300">
 </p>
 
 As always, help and further information is also available on the relevant section of the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index).

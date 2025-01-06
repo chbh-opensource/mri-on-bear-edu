@@ -1,24 +1,17 @@
-# Workshop 6 - Higher-level fMRI analysis
+# Workshop 6 - Scripts, containers and running analyses on the academic computing cluster
 
 Welcome to the sixth workshop of the MRICN course! 
 
-Prior lectures introduced you to the basic concepts and theory behind higher-level fMRI analysis, including multi-session analysis and the general linear model (GLM). <b>In this workshop you will be learning practical skills in how to run higher level fMRI analysis using FSL tools.</b>
-
-This workshop follows on from the [previous (first-level fMRI analysis) workshop](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/). In the previous workshop you analysed the first level data for 2 participants and at the end of the workshop you were asked to analyse the rest of the scans in the data set. Participants 1-2 had one fMRI experiment run each, participants 3-4 and 6-15 had 2 runs each and participant 5 had 3 runs, so there are a total of 29 runs from the 15 participants.
-
-<b>We will now combine the fMRI data across runs and participants in our second and third-level analyses.</b>
+Prior workshops introduced you to running MRI analysis with various FSL tools by either using the FSL GUI or typing a simple command in the terminal. In this workshop we will look at how to automate FSL analyses by creating scripts. Subsequently, we will explore how to run FSL scripts more efficiently by submitting jobs to the cluster. The final part of this workshop will introduce how to use FSL containers rather than pre-installed versions of FSL using different modules available on BEAR apps.  
 
 !!! success "Overview of Workshop 6"
     Topics for this workshop include:
 
-    - How to combine scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment
-    - How to combine scans across participants
-    - How to set up different higher-level analyses
-
-As in the other workshops we will not discuss in detail why you might choose certain parameters. The aim of this workshop is to familiarise you with some of the available analysis tools. 
-You are encouraged to read the pop-up help throughout (hold your mouse arrow over FSL GUI buttons and menus when setting your FEAT design), refer to your lecture notes lectures or resource list readings.
+    - Knowing how to automate neuroimaging analyses by `bash` scripting
+    - Understanding how to submit and managing analysis jobs on the BlueBEAR cluster using Slurm
+    - Working with FSL software containers using Apptainer as an alternative to pre-installed versions
 
 !!! note "More information"
-    As always, you can also find more information on running higher-level fMRI analyses on the [FSL website](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/).
+    The [BEAR Technical Docs](https://docs.bear.bham.ac.uk/) provides guidance on submitting jobs to the cluster.
 
 <b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 06 workshop materials.</b>

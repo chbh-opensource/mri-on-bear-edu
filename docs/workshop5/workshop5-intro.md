@@ -13,7 +13,7 @@ We will also revisit the use of Brain Extraction Tool (BET), and learn how to tr
 !!! success "Overview of Workshop 5"
     Topics for this workshop include:
 
-    - Troblueshooting problematic skull-stripping by using BET options (recursive BET, `robustfov`)
+    - Troubleshooting problematic skull-stripping by using BET options (recursive BET, `robustfov`)
     - Renaming fMRI data and understanding the importance of having suitable file names
     - Running a first-level fMRI analysis on single subjects using FEAT
     - Examining the processed fMRI data using the FEAT Report and FSLeyes

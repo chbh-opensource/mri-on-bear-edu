@@ -1,9 +1,9 @@
 # Running the first-level fMRI analysis
 
-We are now ready to proceed with running our data analysis. We will start with the first dataset (first participant `/p01`) and our first step will be to skull-strip the data using BET.
+We are now ready to proceed with running our fMRI analysis. We will start with the first dataset (first participant `/p01`) and our first step will be to skull-strip the data using BET.
 <b>You should now be able by now to not only run BET but also to troubleshoot poor BET i.e., use different methods to run BET.</b>
 
-The `p01` T1 scan was acquired with a large FOV (you can check this using FSLeyes; it is generally a good practice to explore the data before the start of any analysis, especially if you were not the person who acquired the data). Therefore, we will apply an appropriate method using BET as per the example we explored earlier. This will be likely the right method to be applied to all datasets in the `/recon` folder but please check. 
+The `p01` T1 scan was acquired with a large field-of-view (FOV) (you can check this using FSLeyes; it is generally a good practice to explore the data before the start of any analysis, especially if you were not the person who acquired the data). Therefore, we will apply an appropriate method using BET as per the example we explored earlier. <b>This will be likely the right method to be applied to all datasets in the `/recon` folder but please check.</b>
 
 Open a terminal and use the commands below to skull-strip the T1:
 
@@ -27,7 +27,7 @@ Remember that:
 A poor brain extraction will affect the registration of the functional data into MNI space giving a poorer quality of registered image. This in turn will mean that the higher-level analyses (where functional data are combined in MNI space) will be less than optimal. It will then be harder to detect small BOLD signal changes in the group. 
 
 !!! tip "Re-doing inaccurate BETs"
-    Whenever the BET process is unsatisfactory you will need to go back and redo the individual BET extraction by hand, by tweaking the “Fractional intensity threshold” and/or the Advanced option parameters for the Centre coordinates and/or the “Threshold gradient”.
+    Whenever the BET process is unsatisfactory you will need to go back and redo the individual BET extraction by hand, by tweaking the “Fractional intensity threshold” and/or the advanced option parameters for the centre coordinates" and/or the “Threshold gradient”.
 
 You should be still inside the `/p01` folder; please rename the fMRI scan by typing:
 
@@ -130,7 +130,7 @@ Set the following:
 - <b>Apply external script:</b> Leave empty
 - <b>Add additional confound EVs checkbox:</b> OFF 
 
-Select the “Full model setup” option; and then on the 'EVs' tab:
+Select the 'Full model setup' option (depicted on the blue arrow above); and then on the 'EVs' tab:
 
 - <b>1 EV (Explanatory variable) name:</b> vision
 - <b>Basic shape:</b> square
@@ -166,7 +166,7 @@ The model should now be set up with all the correct details and be ready to be a
 
 <b>Hit the GO button!</b>
 
-!!! note "Running FSL on BlueBEAR"
+!!! tip "Running FSL on BlueBEAR"
     FSL jobs are now submitted in an automated way to a back-end high performance computing cluster on BlueBEAR for execution. Processing time for this analysis will vary but will probably be about 5 mins per run.
 
 ## Monitoring and viewing the results
@@ -179,7 +179,7 @@ To do that, you need to navigate inside the `p01_s1.feat` folder from the BlueBE
  <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="600" height="300">
 </p>
 
-Watch the webpage for progress. Refresh the page to update and click the links (Tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear).
+Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).
 
 <p align="center">
 <img src="../../assets/images/workshop5/first-level/feat_progress.png" alt="FEAT Progress" width="1000" height="300">
@@ -215,15 +215,15 @@ Open the `p01_s1.feat` folder and select the `filtered_func_data` (this is the f
 
 Let's have a look and see the effects that other parameters have on the data. To do this, do the following steps:
 
-- Open FEAT (either through the GUI or the terminal by `Feat &`)
+- Open FEAT (either through the GUI or using the terminal by typing `Feat &`)
 - Press the 'Load' button and open the `design.fsf` file in the `p01_s1.feat` directory for the first participant
 - Change <b>any one</b> of the parameters – some make very little difference but ones that should have some difference are: 
     - Motion parameters: change from 'Standard Motion Parameters' to 'Don't Add Motion Parameters'
     - Spatial smoothing (previously set to 5mm): try increasing to 10mm
-    - Set High pass filter to 30sec (i.e. 50% less than OFF+ON time period). 
+    - High pass filter: set to 30sec (i.e. 50% less than OFF+ON time period). 
 - Hit 'Go'
 
-<b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', “'01_s1+.feat', 'p01_s1+ +.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. 
+<b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', 'p01_s1+.feat', 'p01_s1++.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. 
 
 For example, if you wanted to remove all files and directories that end with '+' for participant 1:
 
@@ -249,7 +249,7 @@ To rerun a FEAT analysis, rather than re-entering all the model details:
 Now change the input 4D file, the output directory name, and the registration details (the BET'ed reoriented T1 for participant 2), and hit 'Go'.
 
 !!! note "Design files"
-    You can also save the design files (`design.fsf`) using the 'Save' button on the FEAT GUI. You can then edit this in a text editor, which is useful when running large group studies. You can also run FEAT from the command line, by giving it a design file to use e.g., `feat my_saved_design.fsf`. We will take a look at modifying the `design.fsf` files directly in the [Functional Connectivity workshop](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/).
+    You can also save the design files (`design.fsf`) using the 'Save' button on the FEAT GUI. You can then edit this in a text editor, which is useful when running large group studies. You can also run FEAT from the command line, by giving it a design file to use e.g., `feat my_saved_design.fsf`. We will take a look at modifying `design.fsf` files directly in the [Functional Connectivity workshop](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/).
 
 !!! example "Running a first-level analysis on the remaining participants"
     In your own time, you should analyse the remaining participants as above. 

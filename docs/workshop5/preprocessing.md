@@ -27,21 +27,21 @@ However, in this case we can see different parameters being used which reflect s
 !!! note "Sequence order"
     Note that sometimes the T1 was the first scan acquired after the planning scan, sometimes it was the very last scan acquired.
 
-Now that we know what the data is, let's start our analyses. Log in into BlueBEAR portal and start BlueBEAR GUI session (2 hours). You should know how to do it from previous workshops. 
+Now that we know what the data is, let's start our analyses. Log in into the BlueBEAR Portal and start a BlueBEAR GUI session (2 hours). You should know how to do it by now from previous workshops. 
 
 Open a new terminal window and navigate to your MRICN project folder:
 
 `cd /rds/projects/c/chechlmy-chbh-mricn/xxx`  [where XXX=your ADF username] 
 
-Please check that you are in the correct directory by typing `pwd`. This should return: `/rds/projects/c/chechlmy-chbh-mricn/xxx` (where XXX = your login username)
+Please check that you are in the correct directory by typing `pwd`. This should return: 
+
+`/rds/projects/c/chechlmy-chbh-mricn/xxx` (where XXX = your login username)
 
 You now need to create a copy of the reconstructed fMRI data to be analysed during the workshop but in your own MRICN folder. To do this, in your terminal type:
 
 `cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/recon/ .`
 
-<b>Be patient as this might take few minutes to copy over.</b> In the meantime, we will revisit BET and learn how to troubleshoot the often problematic process of ”skull-stripping”.
-
-<br>
+<b>Be patient as this might take few minutes to copy over.</b> In the meantime, we will revisit BET and learn how to troubleshoot the often problematic process of 'skull-stripping'.
 
 ## Skull-stripping T1 scans using BET on the command-line
 We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
@@ -79,7 +79,7 @@ After this, navigate inside the copied BET folder and type:
 
 Open FSLeyes (`fsleyes &`), and when this is open, load up the T1 image, and add the `T1_brain1` image. Change the colour for the `T1_brain1` to Red. 
 
-<b>This will likely show that the default brain extraction was not very good and included nonbrain matter.</b> It may also have cut into the brain and thus some part of the cortex is missing. The reason behind the poor brain extraction is a large FOV (resulting in the head plus a large amount of neck present). 
+<b>This will likely show that the default brain extraction was not very good and included non-brain matter.</b> It may also have cut into the brain and thus some part of the cortex is missing. The reason behind the poor brain extraction is a large field-of-view (FOV) (resulting in the head plus a large amount of neck present). 
 
 There are different ways to fix a poor BET output i.e., problematic ”skull-stripping”.
 
@@ -91,7 +91,8 @@ In your terminal type:
 
 `bet T1.nii.gz T1_brain2 -R`
 
-Instead of using the `bet` command from the terminal, you can also use the BET GUI. To run it this way, you would need to select the processing option “Robust brain centre estimation (iterates bet2 several times)” from the pull down menu.
+!!! note "Running BET recursively from the BET GUI"
+    Instead of using the `bet -R` command from the terminal, you can also use the BET GUI. To run it this way, you would need to select the processing option “Robust brain centre estimation (iterates bet2 several times)” from the pull down menu.
 
 You will find that running BET with `-R` option takes longer than before because of the extra iterations. Reload the newly extracted brain (`T1_brain2`) into FSLeyes and check that the extraction now looks improved. 
 
@@ -114,9 +115,11 @@ Reload the newly extracted brain (`T1_brain3`) into FSLeyes and compare it to `T
 Another option is to leave the large FOV and to manually set the initial centre by hand via the `-c` option on the command line. 
 To do that you need to firstly examine the T1 scan in FSLeyes to get a rough estimation (in voxels) of where the centre of the brain is. 
 
-There is another BET option, which can improve ”skull stripping”, the fractional intensity threshold, which by default is set to 0.5. 
+There is another BET option which can improve ”skull stripping”: the fractional intensity threshold, which by default is set to 0.5. 
 You can change it from any value between 0-1. <b>Smaller values give larger brain outline estimates (and vice versa).</b>
-Thus, you can make it smaller if you think that too much brain tissue has been removed. To use it, you need to use the `-f` option (e.g., `bet T1.nii.gz T1_brain -f 0.3`). 
+Thus, you can make it smaller if you think that too much brain tissue has been removed. 
+
+To use it, you would need to use the `-f` option (e.g., `bet T1.nii.gz T1_brain -f 0.3`). 
 
 !!! example "Changing the fractional intensity"
     In your own time (after the workshop) you can check the effect of changing the fractional intensity threshold to 0.1 and 0.9 (however make sure you name the outputs accordingly, so you know which one is which).
@@ -162,7 +165,7 @@ However, apart from the T1 images that have been already renamed for you, the ot
 You can see this by typing into your terminal:
 
 ```bash
-cd  /rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p03 
+cd /rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p03 
 ls
 ```
 
@@ -187,7 +190,7 @@ immv fs005a001 fmri2
 
     - The 'immv' command is a special FSL Linux command that works just like the standard Linux `mv` command except that it automatically takes care of the filename extensions. It saves from having to write out:
     `mv fs004a001.nii.gz fmri1.nii.gz` which would be the standard Linux command to rename a file.
-    - You can of course name these files to anything you want. In principle, you could call the fMRI scan `run1` or `fmri_run1` or `epi1` or whatever. The important thing is that you need to be extremely consistent in the naming of files for the different participants.
+    - You can of course name these files to anything you want. In principle, you could call the fMRI scan `run1` or `fmri_run1` or `epi1` or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b>
 
 For this workshop we will use the naming convention above and call the files `fmri1.nii.gz` and `fmri2.nii.gz`.
 
@@ -218,4 +221,4 @@ You should see something like the image below:
  <img src="../../assets/images/workshop5/preprocessing/fslinfo.png" alt="FSLinfo" width="700" height="300">
 </p>
 
-Before proceeding to the next section, close your terminal.
+Before proceeding to the next section on running a first-level fMRI analysis, close your terminal.
