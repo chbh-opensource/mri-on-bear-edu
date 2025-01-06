@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -897,7 +897,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 6 - Higher-level fMRI analysis
+    Workshop 6 - Scripts, containers and running jobs on the cluster
   </span>
   
 
@@ -907,7 +907,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 6 - Higher-level fMRI analysis
+            Workshop 6 - Scripts, containers and running jobs on the cluster
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -939,11 +939,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop6/higher-level-analysis/" class="md-nav__link">
+      <a href="../../workshop6/running-containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Running the higher-level analysis
+    Scripting analyses, running jobs on the cluster and working with containers
   </span>
   
 
@@ -981,7 +981,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 7 - Bash scripting and region-of-interest analysis
+    Workshop 7 - Higher-level fMRI analysis
   </span>
   
 
@@ -991,7 +991,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 7 - Bash scripting and region-of-interest analysis
+            Workshop 7 - Higher-level fMRI analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1002,11 +1002,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/scripting-fsl/" class="md-nav__link">
+      <a href="../../workshop7/workshop7-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scripting FSL commands
+    Workshop 7 - Aims and objectives
   </span>
   
 
@@ -1023,11 +1023,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/extracting-statistics/" class="md-nav__link">
+      <a href="../../workshop7/higher-level-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Extracting statistics from region of interests
+    Running the higher-level analysis
   </span>
   
 
@@ -1169,9 +1169,9 @@
 
 
 <h1 id="running-the-first-level-fmri-analysis">Running the first-level fMRI analysis<a class="headerlink" href="#running-the-first-level-fmri-analysis" title="Permanent link">&para;</a></h1>
-<p>We are now ready to proceed with running our data analysis. We will start with the first dataset (first participant <code>/p01</code>) and our first step will be to skull-strip the data using BET.
+<p>We are now ready to proceed with running our fMRI analysis. We will start with the first dataset (first participant <code>/p01</code>) and our first step will be to skull-strip the data using BET.
 <b>You should now be able by now to not only run BET but also to troubleshoot poor BET i.e., use different methods to run BET.</b></p>
-<p>The <code>p01</code> T1 scan was acquired with a large FOV (you can check this using FSLeyes; it is generally a good practice to explore the data before the start of any analysis, especially if you were not the person who acquired the data). Therefore, we will apply an appropriate method using BET as per the example we explored earlier. This will be likely the right method to be applied to all datasets in the <code>/recon</code> folder but please check. </p>
+<p>The <code>p01</code> T1 scan was acquired with a large field-of-view (FOV) (you can check this using FSLeyes; it is generally a good practice to explore the data before the start of any analysis, especially if you were not the person who acquired the data). Therefore, we will apply an appropriate method using BET as per the example we explored earlier. <b>This will be likely the right method to be applied to all datasets in the <code>/recon</code> folder but please check.</b></p>
 <p>Open a terminal and use the commands below to skull-strip the T1:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p01
 module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a
@@ -1191,7 +1191,7 @@ bet<span class="w"> </span>T1.nii.gz<span class="w"> </span>T1_brain<span class=
 <p>A poor brain extraction will affect the registration of the functional data into MNI space giving a poorer quality of registered image. This in turn will mean that the higher-level analyses (where functional data are combined in MNI space) will be less than optimal. It will then be harder to detect small BOLD signal changes in the group. </p>
 <div class="admonition tip">
 <p class="admonition-title">Re-doing inaccurate BETs</p>
-<p>Whenever the BET process is unsatisfactory you will need to go back and redo the individual BET extraction by hand, by tweaking the “Fractional intensity threshold” and/or the Advanced option parameters for the Centre coordinates and/or the “Threshold gradient”.</p>
+<p>Whenever the BET process is unsatisfactory you will need to go back and redo the individual BET extraction by hand, by tweaking the “Fractional intensity threshold” and/or the advanced option parameters for the centre coordinates" and/or the “Threshold gradient”.</p>
 </div>
 <p>You should be still inside the <code>/p01</code> folder; please rename the fMRI scan by typing:</p>
 <p><code>immv fs005a001 fmri1</code></p>
@@ -1273,7 +1273,7 @@ If you do, these may cause some programs to crash with errors that may not seem 
 <li><b>Apply external script:</b> Leave empty</li>
 <li><b>Add additional confound EVs checkbox:</b> OFF </li>
 </ul>
-<p>Select the “Full model setup” option; and then on the 'EVs' tab:</p>
+<p>Select the 'Full model setup' option (depicted on the blue arrow above); and then on the 'EVs' tab:</p>
 <ul>
 <li><b>1 EV (Explanatory variable) name:</b> vision</li>
 <li><b>Basic shape:</b> square</li>
@@ -1306,7 +1306,7 @@ If you do, these may cause some programs to crash with errors that may not seem 
 </ul>
 <p>The model should now be set up with all the correct details and be ready to be analyzed.</p>
 <p><b>Hit the GO button!</b></p>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">Running FSL on BlueBEAR</p>
 <p>FSL jobs are now submitted in an automated way to a back-end high performance computing cluster on BlueBEAR for execution. Processing time for this analysis will vary but will probably be about 5 mins per run.</p>
 </div>
@@ -1317,7 +1317,7 @@ If you do, these may cause some programs to crash with errors that may not seem 
  <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="600" height="300">
 </p>
 
-<p>Watch the webpage for progress. Refresh the page to update and click the links (Tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear).</p>
+<p>Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).</p>
 <p align="center">
 <img src="../../assets/images/workshop5/first-level/feat_progress.png" alt="FEAT Progress" width="1000" height="300">
 </p>
@@ -1346,17 +1346,17 @@ fsleyes<span class="w"> </span><span class="p">&amp;</span>
 
 <p>Let's have a look and see the effects that other parameters have on the data. To do this, do the following steps:</p>
 <ul>
-<li>Open FEAT (either through the GUI or the terminal by <code>Feat &amp;</code>)</li>
+<li>Open FEAT (either through the GUI or using the terminal by typing <code>Feat &amp;</code>)</li>
 <li>Press the 'Load' button and open the <code>design.fsf</code> file in the <code>p01_s1.feat</code> directory for the first participant</li>
 <li>Change <b>any one</b> of the parameters – some make very little difference but ones that should have some difference are: <ul>
 <li>Motion parameters: change from 'Standard Motion Parameters' to 'Don't Add Motion Parameters'</li>
 <li>Spatial smoothing (previously set to 5mm): try increasing to 10mm</li>
-<li>Set High pass filter to 30sec (i.e. 50% less than OFF+ON time period). </li>
+<li>High pass filter: set to 30sec (i.e. 50% less than OFF+ON time period). </li>
 </ul>
 </li>
 <li>Hit 'Go'</li>
 </ul>
-<p><b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', “'01_s1+.feat', 'p01_s1+ +.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. </p>
+<p><b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', 'p01_s1+.feat', 'p01_s1++.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. </p>
 <p>For example, if you wanted to remove all files and directories that end with '+' for participant 1:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/<span class="w"> </span>
 rm<span class="w"> </span>-rf<span class="w"> </span>*+
@@ -1378,7 +1378,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span>*+
 <p>Now change the input 4D file, the output directory name, and the registration details (the BET'ed reoriented T1 for participant 2), and hit 'Go'.</p>
 <div class="admonition note">
 <p class="admonition-title">Design files</p>
-<p>You can also save the design files (<code>design.fsf</code>) using the 'Save' button on the FEAT GUI. You can then edit this in a text editor, which is useful when running large group studies. You can also run FEAT from the command line, by giving it a design file to use e.g., <code>feat my_saved_design.fsf</code>. We will take a look at modifying the <code>design.fsf</code> files directly in the <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/">Functional Connectivity workshop</a>.</p>
+<p>You can also save the design files (<code>design.fsf</code>) using the 'Save' button on the FEAT GUI. You can then edit this in a text editor, which is useful when running large group studies. You can also run FEAT from the command line, by giving it a design file to use e.g., <code>feat my_saved_design.fsf</code>. We will take a look at modifying <code>design.fsf</code> files directly in the <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/">Functional Connectivity workshop</a>.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Running a first-level analysis on the remaining participants</p>
@@ -1516,7 +1516,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span>*+
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

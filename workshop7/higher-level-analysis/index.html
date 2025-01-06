@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/">
+        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/higher-level-analysis/">
       
       
-        <link rel="prev" href="../../workshop6/higher-level-analysis/">
+        <link rel="prev" href="../workshop7-intro/">
       
       
-        <link rel="next" href="../extracting-statistics/">
+        <link rel="next" href="../../workshop8/functional-connectivity/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Scripting FSL commands - MRI on BEAR</title>
+        <title>Running the higher-level analysis - MRI on BEAR</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#running-the-higher-level-fmri-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scripting FSL commands
+              Running the higher-level analysis
             
           </span>
         </div>
@@ -832,7 +837,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 6 - Higher-level fMRI analysis
+    Workshop 6 - Scripts, containers and running jobs on the cluster
   </span>
   
 
@@ -842,7 +847,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 6 - Higher-level fMRI analysis
+            Workshop 6 - Scripts, containers and running jobs on the cluster
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -874,11 +879,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop6/higher-level-analysis/" class="md-nav__link">
+      <a href="../../workshop6/running-containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Running the higher-level analysis
+    Scripting analyses, running jobs on the cluster and working with containers
   </span>
   
 
@@ -918,7 +923,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 7 - Bash scripting and region-of-interest analysis
+    Workshop 7 - Higher-level fMRI analysis
   </span>
   
 
@@ -928,9 +933,30 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 7 - Bash scripting and region-of-interest analysis
+            Workshop 7 - Higher-level fMRI analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop7-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop 7 - Aims and objectives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -945,38 +971,85 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Running the higher-level analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Scripting FSL commands
+    Running the higher-level analysis
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extracting-statistics/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Extracting statistics from region of interests
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#second-level-analysis-averaging-across-runs-within-participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second-level analysis - averaging across runs within participants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-level-analysis-combining-data-across-participants-from-the-second-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-level analysis - combining data across participants from the second level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-level-analysis-the-all-in-one-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second-level analysis - the 'all-in-one' method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-level-analysis-combining-participant-data-from-the-all-in-one-second-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-level analysis - combining participant data from the 'all-in-one' second-level
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1113,9 +1186,312 @@
   
 
 
-  <h1>Scripting FSL commands</h1>
+<h1 id="running-the-higher-level-fmri-analysis">Running the higher-level fMRI analysis<a class="headerlink" href="#running-the-higher-level-fmri-analysis" title="Permanent link">&para;</a></h1>
+<p>If you have correctly followed the instructions from the previous workshop, you should now have 29 FEAT directories arising from each fMRI scan of each participant, e.g.,</p>
+<div class="codehilite"><pre><span></span><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p01_s1.feat<span class="w">  </span>←<span class="w"> </span>Participant<span class="w"> </span><span class="m">1</span><span class="w"> </span>scan<span class="w"> </span><span class="m">1</span>
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p02_s1.feat<span class="w">  </span>←<span class="w"> </span>Participant<span class="w"> </span><span class="m">2</span><span class="w"> </span>scan<span class="w"> </span><span class="m">1</span>
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p03_s1.feat<span class="w">  </span>←<span class="w"> </span>Participant<span class="w"> </span><span class="m">3</span><span class="w"> </span>scan<span class="w"> </span><span class="m">1</span>
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p03_s2.feat<span class="w">  </span>←<span class="w"> </span>Participant<span class="w"> </span><span class="m">3</span><span class="w"> </span>scan<span class="w"> </span><span class="m">2</span>
+<span class="o">(</span>…<span class="o">)</span>
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p15_s2.feat<span class="w">  </span>←<span class="w"> </span>Participant<span class="w"> </span><span class="m">15</span><span class="w"> </span>scan<span class="w"> </span><span class="m">2</span>
+</code></pre></div>
 
+<p>(where XXX = your particular login (ADF) username).</p>
+<p>For participants 1 and 2 you should have only one FEAT directory. For participants 3-4 and 6-15 you should have 2 FEAT directories. For participant 5 you should have 3 FEAT directories. <b>You should therefore have 29 complete first level feat directories.</b></p>
+<p>If you haven’t done so already, please check that the output of each and all of these first level analyses looks ok either through the FEAT Report or through FSLeyes.
+If you would like to use the FEAT Report, select the report (called <code>report.html</code>) from within each FEAT directory from your analysis, e.g.,: </p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p03_s1.feat/report.html</code></p>
+<p>and either open it in a new tab or in a new window. </p>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_report.png" alt="FEAT Report" width="900" height="300">
+</p>
+<p align="center"><i style="font-size: 1.2em;">Selecting a participant's first-level FEAT output (left) and examining the FEAT Report (right).</i></p>
 
+<p>Check all of the reports and click on each of the sub-pages in turn:</p>
+<ol>
+<li>Check that the analysis ran ok by checking the 'Log' page. </li>
+<li>Check that the 'Registration' looks ok. </li>
+<li>Check how much they moved on the 'Pre-Stats' page. </li>
+<li>Have a quick look at the 'Post-Stats' page. </li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Motion correction</p>
+<p>Participant 5 was scanned three times. In one of these scans they moved suddenly. <b>Use the motion correction results to decide which scan this was.</b> We will ignore this scan for the rest of this workshop.
+<b>If you have not completed this stage of the analysis, you should do this now before continuing on.</b> Refer to the worksheet from previous workshops.</p>
+</div>
+<h2 id="second-level-analysis-averaging-across-runs-within-participants">Second-level analysis - averaging across runs within participants<a class="headerlink" href="#second-level-analysis-averaging-across-runs-within-participants" title="Permanent link">&para;</a></h2>
+<p>Most of our participants did the experiment twice – a repeated measurement. How do we model this data? There are different ways we can do this. </p>
+<p><b>The simplest way is to combine the data within participant before generating group statistics across the entire group of participants.</b> This corresponds with what you might do if you are analysing data as you go along. 
+Here, we will average their data over the two fMRI runs so that we can benefit from the extra power. Participant 5 did the experiment 3 times. 
+For the moment, for this participant, we will <b>choose only the two scans where they moved less for further analysis.</b> </p>
+<p>Choose one of the participants that did the experiment twice (not participant 1 or 2), such as participant 3. Open a terminal and load FSL:</p>
+<div class="codehilite"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>bear-apps/2022b
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.7.6
+<span class="nb">source</span><span class="w"> </span><span class="nv">$FSLDIR</span>/etc/fslconf/fsl.sh
+</code></pre></div>
+
+<p>Then navigate to the folder where your first-level directories are located and open FEAT:</p>
+<div class="codehilite"><pre><span></span><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1
+Feat<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+
+<p>At the top left of the GUI you will see a pull down menu labelled 'First-level analysis'. Click here to pull down this menu and choose 'Higher-level analysis' The options available will change.</p>
+<p>Now fill out the tabs as below:</p>
+<h3>Stats</h3>
+
+<p>Choose 'Fixed effects' from the pull down menu at the top.</p>
+<p>It is necessary to select this now in order to reduce the number of inputs on the 'Data' tab to be only 2 (the default for all other higher level model types is a minimum no of 3 inputs). 
+Note that choosing 'Fixed effects' will ignore cross scan variance, which is fine to do here because these are scans from the same person at the same time. </p>
+<h3>Data</h3>
+
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/data.png" alt="FEAT Data" width="400" height="300">
+</p>
+
+<ul>
+<li>On the data tab select 'Inputs are lower-level FEAT directories’. </li>
+<li>Make sure the 'Number of inputs' is set as 2. </li>
+<li>Click on the 'Select FEAT directories' button. </li>
+<li>In the form that appears fill in the top line with the <code>.feat</code> directory from the first scan and the second line with the <code>.feat</code> directory from the second scan. (Hint: you can use the little folder icon to browse)</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_folders.png" alt="FEAT Folders" width="600" height="300">
+</p>
+
+<p><br></p>
+<p>Once you have selected the FEAT directories for input, the GUI will update to show what COPE files (contrasts) are available for analysis. </p>
+<ul>
+<li>There is only one COPE (contrast) in this data so leave the 'Use lower level copes' line as it is (with the single COPE 1 selected).</li>
+<li>You should now enter a name for the output analysis directory. Use the Output directory option to choose a directory to put the results in. </li>
+</ul>
+<p><b>The naming scheme here (as with your raw data directories, reconstruction directories and your first level analysis directories) needs to be clear and logical. </b></p>
+<p>It is therefore sensible to use a directory structure like:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2</code> (directory for all FEAT 2nd level analyses)</p>
+<p>For example, you can then put the second level analysis for participant 3 in the subdirectory and so on.</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/p03</code></p>
+<h3>Stats (again)</h3>
+
+<ul>
+<li>Click the Full model setup button</li>
+<li>On the EVs tab put 1 in all rows of the EV1 column (see picture below) [this averages both inputs together]</li>
+<li>On the Contrasts and F-tests tab, check that there is one contrast, titled 'group mean', weighted 1 for EV1 (see picture below)</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm.png" alt="GLM" width="800" height="300">
+</p>
+
+<p>Click the 'Done' button. This will produce a schematic of your design. Check it makes sense and close its window.</p>
+<h3>Post-Stats</h3>
+
+<p>As with the first-level analysis, select the 'Thresholding' pull down option and type 'Uncorrected' and leave the P-threshold value at p&lt;0.05. </p>
+<div class="admonition note">
+<p class="admonition-title">Thresholding and processing time</p>
+<p>Note this is not the correct thresholding that you will want at the final (third stage) of processing (where you will probably want Cluster thresholding) but at the first and second level stages it will speed up the processing per person. </p>
+</div>
+<p>Click the 'Go' button. Repeat for the other participants. </p>
+<p>In the web browser look at the results in the FEAT report (i.e., by opening the <code>report.html</code>). <b>Note that the output folder is called <code>p03.gfeat</code>.</b> You will have to click on the link marked 'Results' and then on the link labelled 'Lower-level contrast 1 (vision)' on that page and then on the 'Post-stats' link. </p>
+<div class="admonition question">
+<p class="admonition-title">Comparing second-level and first-level results</p>
+<p>Are the results better than for just one scan from <code>p03</code>? </p>
+</div>
+<h2 id="third-level-analysis-combining-data-across-participants-from-the-second-level">Third-level analysis - combining data across participants from the second level<a class="headerlink" href="#third-level-analysis-combining-data-across-participants-from-the-second-level" title="Permanent link">&para;</a></h2>
+<p>In FSL, the procedure for setting up an analysis across participants is very similar to averaging within a participant. The main difference is that we specifically need to set up the analysis to model the inter-subject variance. <b>This allows us to generalise beyond our specific group of participants and to interpret the results as being typical of the wider population.</b></p>
+<p>In this demonstration experiment, 12 participants did the scan twice, 1 was scanned three times, and 2 did the scan only once. (Note that it should be rather obvious that this is not an ideal design for a real experiment). In our case, we have averaged within participants and <b>now we will combine these second level analyses with the first level analyses from those participants who were only scanned once.</b></p>
+<p>Close FEAT if you still have it open. Then open it again by typing <code>Feat &amp;</code></p>
+<div class="admonition note">
+<p class="admonition-title">Don't close the terminal if you don't have to!</p>
+<p>Please note that if you close the terminal here you will first need to load FSL again and navigate back to your folder!</p>
+</div>
+<p>At the top left of the GUI select the pull down menu labelled 'First-level analysis’ and choose 'Higher-level analysis'.</p>
+<p>Now complete each of the tabs as described below:</p>
+<h3>Data</h3>
+
+<p>We have 13 participants who did the experiment at least twice (who we combined via a second-level analysis) and 2 who did the experiment only once (who we only analysed at first-level). 
+<b>Therefore, for this next (third level) analysis we will need to combine over first and second level analyses.</b></p>
+<ul>
+<li>On the top button check that 'Inputs are lower-level FEAT directories' is selected.</li>
+<li>Change 'Number of inputs' to be 15</li>
+<li>Press the button marked 'Select Feat Directories'</li>
+</ul>
+<p>In the dialogue that appears you need to add in the path to the <code>.feat</code> directory for each person. For the first-level analyses this is something like:</p>
+<div class="codehilite"><pre><span></span><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p01_s1.feat
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p02_s1.feat
+</code></pre></div>
+
+<p>For the participants where you did a second level analysis this will be:</p>
+<div class="codehilite"><pre><span></span><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/p03.gfeat/cope1.feat
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/p04.gfeat/cope1.feat
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/p05.gfeat/cope1.feat
+...
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/p15.gfeat/cope1.feat
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Subdirectory location</p>
+<p>Note that the actual feat subdirectories of interest for the second-level analyses are hidden inside the <code>.gfeat</code> directories. </p>
+</div>
+<p>You should now enter a name for the output analysis directory. Use the 'Output' directory entry to choose a directory to put the results in. 
+As with your second-level analyses, <b>the naming scheme here needs to be clear and logical.</b></p>
+<p>It is therefore sensible to use a structure like:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/3</code> (directory for all FEAT 3rd level analyses)</p>
+<p>For example, you can then put this current 3rd level output in the subdirectory:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/3/GroupAnalysis1</code></p>
+<h3>Stats</h3>
+
+<ul>
+<li>On the Top Pull down menu, Select 'Mixed Effects: Flame 1'. (Remember, mixed effects means that we can generalise beyond our participants)</li>
+<li>Click on the 'Full model setup' button</li>
+<li>For all the inputs, set 'EV1' to 1 (see the left picture below) and name it 'vision’</li>
+<li>On the Contrasts and F-tests tab set EV1 to 1 and name the contrast 'group mean' (as on the right image below)</li>
+<li>Click the Done button. Check and dismiss the pop-up window</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_third_level.png" alt="GLM Third Level" width="600" height="300">
+</p>
+
+<h3>Post-Stats</h3>
+
+<p>Accept the defaults.   </p>
+<p>Now click the 'Go' button!</p>
+<p><b>When the group analysis has finished, check through the output (using the FEAT Report) and try to work out what each page means.</b>
+For example, the 'Registration Summary' page will highlight areas where the registrations are not aligned between scans/participants. 
+A few missing voxels are ok, but any more than that is a problem as you won't get results from areas where there are missing data.</p>
+<h2 id="second-level-analysis-the-all-in-one-method">Second-level analysis - the 'all-in-one' method<a class="headerlink" href="#second-level-analysis-the-all-in-one-method" title="Permanent link">&para;</a></h2>
+<p><b>A more complicated modelling approach at the second-level is to use one single second-level model (instead of separate models per participant) which incorporates all of the information available about participants and runs.</b></p>
+<p>This corresponds with what you might do if you are analysing all the data after it has been collected, all in one go. 
+Depending on the design of the particular experiment, <b>this has the potential to be an improved approach as it allows a better estimate of both the between-run and the between-subject variance.</b></p>
+<p>Close FEAT if you still have it open. Then open it again by clicking on the FEAT button in the FSL GUI (or type <code>Feat &amp;</code> in the terminal window to directly open the FEAT GUI).</p>
+<ul>
+<li>At the top left of the GUI select the pull down menu labelled 'First-level analysis'.</li>
+<li>Click here to pull down this menu and choose 'Higher-level analysis'</li>
+</ul>
+<p>Now complete the tabs following the instructions below:</p>
+<h3>Data</h3>
+
+<ul>
+<li>On the 'Data' tab select 'Inputs are lower-level FEAT directories'</li>
+<li>Change “Number of inputs” to be 28</li>
+</ul>
+<p>(Note that there are only 28 inputs here as we are going to use all of the first level feat dirs as inputs except for the worst run of the three that participant 5 did).</p>
+<ul>
+<li>
+<p>Click on Select FEAT directories button. </p>
+</li>
+<li>
+<p>In the form that appears fill in the lines with the <code>.feat</code> directory from the first level analysis from the first participant (scan 1), followed by the second participant (scan 1), followed by the third participant (scan 1, and then scan 2) and so on down to participant 15, scan 2. It is important that you enter these in strict logical order, starting with <code>p01</code> as in this example below:</p>
+</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/feat_directory.png" alt="FEAT Directories" width="400" height="300">
+</p>
+
+<ul>
+<li>When this is done, hit the OK button. </li>
+</ul>
+<p>As always you should now enter a name for the output analysis directory. Use the 'Output' directory entry to choose a directory to put the results in. </p>
+<p>As this is a second-level model it should go under the directory:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2</code> (directory for all FEAT 2nd level analyses)</p>
+<p>and should be meaningfully named. For example, you could call it:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2level2all</code></p>
+<h3>Stats</h3>
+
+<ul>
+<li>Choose 'Fixed Effects' from the pull down menu at the top.</li>
+<li>Click the 'Full model setup' button.</li>
+<li>On the 'EVs' tab set the “Number of main EVs” to be 15 (This corresponds to the 15 participants in the experiment).</li>
+<li>Going across the columns, label each EV as participant <code>p01</code> to <code>p15</code> as per below.</li>
+<li>Going down the columns, for each participant, put a 1 in any row of the EV column for which the participant has a matching scan. Each EV should pick out the scans that correspond to a particular participant. There are 28 rows, corresponding to the 28 first level feat inputs. There should therefore be 28 ones in the design matrix overall (as below).</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_evs.png" alt="GLM EVs" width="850" height="300">
+</p>
+
+<p>On the 'Contrasts and F-tests' tab, we also need 15 contrasts to represent the 15 subject means. Fill in the tab as below: </p>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_contrasts.png" alt="GLM Contrasts" width="800" height="300">
+</p>
+
+<div class="admonition caution">
+<p class="admonition-title">Check boxes in FSL</p>
+<p>In the older versions of FSL after selecting an option you will see a yellow checkbox, however in the newer versions of FSL such as the one we are using, the checkbox is yellow to start with, and after selecting option you will see a tick ✔️ inside the yellow checkbox.</p>
+</div>
+<p>Click the Done button. This will produce a schematic of your new second level design. </p>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/design_matrix.png" alt="Design Matrix" width="700" height="300">
+</p>
+
+<p>Check it makes sense, and that you understand what it is showing, then close its window.</p>
+<h3>Post-Stats</h3>
+
+<p>Accept the defaults.</p>
+<p>Now click the Go button!</p>
+<p>Wait for the analysis to complete and then look at the results. <b>Note that the output folder is called <code>level2all.gfeat</code> if you named it as above.</b>
+You will have to click on the link marked 'Results' and then on the link labelled 'Lower-level contrast 1 (vision)' on that page and then on the 'Post-stats' link. 
+This will then show you a contrast (rendered stats image) for each of the participants.</p>
+<div class="admonition question">
+<p class="admonition-title">Comparing the second-level results</p>
+<p>Are the results from this bigger model better than the simple fixed effects model for the same participant? For example, with participant <code>p09</code>? </p>
+</div>
+<h2 id="third-level-analysis-combining-participant-data-from-the-all-in-one-second-level">Third-level analysis - combining participant data from the 'all-in-one' second-level<a class="headerlink" href="#third-level-analysis-combining-participant-data-from-the-all-in-one-second-level" title="Permanent link">&para;</a></h2>
+<p>We can now estimate the mean group effect by combining across participants from the better second-level analysis we have just calculated above.</p>
+<ul>
+<li>First, close FEAT if you still have it open, then open it again by clicking on the FEAT button in the FSL GUI (or typing <code>Feat &amp;</code> in the terminal window to directly open the FEAT GUI)</li>
+<li>Then at the top left of the GUI select the pull down menu labelled 'First-level analysis' and choose 'Higher-level analysis’</li>
+</ul>
+<h3>Data</h3>
+
+<p>In the second-level analysis we just performed we combined data over both participants and runs, effectively collapsing across runs, and the output analyses were then the summary data for each of the 15 participants.
+<b>Therefore, for this next (third-level) analysis we will again need to combine over the 15 participants.</b></p>
+<p>To do this, follow the steps below:</p>
+<ul>
+<li>On the top button change the default setting from 'Inputs are lower-level FEAT directories' and select 'Inputs are 3D cope images from FEAT directories'.</li>
+<li>Change 'Number of inputs' to be 15 (because we have 15 participant data sets we want to combine)</li>
+<li>Press the button marked 'Select cope images'</li>
+<li>In the dialogue that appears you need to add in the path to the COPE image for each of the participants in the second level analysis we have just performed. </li>
+</ul>
+<p>If you have used the correct naming convention above, this is:</p>
+<div class="codehilite"><pre><span></span><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/level2all.gfeat/cope1.feat/stats/cope1.nii.gz<span class="w"> </span>
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/level2all.gfeat/cope1.feat/stats/cope2.nii.gz<span class="w"> </span>
+...
+/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/level2all.gfeat/cope1.feat/stats/cope15.nii.gz
+</code></pre></div>
+
+<p>As before, you should now enter a name for the output analysis directory. As this is a third level model it should go under the directory:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/3</code> (for all FEAT 3rd level analyses)</p>
+<p>and should be meaningfully named. For example, you can then put this current 3rd level output in the subdirectory:</p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/3/GroupAnalysis2</code></p>
+<h3>Stats</h3>
+
+<ul>
+<li>On the top pull down menu, Select 'Mixed Effects: Flame 1'</li>
+<li>Click on the 'Full model setup' button (Remember, mixed effects means that we can generalise beyond our participants)</li>
+<li>For all the inputs, set EV1 to 1 (see picture below) and name it 'vision'.</li>
+</ul>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/glm_third_evs.png" alt="GLM EVs" width="400" height="300">
+</p>
+
+<ul>
+<li>On the 'Contrasts and F-tests' tab set EV1 to 1 and name the contrast 'group mean'</li>
+<li>Click the 'Done' button</li>
+<li>Check and dismiss the pop-up window</li>
+</ul>
+<h3>Post-Stats</h3>
+
+<ul>
+<li>Accept the defaults</li>
+</ul>
+<p>Now click the 'Go' button!</p>
+<div class="admonition question">
+<p class="admonition-title">Comparing the third-level results</p>
+<p>Check through the output when the group analysis has finished. Is the result better than the simple third level analysis above?</p>
+</div>
+<p>If you followed the instructions in workshop materials, you should be able to replicate and see the results as above in the <code>report.html</code> file inside the respective third level analysis folders ('GroupAnalysis1' and 'GroupAnalysis2').</p>
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/third_level_results.png" alt="Results" width="1000" height="300">
+</p>
+
+<p>As always, help and further information is also available on the relevant section of the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index">FSL Wiki</a>.</p>
 
 
 
@@ -1134,22 +1510,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../../workshop6/higher-level-analysis/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../workshop7-intro/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Running the higher-level analysis
+              Workshop 7 - Aims and objectives
             </div>
           </a>
         
         
-          <a href="../extracting-statistics/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../../workshop8/functional-connectivity/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Extracting statistics from region of interests
+              Functional connectivity analysis of resting-state fMRI data using FSL
             </div>
           </a>
         
@@ -1232,7 +1608,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

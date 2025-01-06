@@ -14,11 +14,11 @@
         <link rel="prev" href="../../workshop5/first-level-analysis/">
       
       
-        <link rel="next" href="../higher-level-analysis/">
+        <link rel="next" href="../running-containers/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#workshop-6-higher-level-fmri-analysis" class="md-skip">
+        <a href="#workshop-6-scripts-containers-and-running-analyses-on-the-academic-computing-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -839,7 +839,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 6 - Higher-level fMRI analysis
+    Workshop 6 - Scripts, containers and running jobs on the cluster
   </span>
   
 
@@ -849,7 +849,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 6 - Higher-level fMRI analysis
+            Workshop 6 - Scripts, containers and running jobs on the cluster
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -891,11 +891,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../higher-level-analysis/" class="md-nav__link">
+      <a href="../running-containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Running the higher-level analysis
+    Scripting analyses, running jobs on the cluster and working with containers
   </span>
   
 
@@ -933,7 +933,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 7 - Bash scripting and region-of-interest analysis
+    Workshop 7 - Higher-level fMRI analysis
   </span>
   
 
@@ -943,7 +943,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 7 - Bash scripting and region-of-interest analysis
+            Workshop 7 - Higher-level fMRI analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -954,11 +954,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/scripting-fsl/" class="md-nav__link">
+      <a href="../../workshop7/workshop7-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scripting FSL commands
+    Workshop 7 - Aims and objectives
   </span>
   
 
@@ -975,11 +975,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/extracting-statistics/" class="md-nav__link">
+      <a href="../../workshop7/higher-level-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Extracting statistics from region of interests
+    Running the higher-level analysis
   </span>
   
 
@@ -1120,25 +1120,21 @@
   
 
 
-<h1 id="workshop-6-higher-level-fmri-analysis">Workshop 6 - Higher-level fMRI analysis<a class="headerlink" href="#workshop-6-higher-level-fmri-analysis" title="Permanent link">&para;</a></h1>
+<h1 id="workshop-6-scripts-containers-and-running-analyses-on-the-academic-computing-cluster">Workshop 6 - Scripts, containers and running analyses on the academic computing cluster<a class="headerlink" href="#workshop-6-scripts-containers-and-running-analyses-on-the-academic-computing-cluster" title="Permanent link">&para;</a></h1>
 <p>Welcome to the sixth workshop of the MRICN course! </p>
-<p>Prior lectures introduced you to the basic concepts and theory behind higher-level fMRI analysis, including multi-session analysis and the general linear model (GLM). <b>In this workshop you will be learning practical skills in how to run higher level fMRI analysis using FSL tools.</b></p>
-<p>This workshop follows on from the <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/">previous (first-level fMRI analysis) workshop</a>. In the previous workshop you analysed the first level data for 2 participants and at the end of the workshop you were asked to analyse the rest of the scans in the data set. Participants 1-2 had one fMRI experiment run each, participants 3-4 and 6-15 had 2 runs each and participant 5 had 3 runs, so there are a total of 29 runs from the 15 participants.</p>
-<p><b>We will now combine the fMRI data across runs and participants in our second and third-level analyses.</b></p>
+<p>Prior workshops introduced you to running MRI analysis with various FSL tools by either using the FSL GUI or typing a simple command in the terminal. In this workshop we will look at how to automate FSL analyses by creating scripts. Subsequently, we will explore how to run FSL scripts more efficiently by submitting jobs to the cluster. The final part of this workshop will introduce how to use FSL containers rather than pre-installed versions of FSL using different modules available on BEAR apps.  </p>
 <div class="admonition success">
 <p class="admonition-title">Overview of Workshop 6</p>
 <p>Topics for this workshop include:</p>
 <ul>
-<li>How to combine scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment</li>
-<li>How to combine scans across participants</li>
-<li>How to set up different higher-level analyses</li>
+<li>Knowing how to automate neuroimaging analyses by <code>bash</code> scripting</li>
+<li>Understanding how to submit and managing analysis jobs on the BlueBEAR cluster using Slurm</li>
+<li>Working with FSL software containers using Apptainer as an alternative to pre-installed versions</li>
 </ul>
 </div>
-<p>As in the other workshops we will not discuss in detail why you might choose certain parameters. The aim of this workshop is to familiarise you with some of the available analysis tools. 
-You are encouraged to read the pop-up help throughout (hold your mouse arrow over FSL GUI buttons and menus when setting your FEAT design), refer to your lecture notes lectures or resource list readings.</p>
 <div class="admonition note">
 <p class="admonition-title">More information</p>
-<p>As always, you can also find more information on running higher-level fMRI analyses on the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/">FSL website</a>.</p>
+<p>The <a href="https://docs.bear.bham.ac.uk/">BEAR Technical Docs</a> provides guidance on submitting jobs to the cluster.</p>
 </div>
 <p><b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 06 workshop materials.</b></p>
 
@@ -1169,12 +1165,12 @@ You are encouraged to read the pop-up help throughout (hold your mouse arrow ove
           </a>
         
         
-          <a href="../higher-level-analysis/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../running-containers/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Running the higher-level analysis
+              Scripting analyses, running jobs on the cluster and working with containers
             </div>
           </a>
         
@@ -1257,7 +1253,7 @@ You are encouraged to read the pop-up help throughout (hold your mouse arrow ove
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

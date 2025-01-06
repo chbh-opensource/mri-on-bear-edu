@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/extracting-statistics/">
+        <link rel="canonical" href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/workshop7-intro/">
       
       
-        <link rel="prev" href="../scripting-fsl/">
+        <link rel="prev" href="../../workshop6/running-containers/">
       
       
-        <link rel="next" href="../../workshop8/functional-connectivity/">
+        <link rel="next" href="../higher-level-analysis/">
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Extracting statistics from region of interests - MRI on BEAR</title>
+        <title>Workshop 7 - Aims and objectives - MRI on BEAR</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#workshop-7-higher-level-fmri-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Extracting statistics from region of interests
+              Workshop 7 - Aims and objectives
             
           </span>
         </div>
@@ -832,7 +837,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 6 - Higher-level fMRI analysis
+    Workshop 6 - Scripts, containers and running jobs on the cluster
   </span>
   
 
@@ -842,7 +847,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 6 - Higher-level fMRI analysis
+            Workshop 6 - Scripts, containers and running jobs on the cluster
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -874,11 +879,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop6/higher-level-analysis/" class="md-nav__link">
+      <a href="../../workshop6/running-containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Running the higher-level analysis
+    Scripting analyses, running jobs on the cluster and working with containers
   </span>
   
 
@@ -918,7 +923,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 7 - Bash scripting and region-of-interest analysis
+    Workshop 7 - Higher-level fMRI analysis
   </span>
   
 
@@ -928,30 +933,9 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 7 - Bash scripting and region-of-interest analysis
+            Workshop 7 - Higher-level fMRI analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scripting-fsl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Scripting FSL commands
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -966,17 +950,40 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Extracting statistics from region of interests
+    Workshop 7 - Aims and objectives
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../higher-level-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running the higher-level analysis
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1113,9 +1120,27 @@
   
 
 
-  <h1>Extracting statistics from region of interests</h1>
-
-
+<h1 id="workshop-7-higher-level-fmri-analysis">Workshop 7 - Higher-level fMRI analysis<a class="headerlink" href="#workshop-7-higher-level-fmri-analysis" title="Permanent link">&para;</a></h1>
+<p>Welcome to the seventh workshop of the MRICN course! </p>
+<p>Prior lectures introduced you to the basic concepts and theory behind higher-level fMRI analysis, including multi-session analysis and the general linear model (GLM). <b>In this workshop you will be learning practical skills in how to run higher level fMRI analysis using FSL tools.</b></p>
+<p>This workshop follows on from the <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/">workshop on first-level fMRI analysis</a>. In that workshop you analysed the first level data for 2 participants and at the end of the workshop you were asked to analyse the rest of the scans in the data set. Participants 1-2 had one fMRI experiment run each, participants 3-4 and 6-15 had 2 runs each and participant 5 had 3 runs, so there are a total of 29 runs from the 15 participants.</p>
+<p><b>We will now combine the fMRI data across runs and participants in our second and third-level analyses.</b></p>
+<div class="admonition success">
+<p class="admonition-title">Overview of Workshop 6</p>
+<p>Topics for this workshop include:</p>
+<ul>
+<li>How to combine scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment</li>
+<li>How to combine scans across participants</li>
+<li>How to set up different higher-level (second and third-level) fMRI analyses</li>
+</ul>
+</div>
+<p>As in the other workshops we will not discuss in detail why you might choose certain parameters. The aim of this workshop is to familiarise you with some of the available analysis tools. 
+You are encouraged to read the pop-up help throughout (hold your mouse arrow over FSL GUI buttons and menus when setting your FEAT design), refer to your lecture notes lectures or resource list readings.</p>
+<div class="admonition note">
+<p class="admonition-title">More information</p>
+<p>As always, you can also find more information on running higher-level fMRI analyses on the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/">FSL website</a>.</p>
+</div>
+<p><b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 07 workshop materials.</b></p>
 
 
 
@@ -1134,22 +1159,22 @@
     <nav class="md-footer-nav md-grid" aria-label="Footer">
       <div class="md-footer-nav__inner">
         
-          <a href="../scripting-fsl/" class="md-footer-nav__link md-footer-nav__link--prev">
+          <a href="../../workshop6/running-containers/" class="md-footer-nav__link md-footer-nav__link--prev">
             <span class="md-footer-nav__direction">
               Previous
             </span>
             <div class="md-footer-nav__title">
-              Scripting FSL commands
+              Scripting analyses, running jobs on the cluster and working with containers
             </div>
           </a>
         
         
-          <a href="../../workshop8/functional-connectivity/" class="md-footer-nav__link md-footer-nav__link--next">
+          <a href="../higher-level-analysis/" class="md-footer-nav__link md-footer-nav__link--next">
             <span class="md-footer-nav__direction">
               Next
             </span>
             <div class="md-footer-nav__title">
-              Functional connectivity analysis of resting-state fMRI data using FSL
+              Running the higher-level analysis
             </div>
           </a>
         
@@ -1232,7 +1257,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

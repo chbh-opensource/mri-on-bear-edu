@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -897,7 +897,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 6 - Higher-level fMRI analysis
+    Workshop 6 - Scripts, containers and running jobs on the cluster
   </span>
   
 
@@ -907,7 +907,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 6 - Higher-level fMRI analysis
+            Workshop 6 - Scripts, containers and running jobs on the cluster
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -939,11 +939,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop6/higher-level-analysis/" class="md-nav__link">
+      <a href="../../workshop6/running-containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Running the higher-level analysis
+    Scripting analyses, running jobs on the cluster and working with containers
   </span>
   
 
@@ -981,7 +981,7 @@
             
   
   <span class="md-ellipsis">
-    Workshop 7 - Bash scripting and region-of-interest analysis
+    Workshop 7 - Higher-level fMRI analysis
   </span>
   
 
@@ -991,7 +991,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Workshop 7 - Bash scripting and region-of-interest analysis
+            Workshop 7 - Higher-level fMRI analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1002,11 +1002,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/scripting-fsl/" class="md-nav__link">
+      <a href="../../workshop7/workshop7-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scripting FSL commands
+    Workshop 7 - Aims and objectives
   </span>
   
 
@@ -1023,11 +1023,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop7/extracting-statistics/" class="md-nav__link">
+      <a href="../../workshop7/higher-level-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Extracting statistics from region of interests
+    Running the higher-level analysis
   </span>
   
 
@@ -1193,14 +1193,14 @@ However, in this case we can see different parameters being used which reflect s
 <p class="admonition-title">Sequence order</p>
 <p>Note that sometimes the T1 was the first scan acquired after the planning scan, sometimes it was the very last scan acquired.</p>
 </div>
-<p>Now that we know what the data is, let's start our analyses. Log in into BlueBEAR portal and start BlueBEAR GUI session (2 hours). You should know how to do it from previous workshops. </p>
+<p>Now that we know what the data is, let's start our analyses. Log in into the BlueBEAR Portal and start a BlueBEAR GUI session (2 hours). You should know how to do it by now from previous workshops. </p>
 <p>Open a new terminal window and navigate to your MRICN project folder:</p>
 <p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx</code>  [where XXX=your ADF username] </p>
-<p>Please check that you are in the correct directory by typing <code>pwd</code>. This should return: <code>/rds/projects/c/chechlmy-chbh-mricn/xxx</code> (where XXX = your login username)</p>
+<p>Please check that you are in the correct directory by typing <code>pwd</code>. This should return: </p>
+<p><code>/rds/projects/c/chechlmy-chbh-mricn/xxx</code> (where XXX = your login username)</p>
 <p>You now need to create a copy of the reconstructed fMRI data to be analysed during the workshop but in your own MRICN folder. To do this, in your terminal type:</p>
 <p><code>cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/recon/ .</code></p>
-<p><b>Be patient as this might take few minutes to copy over.</b> In the meantime, we will revisit BET and learn how to troubleshoot the often problematic process of ”skull-stripping”.</p>
-<p><br></p>
+<p><b>Be patient as this might take few minutes to copy over.</b> In the meantime, we will revisit BET and learn how to troubleshoot the often problematic process of 'skull-stripping'.</p>
 <h2 id="skull-stripping-t1-scans-using-bet-on-the-command-line">Skull-stripping T1 scans using BET on the command-line<a class="headerlink" href="#skull-stripping-t1-scans-using-bet-on-the-command-line" title="Permanent link">&para;</a></h2>
 <p>We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
 We will do this using FSL's BET on the command line. As you should know from previous workshops the basic command-line version of BET is: </p>
@@ -1225,13 +1225,16 @@ module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-202
 <p>After this, navigate inside the copied BET folder and type:</p>
 <p><code>bet T1.nii.gz T1_brain1</code></p>
 <p>Open FSLeyes (<code>fsleyes &amp;</code>), and when this is open, load up the T1 image, and add the <code>T1_brain1</code> image. Change the colour for the <code>T1_brain1</code> to Red. </p>
-<p><b>This will likely show that the default brain extraction was not very good and included nonbrain matter.</b> It may also have cut into the brain and thus some part of the cortex is missing. The reason behind the poor brain extraction is a large FOV (resulting in the head plus a large amount of neck present). </p>
+<p><b>This will likely show that the default brain extraction was not very good and included non-brain matter.</b> It may also have cut into the brain and thus some part of the cortex is missing. The reason behind the poor brain extraction is a large field-of-view (FOV) (resulting in the head plus a large amount of neck present). </p>
 <p>There are different ways to fix a poor BET output i.e., problematic ”skull-stripping”.</p>
 <p><b>First of all, you can use the <code>-R</code> option. </b></p>
 <p>This option is used to run BET in an iterative fashion which allows it to better determine the centre of the brain itself. </p>
 <p>In your terminal type:</p>
 <p><code>bet T1.nii.gz T1_brain2 -R</code></p>
-<p>Instead of using the <code>bet</code> command from the terminal, you can also use the BET GUI. To run it this way, you would need to select the processing option “Robust brain centre estimation (iterates bet2 several times)” from the pull down menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Running BET recursively from the BET GUI</p>
+<p>Instead of using the <code>bet -R</code> command from the terminal, you can also use the BET GUI. To run it this way, you would need to select the processing option “Robust brain centre estimation (iterates bet2 several times)” from the pull down menu.</p>
+</div>
 <p>You will find that running BET with <code>-R</code> option takes longer than before because of the extra iterations. Reload the newly extracted brain (<code>T1_brain2</code>) into FSLeyes and check that the extraction now looks improved. </p>
 <p>In the case of T1 images with a large FOV, you can first crop the image (to remove portion of the neck) and run BET again. To do that you need to use command <code>robustfov</code> before applying BET. But first rename the original image. </p>
 <p>Type in your terminal:</p>
@@ -1248,9 +1251,10 @@ bet<span class="w"> </span>T1.nii.gz<span class="w"> </span>T1_brain3<span class
 <p>Reload the newly extracted brain (<code>T1_brain3</code>) into FSLeyes and compare it to <code>T1_brain1</code> and to check that the extraction looks improved. Also compare the cropped T1 image to the original one with a large FOV (<code>T1neck</code>). </p>
 <p>Another option is to leave the large FOV and to manually set the initial centre by hand via the <code>-c</code> option on the command line. 
 To do that you need to firstly examine the T1 scan in FSLeyes to get a rough estimation (in voxels) of where the centre of the brain is. </p>
-<p>There is another BET option, which can improve ”skull stripping”, the fractional intensity threshold, which by default is set to 0.5. 
+<p>There is another BET option which can improve ”skull stripping”: the fractional intensity threshold, which by default is set to 0.5. 
 You can change it from any value between 0-1. <b>Smaller values give larger brain outline estimates (and vice versa).</b>
-Thus, you can make it smaller if you think that too much brain tissue has been removed. To use it, you need to use the <code>-f</code> option (e.g., <code>bet T1.nii.gz T1_brain -f 0.3</code>). </p>
+Thus, you can make it smaller if you think that too much brain tissue has been removed. </p>
+<p>To use it, you would need to use the <code>-f</code> option (e.g., <code>bet T1.nii.gz T1_brain -f 0.3</code>). </p>
 <div class="admonition example">
 <p class="admonition-title">Changing the fractional intensity</p>
 <p>In your own time (after the workshop) you can check the effect of changing the fractional intensity threshold to 0.1 and 0.9 (however make sure you name the outputs accordingly, so you know which one is which).</p>
@@ -1284,7 +1288,7 @@ Thus, you can make it smaller if you think that too much brain tissue has been r
 <p>Explore what’s inside each participant folder. Please note that each participant folder only contains reconstructed data. <b>It’s a good idea to store raw and reconstructed data separately.</b> At this point you should have access to reconstructed participants <code>p01</code> to <code>p15</code>. The reconstructed data should be in folders named <code>~/chechlmy-chbh-mricn/xxx/recon/p01</code> etc. </p>
 <p>However, apart from the T1 images that have been already renamed for you, the other reconstructed files in this directory will have unusual names, created automatically by the <code>dcm2nii</code> conversion program. </p>
 <p>You can see this by typing into your terminal:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w">  </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p03<span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p03<span class="w"> </span>
 ls
 </code></pre></div>
 
@@ -1306,7 +1310,7 @@ immv<span class="w"> </span>fs005a001<span class="w"> </span>fmri2
 <ul>
 <li>The 'immv' command is a special FSL Linux command that works just like the standard Linux <code>mv</code> command except that it automatically takes care of the filename extensions. It saves from having to write out:
 <code>mv fs004a001.nii.gz fmri1.nii.gz</code> which would be the standard Linux command to rename a file.</li>
-<li>You can of course name these files to anything you want. In principle, you could call the fMRI scan <code>run1</code> or <code>fmri_run1</code> or <code>epi1</code> or whatever. The important thing is that you need to be extremely consistent in the naming of files for the different participants.</li>
+<li>You can of course name these files to anything you want. In principle, you could call the fMRI scan <code>run1</code> or <code>fmri_run1</code> or <code>epi1</code> or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b></li>
 </ul>
 </div>
 <p>For this workshop we will use the naming convention above and call the files <code>fmri1.nii.gz</code> and <code>fmri2.nii.gz</code>.</p>
@@ -1331,7 +1335,7 @@ fslinfo<span class="w"> </span>fs005a001.nii.gz
  <img src="../../assets/images/workshop5/preprocessing/fslinfo.png" alt="FSLinfo" width="700" height="300">
 </p>
 
-<p>Before proceeding to the next section, close your terminal.</p>
+<p>Before proceeding to the next section on running a first-level fMRI analysis, close your terminal.</p>
 
 
 
@@ -1448,7 +1452,7 @@ fslinfo<span class="w"> </span>fs005a001.nii.gz
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
