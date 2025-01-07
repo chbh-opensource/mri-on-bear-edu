@@ -67,9 +67,9 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 | [Workshop 2](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) | NIFTI/DICOM format, FSLeyes viewer, MRI atlases |
 | [Workshop 3](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) | DTI preprocessing, DTIfit, TBSS, BET |
 | [Workshop 4](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) | Probabilistic tractography, BEDPOSTX, PROBTRACKX |
-| [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | Advanced BET, FEAT, First-level GLM |
-| [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) | Group-level analysis, Fixed/Random effects |
-| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Bash scripting, ROI analysis, Automated processing |
+| [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | Advanced BET, FEAT, First-level fMRI analysis |
+| [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro) | Bash scripting, Submitting jobs, Containers |
+| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Group-level fMRI analysis, Fixed/Random effects |
 | [Workshop 8](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) | Resting-state fMRI, Functional connectivity, Neurosynth |
 
 <br>
