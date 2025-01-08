@@ -40,24 +40,24 @@ The MRICN course during Spring Term 2024-25 will have the following dates (subje
 
 <div align="center">
 
-| **Week** | **Workshop** |
-|:--------:|:------------:|
-| Week 1 | No workshop |
-| Week 2 | [Introduction to BlueBEAR and Linux](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) |
-| Week 3 | No workshop |
-| Week 4 | [Basic MRI Skills](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) |
-| Week 5 | [Basic diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) |
-| Week 6 | MRI demo (optional) |
-| Week 7 | [Advanced diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) |
-| Week 8 | [First-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) |
-| Week 9 | No workshop (Reading Week) |
-| Week 10 | [Higher-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) |
-| Week 11 | [Bash scripting and statistical analysis of fMRI data](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) |
-| Week 12 | [Functional connectivity](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) (optional) |
+| **Week** | **Date** | **Workshop** |
+|:--------:|:--------:|:------------:|
+| Week 1 | TBD | No workshop |
+| Week 2 | TBD | [Introduction to BlueBEAR and Linux](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) |
+| Week 3 | TBD | No workshop |
+| Week 4 | TBD | [Basic MRI Skills](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) |
+| Week 5 | TBD | [Basic diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) |
+| Week 6 | TBD | MRI demo at the CHBH (optional) |
+| Week 7 | TBD | [Advanced diffusion MRI analyses](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) |
+| Week 8 | TBD | [First-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) |
+| Week 9 | TBD | No workshop (Reading Week) |
+| Week 10 | TBD | [Bash scripting, submitting jobs, and containers](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) |
+| Week 11 | TBD | [Higher-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) |
+| Week 12 | TBD | [Functional connectivity](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) (optional) |
 
 </div>
 
-Workshops will be held at Computer Room G19, Gisbert Kapp, at the School of Psychology during all weeks with the exception of Weeks 6 and 12.
+Workshops will be held at Computer Room G19, Gisbert Kapp, at the School of Psychology.
 
 ## Getting Started
 
