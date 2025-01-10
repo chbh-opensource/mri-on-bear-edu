@@ -464,16 +464,3 @@ If you type **[46, -70, 32]** as co-ordinates in Neurosynth, and then into the M
 </div>
 <br>
 This is a great result given that we only have three subjects!
-
-!!! success "Learning outcomes of this workshop"
-    In this workshop, you have:
-
-    - Created a seed region in the posterior cingulate cortex (PCC) using FSL's standard brain and atlases
-    - Extracted mean time-series data from the PCC for three subjects
-    - Run a single-subject functional connectivity analysis manually using FEAT
-    - Learned to automate analyses by scripting FEAT for multiple subjects using bash
-    - Conducted a group-level analysis to identify regions showing functional connectivity with the PCC
-    - Used two different methods to identify active brain regions:
-        - FSL's Harvard-Oxford atlas for anatomical localization
-        - Neurosynth for validating findings against meta-analytic data
-    - Successfully identified functional connectivity between the PCC and lateral occipital cortex, replicating known patterns of functional connectivity

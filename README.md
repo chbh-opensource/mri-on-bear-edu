@@ -52,7 +52,7 @@ The MRICN course during Spring Term 2024-25 will have the following dates (subje
 | Week 8 | TBD | [First-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) |
 | Week 9 | TBD | No workshop (Reading Week) |
 | Week 10 | TBD | [Bash scripting, submitting jobs, and containers](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/) |
-| Week 11 | TBD | [Higher-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) |
+| Week 11 | TBD | [Higher-level fMRI analysis](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/workshop7-intro/) |
 | Week 12 | TBD | [Functional connectivity](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) (optional) |
 
 </div>
