@@ -8,8 +8,6 @@
 
 Welcome to the MRI-on-BEAR website, a freely available resource created by researchers at the [Centre for Human Brain Health](https://www.birmingham.ac.uk/research/centre-for-human-brain-health), University of Birmingham. The website is made for students on the 'Magnetic Resonance Imaging in Cognitive Neuroscience' course, but may also be useful to external students and researchers. However, please BEAR in mind that the course materials were designed to run on computing resources at the University of Birmingham!
 
-This README is primarily for students, and will help you navigate the course materials and get started with the practical workshops.
-
 ## Table of contents
 
 - [Course Overview](#course-overview)
@@ -32,8 +30,6 @@ This README is primarily for students, and will help you navigate the course mat
 ## Course Overview
 
 The series of workshops collectively provide <b>a comprehensive introduction to Magnetic Resonance Imaging (MRI) techniques in cognitive neuroscience, including the analysis of diffusion and functional magnetic resonance imaging (fMRI) data</b>. In doing so, you will also learn how to access the BEAR Portal, BlueBEAR and basic programming skills required for working with neuroimaging data (e.g., Linux commands and bash scripting). 
-
-Workshops will be held at Computer Room G19, Gisbert Kapp, at the School of Psychology.
 
 ## Getting Started
 
@@ -61,13 +57,13 @@ If you encounter any issues or have questions please contact the following:
 
 ## 🛠️ Contributing (for CHBH staff)
 
-If you teach on the course, or are staff member at the CHBH and could like to contribute to the website, please follow the instructions below.
+If you teach on the course, or are a staff member at the CHBH and could like to contribute to the website, please follow the instructions below.
 
 ### 🔧 Development Setup
 
 You will firstly need to re-create the website locally. The website is built using [MkDocs](https://www.mkdocs.org/), which is nice and easy to work with. After cloning the repository, to install all the required `mkdocs` Python packages, use the provided `requirements.txt` file within the root of this repository. The recommendation for development is to do this inside a dedicated virtual environment. 
 
-All of these steps can be done using the commands below:
+All of these steps can be done using the commands below (if you have push access):
 
 ```shell
 git clone https://github.com/chbh-opensource/mri-on-bear
@@ -77,7 +73,7 @@ source ./.venv/bin/activate
 pip install -r requirements.txt
 ```
 
-This assumes that you have push access. If you do not, you will need to `git clone` from your own GitHub account:
+If you do not, you will need to `git clone` from your own GitHub account:
 
 `git clone https://github.com/YOUR-USERNAME/mri-on-bear`
 
