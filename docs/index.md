@@ -37,7 +37,7 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 
 <div style="margin-top: 30px;"></div>
 
-[Magdalena Chechlacz](https://www.birmingham.ac.uk/staff/profiles/psychology/chechlacz-magda) is an Assistant Professor in Cognition and Ageing at the School of Psychology, University of Birmingham. She initially trained and carried out a doctorate in cellular and molecular biology (2002). After working as a biologist (Larry L. Hillblom Foundation Fellowship at the University of California, San Diego) she decided on a career change to a more human-oriented science and neuroimaging. In order to gain formal training in cognitive neuroscience and neuroimaging, she completed a second doctorate in psychology at the University of Birmingham under the supervision of Glyn Humphreys (2012). From 2013 to 2016, she held a British Academy Postdoctoral Fellowship and EPA Cephalosporin Junior Research Fellowship, Linacre College at the University of Oxford. In 2016, Dr Chechlacz returned to the School of Psychology, University of Birmingham as a Bridge Fellow.
+[Magdalena Chechlacz](https://www.birmingham.ac.uk/staff/profiles/psychology/chechlacz-magda) is an Assistant Professor in Cognition and Ageing at the School of Psychology, University of Birmingham. She initially trained and carried out a doctorate in Cellular and Molecular Biology in 2002, and after working as a biologist at the University of California, San Diego, decided on a career change to a more human-oriented science and neuroimaging. She completed a second doctorate in psychology at the University of Birmingham under the supervision of Glyn Humphreys in 2012, and from 2013 to 2016, held a British Academy Postdoctoral Fellowship and EPA Cephalosporin Junior Research Fellowship at Linacre College, University of Oxford. In 2016, Dr Chechlacz returned to the School of Psychology, University of Birmingham as a Bridge Fellow.
 
 <br>
 <p>
@@ -63,13 +63,13 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 | Workshop | Key Concepts/Tools |
 |----------|-------------------|
 | [Getting Started](https://chbh-opensource.github.io/mri-on-bear-edu/setting-up/) | BEAR Portal, BEAR Storage, BlueBEAR |
-| [Workshop 1](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) | BlueBEAR GUI, Linux commands, Terminal basics |
-| [Workshop 2](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) | NIFTI/DICOM format, FSLeyes viewer, MRI atlases |
-| [Workshop 3](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) | DTI preprocessing, DTIfit, TBSS, BET |
+| [Workshop 1](https://chbh-opensource.github.io/mri-on-bear-edu/workshop1/workshop1-intro/) | BlueBEAR GUI, Linux commands |
+| [Workshop 2](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/workshop2-intro/) | MRI data formats, FSLeyes, MRI atlases |
+| [Workshop 3](https://chbh-opensource.github.io/mri-on-bear-edu/workshop3/workshop3-intro/) | DTIfit, TBSS, BET |
 | [Workshop 4](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) | Probabilistic tractography, BEDPOSTX, PROBTRACKX |
-| [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | Advanced BET, FEAT, First-level fMRI analysis |
+| [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | FEAT, First-level fMRI analysis |
 | [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro) | Bash scripting, Submitting jobs, Containers |
-| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Group-level fMRI analysis, Fixed/Random effects |
+| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Higher-level fMRI analysis, FEATquery |
 | [Workshop 8](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) | Resting-state fMRI, Functional connectivity, Neurosynth |
 
 <br>
@@ -77,4 +77,10 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 !!! info "Accessing additional course materials"
     If you are a CHBH member and would like access to additional course materials (lecture recordings etc.), please contact one of the teaching staff members listed above.
 
-<br>
+## License
+
+MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear-edu). All content in this book (i.e., any files and content in the `docs/` folder) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license. Please see the `LICENSE` file in the GitHub repository for more details.
+
+<p>
+  <img src="assets/images/main_page/cc_by_sa.png" alt="CC-BY-SA" width="100" height="200">
+</p>
