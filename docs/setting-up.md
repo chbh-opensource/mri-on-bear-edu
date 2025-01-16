@@ -32,9 +32,9 @@ There are two steps to gaining access to BlueBEAR:
 !!! note "Gaining access to BEAR Projects"
     Only a member of academic staff e.g., your project supervisor or module lead, can apply for a BEAR project. <b>As a student you cannot apply for a BEAR project.</b> If you are registered as a student on the MRICN module, you should have already been added as member to the project `chechlmy-chbh-mricn`. If not please contact one of the teaching staff.
 
-Even if you are already a member of a BEAR project giving you BlueBEAR access, you will still need to activate your BEAR Linux account via the self-service route or the service desk form. The information on how to do it and step-by-step instructions are available on the BEAR website, see the following [link](https://www.birmingham.ac.uk/research/arc/contact/bear-linux-account?_ga=2.176269477.1685318850.1729004469-1655917096.1696437021).
+Even if you are already a member of a BEAR project giving you BlueBEAR access, you will still need to activate your BEAR Linux account via the self-service route or the service desk form. The information on how to do it and step-by-step instructions are available on the University Advanced Research Computing page, see the following [link](https://www.birmingham.ac.uk/research/arc/contact/bear-linux-account).
 
-<b>Please follow these steps as above to make sure you have a BEAR Linux account before starting with workshop 1 materials.</b> To do this you will need to be on campus or using the [University Remote Access Service (VPN)](https://intranet.birmingham.ac.uk/collaboration/pure/using-pure/remote-access.aspx). 
+<b>Please follow these steps as above to make sure you have a BEAR Linux account before starting with workshop 1 materials.</b> To do this you will need to be on campus or using the [University Remote Access Service (VPN)](https://itservicedesk.bham.ac.uk/itportal?id=uob_kb_article&sysparm_article=KB13508). 
 
 <h2>Signing in to the BEAR Portal</h2>
 
