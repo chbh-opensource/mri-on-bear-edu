@@ -164,3 +164,22 @@ table {
 .md-typeset .admonition p {
     font-size: 1.2em; /* This is for the text inside the note */
 }
+
+/* Increase size of bullet points and list items in admonitions */
+.md-typeset .admonition ul,
+.md-typeset .admonition ol {
+    font-size: 1.1em;
+}
+
+/* If nested lists are present, prevent compound size increases */
+.md-typeset .admonition ul ul,
+.md-typeset .admonition ul ol,
+.md-typeset .admonition ol ul,
+.md-typeset .admonition ol ol {
+    font-size: 1em;
+}
+
+/* Ensure proper bullet point alignment */
+.md-typeset .admonition li {
+    margin-bottom: 0.5em;
+}

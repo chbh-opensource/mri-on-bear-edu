@@ -7,7 +7,7 @@ Linux is a computer Operating System (OS) similar to Microsoft Windows or Mac OS
 
 <b>If you work in neuroimaging, it is to your advantage to become familiar with Linux. The more familiar you are, the more productive you will become.</b> For some of you, this might be a challenge. The environment will present a new learning experience, one that will take time and effort to learn. But in the end, you should hopefully realize that the benefits of learning to work in this new computer environment are indeed worth the effort. 
 
-Linux is not like the Windows or Mac OSX environments. It is best used by typing commands into a Terminal client and by writing small batch command programs. Frequently you may not even need to use the mouse. Using the Linux environment alone may take some getting used to, but will become more familar throughout the course, as we use them to navigate through our file system and to script our analyses. <b>For now, we will simply explore using the Linux terminal and simple commands</b>.
+Linux is not like Windows or Mac OSX environments. It is best used by typing commands into a Terminal client and by writing small batch command programs. Frequently you may not even need to use the mouse. Using the Linux environment alone may take some getting used to, but will become more familar throughout the course, as we use them to navigate through our file system and to script our analyses. <b>For now, we will simply explore using the Linux terminal and simple commands</b>.
 
 ## Using the Linux Terminal
 
@@ -16,13 +16,13 @@ BlueBEAR GUI enables to load various apps and applications by using the Linux en
 Either by selecting from the drop-down menu:
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal1.png" alt="Open Terminal" width="700" height="300">
+  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal1.png" alt="Open Terminal" width="900" height="300">
 </p>
 <br>
 Or by selecting the folder at the bottom of the screen:
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal2.png" alt="Open Terminal 2" width="700" height="300">
+  <img src="../../assets/images/workshop1/intro-to-linux/open_terminal2.png" alt="Open Terminal 2" width="900" height="300">
 </p>
 <br>
 In either case you will load the terminal:
@@ -68,7 +68,7 @@ Examples of directories on BlueBEAR include:
 - `/rds/projects/c/chechlmy-chbh-mricn` (our module RDS project directory) 
 
 !!! note "Directory separators on Linux and Windows"
-    / (forward slash) is the Linux directory separator. Note that this is different from Windows (where the backward slash \ is the directory separator).
+    `/` (forward slash) is the Linux directory separator. Note that this is different from Windows (where the backward slash `\` is the directory separator).
 
 The current directory is always called `.` (i.e. a single dot).
 
@@ -81,7 +81,7 @@ Your home directory can always be accessed using the shortcut `~` (the tilde sym
 ## Basic Linux Commands
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-linux/linux_cheatsheet.png" alt="Linux Cheatsheet" width="600" height="600">
+  <img src="../../assets/images/workshop1/intro-to-linux/linux_cheatsheet.png" alt="Linux Cheatsheet" width="700" height="600">
 </p>
 
 <b>pwd (Print Working Directory) </b>

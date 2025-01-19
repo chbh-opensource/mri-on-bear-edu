@@ -69,7 +69,7 @@ This website contains workshop materials created for the MSc module 'Magnetic Re
 | [Workshop 4](https://chbh-opensource.github.io/mri-on-bear-edu/workshop4/workshop4-intro/) | Probabilistic tractography, BEDPOSTX, PROBTRACKX |
 | [Workshop 5](https://chbh-opensource.github.io/mri-on-bear-edu/workshop5/workshop5-intro/) | FEAT, First-level fMRI analysis |
 | [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro) | Bash scripting, Submitting jobs, Containers |
-| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/scripting-fsl/) | Higher-level fMRI analysis, FEATquery |
+| [Workshop 7](https://chbh-opensource.github.io/mri-on-bear-edu/workshop7/workshop7-intro) | Higher-level fMRI analysis, FEATquery |
 | [Workshop 8](https://chbh-opensource.github.io/mri-on-bear-edu/workshop8/functional-connectivity/) | Resting-state fMRI, Functional connectivity, Neurosynth |
 
 <br>

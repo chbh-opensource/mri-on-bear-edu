@@ -8,12 +8,10 @@ Linux OS is similar to other operating systems such as Mac OS and Windows, and c
 !!! success "Overview of Workshop 1"
     Topics for this workshop include:
 
-    - Introduction to BlueBEAR portal
+    - Introduction to the BEAR Portal
     - Using the BlueBEAR Graphical User Interface (GUI) environment
-    - Files and Directories in BEAR Portal
-    - Introduction to Linux
-    - Using the Linux Terminal
-    - Basic Linux Commands
+    - Navigating files and directories in the BEAR Portal
+    - Introduction to Linux, and using basic Linux commands in the Terminal
 
 !!! danger "Pre-requisites for the workshop"
     Please ensure that you have completed the '[Setting Up](https://chbh-opensource.github.io/mri-on-bear-edu/setting-up/)' section of this course, as you will require access to the BEAR Portal for this workshop.

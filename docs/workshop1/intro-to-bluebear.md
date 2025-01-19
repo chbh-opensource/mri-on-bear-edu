@@ -40,13 +40,13 @@ If you navigate to that folder `rds/projects/c/chechlmy-chbh-mricn/xxx`, you wil
 
 ## Launching the BlueBEAR GUI
 
-The BlueBEAR Portal options in the menu bar, 'Jobs', 'Clusters' and 'My Interactive Sessions' can be used to submit and edit jobs to run on the BlueBEAR cluster and to get information about your currently running jobs and interactive sessions. Some of these processes can be also executed using Code Server Editor (VS Code) accessible via Interactive Apps. We won’t explore these options in detail now but some of these will be introduced later when needed. 
+The BlueBEAR Portal options in the menu bar, 'Jobs', 'Clusters' and 'My Interactive Sessions' can be used to submit and edit jobs to run on the BlueBEAR cluster and to get information about your currently running jobs and interactive sessions. Some of these processes can be also executed using the Code Server Editor (VS Code) accessible via Interactive Apps. We won’t explore these options in detail now but some of these will be introduced later when needed. 
 
 <p align="center">
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_tabs.png" alt="BEAR Tabs" width="900" height="300">
 </p>
 
-For example, from the 'Cluster' option you can jump directly on BlueBEAR terminal and by using this built-in terminal, submit data analysis jobs and/or employ own contained version of neuroimaging software rather than software already available on BlueBEAR. We will cover containers, scripting and submitting jobs in later workshops. <b>For now, just click on this option and see what happens; you can subsequently exit/close the terminal page.</b>
+For example, from the 'Cluster' option you can jump directly on to the BlueBEAR terminal and by using this built-in terminal, submit data analysis jobs and/or employ your own contained version of neuroimaging software rather than software already available on BlueBEAR. We will cover containers, scripting and submitting jobs in [Workshop 6](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/). <b>For now, just click on this option and see what happens; you can subsequently exit/close the terminal page.</b>
 
 Finally, from the BlueBEAR Portal menu bar you can select 'Interactive Apps' and from there access various GUI applications you wish to use, including [JupyterLab](https://jupyter.org/), [RStudio](https://posit.co/download/rstudio-desktop/), [MATLAB](https://uk.mathworks.com/products/matlab.html?requestedDomain=) and most importantly the <b>BlueBEAR GUI</b>, which we will be using to analyse MRI data in the subsequent workshops. 
 
@@ -54,7 +54,7 @@ Finally, from the BlueBEAR Portal menu bar you can select 'Interactive Apps' and
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_gui_dropdown.png" alt="BEAR GUI" width="900" height="300">
 </p>
 
-Please select 'BlueBEAR GUI'. This will bring up a page for you to specify options for your job to start the BlueBEAR GUI. You can leave some of these options as default. But please <b>change “Number of Hours” to 2</b> (our workshops will last 2 hours; for some other analysis tasks you might need more time) and make sure that the selected 'BEAR Project' is `chechlmy-chbh-mricn`. Next click on Launch.
+Please select 'BlueBEAR GUI'. This will bring up a page for you to specify options for your job to start the BlueBEAR GUI. You can leave some of these options as default. But please <b>change “Number of Hours” to 2</b> (our workshops will last 2 hours; for some other analysis tasks you might need more time) and make sure that the selected 'BEAR Project' is `chechlmy-chbh-mricn`. Next click on 'Launch'.
 
 <p align="center">
   <img src="../../assets/images/workshop1/intro-to-bluebear/bluebear_gui_options.png" alt="BEAR GUI Options" width="400" height="1200">
