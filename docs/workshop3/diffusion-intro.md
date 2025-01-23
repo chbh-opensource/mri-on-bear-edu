@@ -90,7 +90,7 @@ Let's view the content of the `bvals` and `bvecs` files by using the `cat` comma
 `cat blip_down.bval`
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-intro/cat_bval.png" alt="Cat bval" width="700" height="300">
+  <img src="../../assets/images/workshop3/diffusion-intro/cat_bval.png" alt="Cat bval" width="900" height="300">
 </p>
 
 The first number is 0. This indicates that indeed the first volume (volume 0) is a non-diffusion weighted image and the third volume (volume 2) is diffusion weighted volume with b=1500. 
@@ -118,7 +118,7 @@ All types of distortions need correction during pre-processing steps in diffusio
 The processing with these two tools is time and computing intensive. <b>Therefore we will not run the distortion correction steps in the workshop but instead explore some principles behind it.</b> 
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-intro/distortion_types.png" alt="Distortion Types" width="700" height="300">
+  <img src="../../assets/images/workshop3/diffusion-intro/distortion_types.png" alt="Distortion Types" width="800" height="300">
 </p>
 
 For this, you are given distortion corrected data to conduct further analysis, diffusion tensor fitting and probabilistic tractography.  
@@ -203,11 +203,11 @@ and then open the 'BET brain extraction tool' by clicking on it in the GUI.
 In either case, once BET is opened, click on advanced options and make sure the first two outputs are selected ('brain extracted image' and 'binary brain mask') as below. Select as the 'Input' image the previously created `nodif.nii.gz` and change 'Fractional Intensity Threshold' to 0.4. Then click the 'Go' button. 
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui.png" alt="BET GUI" width="600" height="300">
+  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui.png" alt="BET GUI" width="800" height="300">
 </p>
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui_detailed.png" alt="BET GUI Detailed" width="600" height="300">
+  <img src="../../assets/images/workshop3/diffusion-intro/bet_gui_detailed.png" alt="BET GUI Detailed" width="800" height="300">
 </p>
 
 !!! tip "Completing BET in the terminal"

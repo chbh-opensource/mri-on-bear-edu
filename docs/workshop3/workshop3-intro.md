@@ -11,8 +11,8 @@ By the end of the two workshops, you should be able to understand the principles
 
     - Visualizing diffusion data using FSLeyes (before and after distortion correction)
     - Using FSL's Brain Extraction Tool (BET) to create a brain mask
-    - Understand and perform diffusion tensor fitting (DTIfit) to generate key diffusion metrics like FA (Fractional Anisotropy) and MD (Mean Diffusivity)
-    - Learn to conduct Tract-Based Spatial Statistics (TBSS) for group-level comparisons of diffusion data
+    - Performing diffusion tensor fitting (DTIfit) to generate key diffusion metrics like FA (Fractional Anisotropy) and MD (Mean Diffusivity)
+    - Learning to conduct Tract-Based Spatial Statistics (TBSS) for group-level comparisons of diffusion data
 
 We will be working with various previously acquired datasets (similar to the data acquired during the CHBH MRI Demonstration/Site visit). We will not go into details as to why and how specific sequence parameters and specific values of the default settings have been chosen. Some values should be clear to you from the lectures or assigned on Canvas readings, please check there, or if you are still unclear, feel free to ask. 
 

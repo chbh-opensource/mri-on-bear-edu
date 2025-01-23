@@ -4,7 +4,7 @@
 
 ![GitHub stars](https://img.shields.io/github/stars/chbh-opensource/mri-on-bear-edu) ![GitHub repo size](https://img.shields.io/github/repo-size/chbh-opensource/mri-on-bear-edu)
 
-> 🎯 **Purpose:** A freely available resource for the 'Magnetic Resonance Imaging in Cognitive Neuroscience' course at the Centre for Human Brain Health
+> **Purpose:** A freely available resource for the 'Magnetic Resonance Imaging in Cognitive Neuroscience' course at the Centre for Human Brain Health
 
 Welcome to the MRI-on-BEAR website, a freely available resource created by researchers at the [Centre for Human Brain Health](https://www.birmingham.ac.uk/research/centre-for-human-brain-health), University of Birmingham. The website is made for students on the 'Magnetic Resonance Imaging in Cognitive Neuroscience' course, but may also be useful to external students and researchers. However, please BEAR in mind that the course materials were designed to run on computing resources at the University of Birmingham!
 
@@ -41,25 +41,23 @@ Whilst not mandatory, additional resources related to the course can also be fou
 
 If you encounter any issues or have questions please contact the following:
 
-### 📚 Course-related Issues
+### Course-related Issues
 - **Dr Magda Chechlacz** (Module Lead)
-  - 📧 [m.chechlacz@bham.ac.uk](mailto:m.chechlacz@bham.ac.uk)
+  - [m.chechlacz@bham.ac.uk](mailto:m.chechlacz@bham.ac.uk)
 
-### 💻 IT/Computing Support
+### IT/Computing Support
 - **Charnjit Sidhu** (Lead Computing Officer, CHBH)
-  - 📧 [c.sidhu@bham.ac.uk](mailto:c.sidhu@bham.ac.uk)
+  - [c.sidhu@bham.ac.uk](mailto:c.sidhu@bham.ac.uk)
 
-### 🌐 Website/GitHub enquiries
+### Website/GitHub enquiries
 - **Aamir Sohail** (Module Teaching Assistant)
-  - 📧 [axs2210@bham.ac.uk](mailto:axs2210@bham.ac.uk)
+  - [axs2210@bham.ac.uk](mailto:axs2210@bham.ac.uk)
 
-> ⏰ Please contact us during working hours (9am-5pm)!
-
-## 🛠️ Contributing (for CHBH staff)
+## Contributing (for CHBH staff)
 
 If you teach on the course, or are a staff member at the CHBH and could like to contribute to the website, please follow the instructions below.
 
-### 🔧 Development Setup
+### Development Setup
 
 You will firstly need to re-create the website locally. The website is built using [MkDocs](https://www.mkdocs.org/), which is nice and easy to work with. After cloning the repository, to install all the required `mkdocs` Python packages, use the provided `requirements.txt` file within the root of this repository. The recommendation for development is to do this inside a dedicated virtual environment. 
 

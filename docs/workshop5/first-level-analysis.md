@@ -176,7 +176,7 @@ FEAT has a built-in progress watcher, the 'FEAT Report', which you can open in a
 To do that, you need to navigate inside the `p01_s1.feat` folder from the BlueBEAR Portal as below and from there select the `report.html` file, and either open it in a new tab or in a new window. 
 
 <p align="center">
- <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="600" height="300">
+ <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="700" height="300">
 </p>
 
 Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).
@@ -223,7 +223,7 @@ Let's have a look and see the effects that other parameters have on the data. To
     - High pass filter: set to 30sec (i.e. 50% less than OFF+ON time period). 
 - Hit 'Go'
 
-<b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', 'p01_s1+.feat', 'p01_s1++.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. 
+<b>Note that each time you rerun FEAT, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named `p01_s1.feat`, `p01_s1+.feat`, `p01_s1++.feat`, and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. 
 
 For example, if you wanted to remove all files and directories that end with '+' for participant 1:
 
@@ -262,10 +262,11 @@ Now change the input 4D file, the output directory name, and the registration de
 
     <b>There are therefore 29 separate analyses that need to be done.</b>
     
-    - Analyze each of these 29 fMRI runs independently and put the output of each one into a separate, clearly labelled directory as suggested above. 
-    - Try and get all these done before the next fMRI workshop in week 10 on higher level fMRI analysis as you will need this processed data for that workshop. You have two weeks to complete this task. 
+    Analyze each of these 29 fMRI runs independently and put the output of each one into a separate, clearly labelled directory as suggested above. 
+    
+    Try and get all these done before the next fMRI workshop in week 10 on higher level fMRI analysis as you will need this processed data for that workshop. You have two weeks to complete this task. 
 
 !!! tip "Scripting your analysis"
-    It will seem laborious to re-write and re-run 29 separate FEAT analyses; a much quicker way is by scripting our analyses using `bash`. If you would like, try scripting your analyses! Contact one of the course TA's or convenors if you are stuck!
+    It will seem laborious to re-write and re-run 29 separate FEAT analyses; a much quicker way is by scripting our analyses using `bash`. If you would like, try scripting your analyses! We will learn more about `bash` scripting in [the next workshop](https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/).
 
 As always, help and further information is also available on the relevant section of the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index).

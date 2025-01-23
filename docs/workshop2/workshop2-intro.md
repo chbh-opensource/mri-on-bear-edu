@@ -8,7 +8,7 @@ In this workshop we will explore, MRI image fundamentals, MRI data formats, data
 
     - The fundamentals of MRI data, including file types and formats
     - Converting between different MRI data files (e.g., DICOM to NIFTI)
-    - Introduction to FSLeyes and basic navigation
+    - An introduction to FSLeyes and basic navigation
     - Loading atlases and creating regions-of-interest (ROIs)
     - Binarizing and thresholding ROIs
 

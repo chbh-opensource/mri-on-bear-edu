@@ -27,13 +27,13 @@ To run the diffusion tensor fit, you need 4 files as specified below:
 In the FSL GUI, first click on 'FDT diffusion', and in the FDT window, select 'DTIFIT Reconstruct diffusion tensors'. Now choose as 'Input directory' the `data` subdirectory located inside `p01` and click 'Go'. 
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_gui.png" alt="DTIfit GUI" width="900" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_gui.png" alt="DTIfit GUI" width="1000" height="300">
 </p>
 
 You should see something happening in the terminal and once you see 'Done!' you are ready to view the results.
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_done.png" alt="DTIfit Done" width="100" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_done.png" alt="DTIfit Done" width="150" height="300">
 </p>
 
 Click 'OK' when the message appears.
@@ -72,6 +72,7 @@ This would be useful if you want to write a script; we will look at it in the la
     Again, please do NOT run it now but try it in your own time with data in the `p02` folder.
 
 The results of running DTIfit are several output files as specified below. <b>We will look closer at the highlighted files in bold.</b> 
+
 All of these files should be located in the `data` subdirectory, i.e. within `/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01/data/`.
 
 | Output File | Description |
@@ -127,7 +128,7 @@ The steps for Tract-Based Spatial Statistics are:
 5. Each participant’s aligned FA map is then projected back onto the skeleton prior to statistical analysis 
 6. Hypothesis testing (voxelwise statistics)
 
-To save time, some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you and all outputs are included in the `data` folder you have copied at the start of this workshop. 
+To save time, <b>some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you</b> and all outputs are included in the `data` folder you have copied at the start of this workshop. 
 
 <h2><div align="center"><b>Tract-Based Spatial Statistics analysis pipeline</b></div></h2>
 
@@ -187,7 +188,7 @@ cd FA
 imglob *_FA.*
 ```
 
-You should see data from the 5 older (o1-o5) followed by data fromthe  10 (y1-y10) younger participants.
+You should see data from the 5 older (o1-o5) followed by data from the 10 (y1-y10) younger participants.
 
 Next navigate back to the `stats` folder and open FSL:
 
@@ -200,7 +201,7 @@ fsl &
 Click on 'Miscellaneous tools' and select 'GLM Setup' to open the GLM GUI. 
 
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm.png" alt="TBSS GUI" width="250" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm.png" alt="TBSS GUI" width="350" height="300">
 </p>
 
 <b>In the workshop we will set up a simple group analysis (a two sample unpaired t-test).</b>
@@ -284,7 +285,7 @@ You should see the same results as below:
     Are the results as expected? Why/why not?
 
 !!! example "Reviewing the tstat1 image"
-    Next review the `tbss_tfce_corrp_tstat1.nii.gz` 
+    Next review the image `tbss_tfce_corrp_tstat1.nii.gz`.
 
 !!! info "Further information on TBSS"
     More information on TBSS, can be found on the 'TBSS' section of the FSL Wiki: [https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/tbss)

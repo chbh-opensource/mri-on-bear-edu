@@ -25,7 +25,7 @@ A script can be very simple, containing just commands that you already know how 
 You can start a new script by clicking on “New File” and naming it for example “`my_script.sh`” and next clicking on “Edit” to start typing commands you want to use. You can also use “Edit” to edit existing scripts. 
 
 <p align="center">
- <img src="../../assets/images/workshop6/edit_scripts.png" alt="Edit Scripts" width="900" height="300">
+ <img src="../../assets/images/workshop6/edit_scripts.png" alt="Edit Scripts" width="1000" height="300">
 </p>
 
 !!! tip "The shebang"
@@ -60,12 +60,12 @@ Whether you are editing or creating a new script, you need to save it. After sav
 
 Next you need to make the script executable (as below) and remember the script will run in the current directory (`pwd`). You also need to make the script executable if you copied a script from someone else.
 
-To make your script executable type in terminal: `chmod a+x brainvols.sh`
+To make your script executable type in your terminal: `chmod a+x brainvols.sh`
 
 !!! warning "Running the script without permissions"
     If you try to run the script without making it executable, you will get a permission error. 
 
-To run the script, type in your terminal `./brainvols.sh`
+To run the script, type in your terminal: `./brainvols.sh`
 
 You can now tell which participant has the biggest brain.
 
@@ -75,7 +75,7 @@ The previous script hopefully worked. But it is not very elegant and is not much
 
 - Also, it would be helpful to print out some text so that we know which line of output on the screen relates to which participant. 
 
-Bash has a `for … do ... done` construct to do the former and an `echo` command to do the latter. So, let's use these to create an improved script with a loop. This is illustrated in the example `brainvols2.sh`:
+Bash has a `for/do/done` construct to do the former and an `echo` command to do the latter. So, let's use these to create an improved script with a loop. This is illustrated in the example `brainvols2.sh`:
 
 ```bash
 #!/bin/bash
@@ -88,7 +88,7 @@ do
 done
 ```
 
-Both examples above assume that you have already run BET (brain extraction) on T1 scans. But of course, you could also automate the process of brain extraction and complete both tasks, i.e., running bet and calculate volume, using a single script. This is illustrated in the example `bet_brainvols.sh`:
+<b>Both examples above assume that you have already run BET (brain extraction) on T1 scans.</b> But of course, you could also automate the process of brain extraction and complete both tasks, i.e., running bet and calculate volume, using a single script. This is illustrated in the example `bet_brainvols.sh`:
 
 ```bash
 #!/bin/bash
@@ -126,7 +126,7 @@ Some of the most powerful scripting comes when manipulating FEAT model files. <b
 
 So, if we copy the design file for `p01`'s first scan (i.e. the file `feat/1/p01_s1.feat/design.fsf`), open it up in a text editor, search and replace every instance of `p01` with `p02` and then save it, we should have the model file for `p02`'s first scan. The only differences should be in:
 
-- The 4d input EPI file: `/recon/p01/fmri1` → /recon/p02/fmri1
+- The 4d input EPI file: `/recon/p01/fmri1` → `/recon/p02/fmri1`
 
 - The output directory: `/feat/1/p02_s1` → `/feat/1/p02_s1`
 
@@ -196,7 +196,7 @@ In previous workshops we were using BlueBEAR Portal to launch BlueBEAR GUI Linux
 
 While the BEAR Portal provides a convenient web-based access to a range of BlueBEAR services, you don’t have to go via this portal, but can instead use the command line to access BlueBEAR through one of the multiple login nodes, available from the address [bluebear.bham.ac.uk](http://bluebear.bham.ac.uk/).
 
-Exactly how you do that will depend on the type of the operating system your computer uses; you can find detailed information about Accessing BlueBEAR using the command line from [this link](https://docs.bear.bham.ac.uk/bluebear/accessing/).
+Exactly how you do that will depend on the type of the operating system your computer uses; you can find detailed information about accessing BlueBEAR using the command line from [this link](https://docs.bear.bham.ac.uk/bluebear/accessing/).
 
 The process of submitting and running jobs on the cluster is exactly the same whether using the BlueBEAR terminal via the “Clusters” tab on the BlueBEAR portal or using the command line. To run a job with Slurm (BlueBEAR HPC scheduling system) you first need to prepare a job script and then submit using the command `sbatch`.
 

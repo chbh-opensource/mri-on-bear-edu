@@ -1,16 +1,15 @@
 # Functional connectivity analysis of resting-state fMRI data using FSL
 
-This workshop is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial by Dianne Paterson at the University of Arizona, which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional content covering [Neurosynth](https://neurosynth.org/).
+This workshop is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial, which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional content covering [Neurosynth](https://neurosynth.org/).
 
 We will run a group-level functional connectivity analysis on resting-state fMRI data of three participants, specifically examining the functional connectivity of the posterior cingulate cortex (PCC), a region of the default mode network (DMN) that is commonly found to be active in resting-state data. 
 
-!!! success "Overview of Workshop 8"
-    To do this, we will:
+To do this, we will:
 
-    - extract a mean-timeseries for a PCC seed region for each participant,
-    - run single-subject level analyses, one manually and bash scripting the other two, 
-    - run a group-level analysis using the single-level results 
-    - figure out which brain regions our active voxels are in, using atlases in FSL, and Neurosynth.
+- extract a mean-timeseries for a PCC seed region for each participant,
+- run single-subject level analyses, one manually and bash scripting the other two, 
+- run a group-level analysis using the single-level results 
+- figure out which brain regions our active voxels are in, using atlases in FSL, and Neurosynth.
 
 ## Preparing the data
 

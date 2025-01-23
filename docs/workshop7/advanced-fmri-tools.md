@@ -41,7 +41,7 @@ Finally, you should have 2 third-level group analysis folders:
 
 ## Testing the effects of different thresholds
 
-<b>Try as many of the suggestions below as you have time for. I suggest trying 1 or 2 at the start of the session and returning to these later if you have time, or outside the workshop.</b> (You can load up an existing model by running FEAT and using the 'Load' button. The model file will be called `design.fsf` and can be found in the `.feat` or `.gfeat` directory of an existing analysis folder.)
+<b>Try as many of the suggestions below as you have time for. Try 1 or 2 at the start of the session and returning to these later if you have time, or outside the workshop.</b> (You can load up an existing model by running FEAT and using the 'Load' button. The model file will be called `design.fsf` and can be found in the `.feat` or `.gfeat` directory of an existing analysis folder.)
 
 1. <b>Ordinary Least Squares (OLS) vs FLAME:</b>
 Repeat the third level group analyses from FSL Workshop 5, but on the 'Stats' tab select 'Mixed Effects: Simple OLS'

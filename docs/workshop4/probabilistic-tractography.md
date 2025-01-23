@@ -55,7 +55,7 @@ Then in FSLeyes:
 This will likely show that in this case the default brain extraction was good. <b>The reason behind such a good brain extraction with default options is a small FOV and data from a young healthy adult.</b> This is not always the case e.g., when we have a large FOV or data from older participants. 
 
 !!! note "More brain extraction to come? You BET!"
-    In the next workshop (Workshop 5) we will explore different BET [options] and how to troubleshoot brain extraction.
+    In the next workshop (Workshop 5) we will explore different BET options and how to troubleshoot brain extraction.
 
 ## Preparing our data with BEDPOSTX
 
@@ -68,7 +68,7 @@ To run it, you would need to open FSL GUI, click on FDT diffusion and from drop 
 <p align="center">
   <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx_single_shell.png" alt="BEDPOSTX Shell" width="800" height="300">
   <br>
-  <em><span style="font-size: 1.1em;">In case of the data being used for this workshop with a single b-value, we need to specify the single-shell model.</span></em>
+  <em><span style="font-size: 1.2em;">In case of the data being used for this workshop with a single b-value, we need to specify the single-shell model.</span></em>
 </p>
 
 After the workshop, in your own time, you could run it using the provided data (see Tractography Exercises section at the end of workshop notes).
@@ -86,8 +86,6 @@ Typically, registration will be run between three spaces:
 
 <b>This step has been again run for you.</b> To run it, you would need to open FSL GUI, click on 'FDT diffusion' and from the drop down menu select 'Registration'. 
 The main structural image would be your ”skull-stripped” T1 (`T1_brain`) and non-betted structural image would be T1. Plus you need to select `data.bedpostX` as the 'BEDPOSTX directory'.
-
-<br>
 
 <p align="center">
  <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx.png" alt="BEDPOSTX" width="700" height="300">
@@ -160,13 +158,13 @@ Close FDT toolbox and then open it again from the terminal to make sure you don�
 In the FDT Toolbox window - before you select your input in the 'Data' tab - go to the 'Options' tab (as below) and reduce the number of samples to 500 under 'Options'. You would normally run 5000 (default) but reducing this number will speed up processing and is useful for exploratory analyses.
 
 <p align="center">
- <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_options.png" alt="PROBTRACKX Options" width="400" height="300">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_options.png" alt="PROBTRACKX Options" width="500" height="300">
 </p>
 
 Now going back to the 'Data' tab (as below) do the following:
 
 <p align="center">
- <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_data.png" alt="PROBTRACKX Data" width="400" height="300">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_data.png" alt="PROBTRACKX Data" width="500" height="300">
 </p>
 
 1. Select `data.bedpostX` as 'BEDPOSTX directory'
@@ -183,7 +181,7 @@ Now going back to the 'Data' tab (as below) do the following:
 
 It will take significantly longer this time to run the tractography in standard space. However, once it has finished, you will see the window 'Done!/OK'. Before proceeding, click 'OK'. 
 
-A new subdirectory will be created with the chosen output name `MotorThalamusM1`. Check the contents of this subdirectory. It contains slightly different files compared to the previous tractography output. The main output, the streamline density map is called `fdt_paths.nii.gz`. There is also a file called `waytotal` that contains the total number of valid streamlines runs.
+A new subdirectory will be created with the chosen output name `MotorThalamusM1`. <b>Check the contents of this subdirectory.</b> It contains slightly different files compared to the previous tractography output. The main output, the streamline density map is called `fdt_paths.nii.gz`. There is also a file called `waytotal` that contains the total number of valid streamlines runs.
 
 <b>We will now explore the results from both tractography runs.</b> First close FDT and your terminal as we need FSLeyes, which cannot be loaded together with the current version of FSL.
 

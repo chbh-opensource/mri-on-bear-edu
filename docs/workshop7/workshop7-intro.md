@@ -11,9 +11,9 @@ This workshop follows on from the [workshop on first-level fMRI analysis](https:
 !!! success "Overview of Workshop 6"
     Topics for this workshop include:
 
-    - How to combine scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment
-    - How to combine scans across participants
-    - How to set up different higher-level (second and third-level) fMRI analyses
+    - Combining scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment
+    - Combining scans across participants
+    - Setting up different higher-level (second and third-level) fMRI analyses
 
 As in the other workshops we will not discuss in detail why you might choose certain parameters. The aim of this workshop is to familiarise you with some of the available analysis tools. 
 You are encouraged to read the pop-up help throughout (hold your mouse arrow over FSL GUI buttons and menus when setting your FEAT design), refer to your lecture notes lectures or resource list readings.

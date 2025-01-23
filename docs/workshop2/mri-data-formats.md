@@ -108,9 +108,9 @@ cd 20191008#C4E7_dicom
 ls
 ```
 
-You should see a list of 7 sub-directories. Each top level DICOM directory contains sub-directories with each individual scan sequence. The structure of DICOM directories can vary depending on how it is stored/exported on different systems. <b>The 7 sub-directories here contain data for four localizer scans/planning scans, two fMRI scans and one structural scan.</b> Each sub-directory contains several `.dcm` files.
+You should see a list of 7 sub-directories. Each top level DICOM directory contains sub-directories with each individual scan sequence. The structure of DICOM directories can vary depending on how it is stored/exported on different systems. <b>The 7 sub-directories here contain data for four localizer scans/planning scans, two fMRI scans and one structural scan.</b> Each sub-directory also contains several `.dcm` files.
 
-There are several software packages which can be used to convert DICOM to NIfTI, but `dcm2niix` is the most widely used. It is available as standalone software, or part of [MRIcroGL](https://www.nitrc.org/plugins/mwiki/index.php/mricrogl:MainPage) a popular tool for brain visualization similar to FSLeyes. `dcm2niix` is available on BlueBEAR, but to use it you need to load it first using the terminal.
+There are several software packages which can be used to convert DICOM to NIfTI, but `dcm2niix` is the most widely used. It is available as standalone software, or part of [MRIcroGL](https://www.nitrc.org/plugins/mwiki/index.php/mricrogl:MainPage), a popular tool for brain visualization similar to FSLeyes. `dcm2niix` is available on BlueBEAR, but to use it you need to load it first using the terminal.
 
 To do this, in the terminal type:
 
@@ -129,7 +129,7 @@ If you now check the `T1_vol_v1_5` sub-directory, you should find there a single
 !!! example "Converting more MRI data"
     Now try to convert to NIfTI the `.dcm` files from the scanning session `20221206#C547` with 3 DICOM sub-directories, the two diffusion scans `diff_AP` and `diff_PA` and one structural scan MPRAGE. 
     
-    To do this, you will first need to change current directory, unzip, change directory again and then run the `dcm2niix` command as above.
+    To do this, you will first need to change the current directory, unzip, change the directory again and then run the `dcm2niix` command as above.
 
 If you have done it correctly you will find `.nii` and `.json` files generated in the structural sub-directories, and in the diffusion sub-directories you will also find `.bval` and `.bvec` files.
 

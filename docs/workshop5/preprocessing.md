@@ -15,7 +15,7 @@ A few extra seconds of “off” (6-8s) were later added at the very end of the 
  <img src="../../assets/images/workshop5/preprocessing/experiment_design.png" alt="Design" width="900" height="300">
 </p>
 
-Normally in any experiment it is very important to keep all the protocol parameters fixed when acquiring the neuroimaging data. 
+<b>Normally in any experiment it is very important to keep all the protocol parameters fixed when acquiring the neuroimaging data.</b> 
 However, in this case we can see different parameters being used which reflect slightly different “best choices” made by different operators over the yearly demonstration sessions:
 
 - The repetition time and voxel size were the same for all scans: (TR = 2000 ms, voxel size 2.5 x 2.5 x 2.5mm).
@@ -47,8 +47,6 @@ You now need to create a copy of the reconstructed fMRI data to be analysed duri
 We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
 We will do this using FSL's BET on the command line. As you should know from previous workshops the basic command-line version of BET is: 
 
-(do not type this command, this is just a reminder)
-
 `bet <input> <output> [options]`
 
 where:
@@ -62,7 +60,9 @@ where:
 If the fMRI data has finished copying over, you can use the same terminal which you have previously opened. 
 If not, keep that terminal open and instead open a new terminal, navigating inside your MRICN project folder (i.e., `/rds/projects/c/chechlmy-chbh-mricn/xxx`)
 
-Next you need to copy the data for this part of the workshop. As there is only 1 file, it will not take a long time. Type:
+Next you need to copy the data for this part of the workshop. As there is only 1 file, it will not take a long time. 
+
+Type:
 
 `cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/BET/ .`
 
@@ -186,11 +186,10 @@ immv fs005a001 fmri2
 ```
 
 !!! example "Renaming files"
-    Notes:
-
-    - The 'immv' command is a special FSL Linux command that works just like the standard Linux `mv` command except that it automatically takes care of the filename extensions. It saves from having to write out:
+    The `immv` command is a special FSL Linux command that works just like the standard Linux `mv` command except that it automatically takes care of the filename extensions. It saves from having to write out:
     `mv fs004a001.nii.gz fmri1.nii.gz` which would be the standard Linux command to rename a file.
-    - You can of course name these files to anything you want. In principle, you could call the fMRI scan `run1` or `fmri_run1` or `epi1` or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b>
+    
+    You can of course name these files to anything you want. In principle, you could call the fMRI scan `run1` or `fmri_run1` or `epi1` or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b>
 
 For this workshop we will use the naming convention above and call the files `fmri1.nii.gz` and `fmri2.nii.gz`.
 
