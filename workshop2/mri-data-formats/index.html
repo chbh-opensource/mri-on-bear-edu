@@ -1269,8 +1269,8 @@ unzip<span class="w"> </span><span class="m">20191008</span><span class="c1">#C4
 ls
 </code></pre></div>
 
-<p>You should see a list of 7 sub-directories. Each top level DICOM directory contains sub-directories with each individual scan sequence. The structure of DICOM directories can vary depending on how it is stored/exported on different systems. <b>The 7 sub-directories here contain data for four localizer scans/planning scans, two fMRI scans and one structural scan.</b> Each sub-directory contains several <code>.dcm</code> files.</p>
-<p>There are several software packages which can be used to convert DICOM to NIfTI, but <code>dcm2niix</code> is the most widely used. It is available as standalone software, or part of <a href="https://www.nitrc.org/plugins/mwiki/index.php/mricrogl:MainPage">MRIcroGL</a> a popular tool for brain visualization similar to FSLeyes. <code>dcm2niix</code> is available on BlueBEAR, but to use it you need to load it first using the terminal.</p>
+<p>You should see a list of 7 sub-directories. Each top level DICOM directory contains sub-directories with each individual scan sequence. The structure of DICOM directories can vary depending on how it is stored/exported on different systems. <b>The 7 sub-directories here contain data for four localizer scans/planning scans, two fMRI scans and one structural scan.</b> Each sub-directory also contains several <code>.dcm</code> files.</p>
+<p>There are several software packages which can be used to convert DICOM to NIfTI, but <code>dcm2niix</code> is the most widely used. It is available as standalone software, or part of <a href="https://www.nitrc.org/plugins/mwiki/index.php/mricrogl:MainPage">MRIcroGL</a>, a popular tool for brain visualization similar to FSLeyes. <code>dcm2niix</code> is available on BlueBEAR, but to use it you need to load it first using the terminal.</p>
 <p>To do this, in the terminal type:</p>
 <p><code>module load bear-apps/2022b</code></p>
 <p>Wait for the apps to load and then type:</p>
@@ -1281,7 +1281,7 @@ ls
 <div class="admonition example">
 <p class="admonition-title">Converting more MRI data</p>
 <p>Now try to convert to NIfTI the <code>.dcm</code> files from the scanning session <code>20221206#C547</code> with 3 DICOM sub-directories, the two diffusion scans <code>diff_AP</code> and <code>diff_PA</code> and one structural scan MPRAGE. </p>
-<p>To do this, you will first need to change current directory, unzip, change directory again and then run the <code>dcm2niix</code> command as above.</p>
+<p>To do this, you will first need to change the current directory, unzip, change the directory again and then run the <code>dcm2niix</code> command as above.</p>
 </div>
 <p>If you have done it correctly you will find <code>.nii</code> and <code>.json</code> files generated in the structural sub-directories, and in the diffusion sub-directories you will also find <code>.bval</code> and <code>.bvec</code> files.</p>
 <p><b>Now that we have our MRI data in the correct format, we will take a look at the brain images themselves using FSLeyes.</b></p>

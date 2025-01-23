@@ -1210,12 +1210,12 @@ fsl<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
 <p><b>All these files are included inside the data subdirectory <code>p01/data</code>.</b> You will later learn how to create a binary brain mask but first we will run DTIfit.</p>
 <p>In the FSL GUI, first click on 'FDT diffusion', and in the FDT window, select 'DTIFIT Reconstruct diffusion tensors'. Now choose as 'Input directory' the <code>data</code> subdirectory located inside <code>p01</code> and click 'Go'. </p>
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_gui.png" alt="DTIfit GUI" width="900" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_gui.png" alt="DTIfit GUI" width="1000" height="300">
 </p>
 
 <p>You should see something happening in the terminal and once you see 'Done!' you are ready to view the results.</p>
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_done.png" alt="DTIfit Done" width="100" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/dtifit_done.png" alt="DTIfit Done" width="150" height="300">
 </p>
 
 <p>Click 'OK' when the message appears.</p>
@@ -1270,8 +1270,8 @@ This would be useful if you want to write a script; we will look at it in the la
 <p class="admonition-title">Running DTIfit from the terminal in your own time</p>
 <p>Again, please do NOT run it now but try it in your own time with data in the <code>p02</code> folder.</p>
 </div>
-<p>The results of running DTIfit are several output files as specified below. <b>We will look closer at the highlighted files in bold.</b> 
-All of these files should be located in the <code>data</code> subdirectory, i.e. within <code>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01/data/</code>.</p>
+<p>The results of running DTIfit are several output files as specified below. <b>We will look closer at the highlighted files in bold.</b> </p>
+<p>All of these files should be located in the <code>data</code> subdirectory, i.e. within <code>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01/data/</code>.</p>
 <table>
 <thead>
 <tr>
@@ -1341,7 +1341,7 @@ The statistical analysis that you will run <b>aims to examine where on the tract
 <li>Each participant’s aligned FA map is then projected back onto the skeleton prior to statistical analysis </li>
 <li>Hypothesis testing (voxelwise statistics)</li>
 </ol>
-<p>To save time, some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you and all outputs are included in the <code>data</code> folder you have copied at the start of this workshop. </p>
+<p>To save time, <b>some of the pre-processing stages including generating FA maps (tensor fitting), preparing data for analysis, registration of FA maps and skeletonization have been run for you</b> and all outputs are included in the <code>data</code> folder you have copied at the start of this workshop. </p>
 <h2><div align="center"><b>Tract-Based Spatial Statistics analysis pipeline</b></div></h2>
 
 <p align="center">
@@ -1389,7 +1389,7 @@ The easiest way to determine the alphabetical order of participants in the the f
 imglob<span class="w"> </span>*_FA.*
 </code></pre></div>
 
-<p>You should see data from the 5 older (o1-o5) followed by data fromthe  10 (y1-y10) younger participants.</p>
+<p>You should see data from the 5 older (o1-o5) followed by data from the 10 (y1-y10) younger participants.</p>
 <p>Next navigate back to the <code>stats</code> folder and open FSL:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
 <span class="nb">cd</span><span class="w"> </span>stats
@@ -1398,7 +1398,7 @@ fsl<span class="w"> </span><span class="p">&amp;</span>
 
 <p>Click on 'Miscellaneous tools' and select 'GLM Setup' to open the GLM GUI. </p>
 <p align="center">
-  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm.png" alt="TBSS GUI" width="250" height="300">
+  <img src="../../assets/images/workshop3/diffusion-mri-analysis/tbss_glm.png" alt="TBSS GUI" width="350" height="300">
 </p>
 
 <p><b>In the workshop we will set up a simple group analysis (a two sample unpaired t-test).</b></p>
@@ -1495,7 +1495,7 @@ fsl<span class="w"> </span><span class="p">&amp;</span>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Reviewing the tstat1 image</p>
-<p>Next review the <code>tbss_tfce_corrp_tstat1.nii.gz</code> </p>
+<p>Next review the image <code>tbss_tfce_corrp_tstat1.nii.gz</code>.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Further information on TBSS</p>

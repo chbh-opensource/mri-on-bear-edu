@@ -1239,7 +1239,7 @@ Then in FSLeyes: </p>
 <p>This will likely show that in this case the default brain extraction was good. <b>The reason behind such a good brain extraction with default options is a small FOV and data from a young healthy adult.</b> This is not always the case e.g., when we have a large FOV or data from older participants. </p>
 <div class="admonition note">
 <p class="admonition-title">More brain extraction to come? You BET!</p>
-<p>In the next workshop (Workshop 5) we will explore different BET [options] and how to troubleshoot brain extraction.</p>
+<p>In the next workshop (Workshop 5) we will explore different BET options and how to troubleshoot brain extraction.</p>
 </div>
 <h2 id="preparing-our-data-with-bedpostx">Preparing our data with BEDPOSTX<a class="headerlink" href="#preparing-our-data-with-bedpostx" title="Permanent link">&para;</a></h2>
 <p><b>BEDPOSTX is an FSL tool used for a step in the diffusion MRI analysis pipeline, which prepares the data for probabilistic tractography.</b> BEDPOSTX (Bayesian Estimation of Diffusion Parameters Obtained using Sampling Techniques, X = modelling Crossing Fibres) estimates fibre orientation in each voxel within the brain. BEDPOSTX employs Markov Chain Monte Carlo (MCMC) sampling to reconstruct distributions of diffusion parameters at each voxel.</p>
@@ -1248,7 +1248,7 @@ Then in FSLeyes: </p>
 <p align="center">
   <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx_single_shell.png" alt="BEDPOSTX Shell" width="800" height="300">
   <br>
-  <em><span style="font-size: 1.1em;">In case of the data being used for this workshop with a single b-value, we need to specify the single-shell model.</span></em>
+  <em><span style="font-size: 1.2em;">In case of the data being used for this workshop with a single b-value, we need to specify the single-shell model.</span></em>
 </p>
 
 <p>After the workshop, in your own time, you could run it using the provided data (see Tractography Exercises section at the end of workshop notes).</p>
@@ -1264,7 +1264,6 @@ Typically, registration will be run between three spaces: </p>
 </ol>
 <p><b>This step has been again run for you.</b> To run it, you would need to open FSL GUI, click on 'FDT diffusion' and from the drop down menu select 'Registration'. 
 The main structural image would be your ”skull-stripped” T1 (<code>T1_brain</code>) and non-betted structural image would be T1. Plus you need to select <code>data.bedpostX</code> as the 'BEDPOSTX directory'.</p>
-<p><br></p>
 <p align="center">
  <img src="../../assets/images/workshop4/probabilistic-tractography/bedpostx.png" alt="BEDPOSTX" width="700" height="300">
 </p>
@@ -1319,12 +1318,12 @@ module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.7.6
 <p><b>This is the most typical design of tractography studies.</b></p>
 <p>In the FDT Toolbox window - before you select your input in the 'Data' tab - go to the 'Options' tab (as below) and reduce the number of samples to 500 under 'Options'. You would normally run 5000 (default) but reducing this number will speed up processing and is useful for exploratory analyses.</p>
 <p align="center">
- <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_options.png" alt="PROBTRACKX Options" width="400" height="300">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_options.png" alt="PROBTRACKX Options" width="500" height="300">
 </p>
 
 <p>Now going back to the 'Data' tab (as below) do the following:</p>
 <p align="center">
- <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_data.png" alt="PROBTRACKX Data" width="400" height="300">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_data.png" alt="PROBTRACKX Data" width="500" height="300">
 </p>
 
 <ol>
@@ -1342,7 +1341,7 @@ module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.7.6
 <p>Without selecting the waypoint and termination masks, you would also get other tracts passing via motor thalamus, including random offshoots with low probability (noise). This is expected for probabilistic tractography, as the random sampling without specifying direction can result in spurious offshoots into nearby tracts and give low probability noise. </p>
 </div>
 <p>It will take significantly longer this time to run the tractography in standard space. However, once it has finished, you will see the window 'Done!/OK'. Before proceeding, click 'OK'. </p>
-<p>A new subdirectory will be created with the chosen output name <code>MotorThalamusM1</code>. Check the contents of this subdirectory. It contains slightly different files compared to the previous tractography output. The main output, the streamline density map is called <code>fdt_paths.nii.gz</code>. There is also a file called <code>waytotal</code> that contains the total number of valid streamlines runs.</p>
+<p>A new subdirectory will be created with the chosen output name <code>MotorThalamusM1</code>. <b>Check the contents of this subdirectory.</b> It contains slightly different files compared to the previous tractography output. The main output, the streamline density map is called <code>fdt_paths.nii.gz</code>. There is also a file called <code>waytotal</code> that contains the total number of valid streamlines runs.</p>
 <p><b>We will now explore the results from both tractography runs.</b> First close FDT and your terminal as we need FSLeyes, which cannot be loaded together with the current version of FSL.</p>
 <p>Next navigate inside where all the tractography results have been generated and load/open FSLeyes:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/tractography/p01

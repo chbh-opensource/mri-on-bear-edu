@@ -1201,7 +1201,7 @@ starting and finishing with “off” and including 4 blocks of “on” (i.e., 
  <img src="../../assets/images/workshop5/preprocessing/experiment_design.png" alt="Design" width="900" height="300">
 </p>
 
-<p>Normally in any experiment it is very important to keep all the protocol parameters fixed when acquiring the neuroimaging data. 
+<p><b>Normally in any experiment it is very important to keep all the protocol parameters fixed when acquiring the neuroimaging data.</b> 
 However, in this case we can see different parameters being used which reflect slightly different “best choices” made by different operators over the yearly demonstration sessions:</p>
 <ul>
 <li>The repetition time and voxel size were the same for all scans: (TR = 2000 ms, voxel size 2.5 x 2.5 x 2.5mm).</li>
@@ -1225,7 +1225,6 @@ However, in this case we can see different parameters being used which reflect s
 <h2 id="skull-stripping-t1-scans-using-bet-on-the-command-line">Skull-stripping T1 scans using BET on the command-line<a class="headerlink" href="#skull-stripping-t1-scans-using-bet-on-the-command-line" title="Permanent link">&para;</a></h2>
 <p>We will now look at how to ”skull-strip” the T1 image (remove the skull and non-brain areas), as this step is needed as part of the registration step in the fMRI analysis pipeline. 
 We will do this using FSL's BET on the command line. As you should know from previous workshops the basic command-line version of BET is: </p>
-<p>(do not type this command, this is just a reminder)</p>
 <p><code>bet &lt;input&gt; &lt;output&gt; [options]</code></p>
 <p>where:</p>
 <ul>
@@ -1236,7 +1235,8 @@ We will do this using FSL's BET on the command line. As you should know from pre
 <p><b>We will firstly explore the different options and how to troubleshoot brain extraction.</b></p>
 <p>If the fMRI data has finished copying over, you can use the same terminal which you have previously opened. 
 If not, keep that terminal open and instead open a new terminal, navigating inside your MRICN project folder (i.e., <code>/rds/projects/c/chechlmy-chbh-mricn/xxx</code>)</p>
-<p>Next you need to copy the data for this part of the workshop. As there is only 1 file, it will not take a long time. Type:</p>
+<p>Next you need to copy the data for this part of the workshop. As there is only 1 file, it will not take a long time. </p>
+<p>Type:</p>
 <p><code>cp -r /rds/projects/c/chechlmy-chbh-mricn/module_data/BET/ .</code></p>
 <p>And then load FSL and FSLeyes by typing:</p>
 <div class="codehilite"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a
@@ -1327,12 +1327,9 @@ immv<span class="w"> </span>fs005a001<span class="w"> </span>fmri2
 
 <div class="admonition example">
 <p class="admonition-title">Renaming files</p>
-<p>Notes:</p>
-<ul>
-<li>The 'immv' command is a special FSL Linux command that works just like the standard Linux <code>mv</code> command except that it automatically takes care of the filename extensions. It saves from having to write out:
-<code>mv fs004a001.nii.gz fmri1.nii.gz</code> which would be the standard Linux command to rename a file.</li>
-<li>You can of course name these files to anything you want. In principle, you could call the fMRI scan <code>run1</code> or <code>fmri_run1</code> or <code>epi1</code> or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b></li>
-</ul>
+<p>The <code>immv</code> command is a special FSL Linux command that works just like the standard Linux <code>mv</code> command except that it automatically takes care of the filename extensions. It saves from having to write out:
+<code>mv fs004a001.nii.gz fmri1.nii.gz</code> which would be the standard Linux command to rename a file.</p>
+<p>You can of course name these files to anything you want. In principle, you could call the fMRI scan <code>run1</code> or <code>fmri_run1</code> or <code>epi1</code> or whatever. <b>The important thing is that you need to be extremely consistent in the naming of files for the different participants.</b></p>
 </div>
 <p>For this workshop we will use the naming convention above and call the files <code>fmri1.nii.gz</code> and <code>fmri2.nii.gz</code>.</p>
 <p>As the experimenter you would normally be familiar with the order of acquisition of the different sequences and therefore the order of the resulting files created, including which one is the T1 image. You would write these down in your research log book whilst acquiring the MRI data. But sometimes, as here, if data is given to you later it may not be clear which particular file is the T1 image. </p>

@@ -1335,7 +1335,7 @@ If you do, these may cause some programs to crash with errors that may not seem 
 <p>FEAT has a built-in progress watcher, the 'FEAT Report', which you can open in a web browser. </p>
 <p>To do that, you need to navigate inside the <code>p01_s1.feat</code> folder from the BlueBEAR Portal as below and from there select the <code>report.html</code> file, and either open it in a new tab or in a new window. </p>
 <p align="center">
- <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="600" height="300">
+ <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="700" height="300">
 </p>
 
 <p>Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).</p>
@@ -1377,7 +1377,7 @@ fsleyes<span class="w"> </span><span class="p">&amp;</span>
 </li>
 <li>Hit 'Go'</li>
 </ul>
-<p><b>Note that each time you rerun Feat, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named 'p01_s1.feat', 'p01_s1+.feat', 'p01_s1++.feat', and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. </p>
+<p><b>Note that each time you rerun FEAT, it creates a new folder with a '+' sign in the name.</b> So you will have folders rather messily named <code>p01_s1.feat</code>, <code>p01_s1+.feat</code>, <code>p01_s1++.feat</code>, and so on. This is rather wasteful of of your precious quota space, so you should delete unnecessary ones after looking at them. </p>
 <p>For example, if you wanted to remove all files and directories that end with '+' for participant 1:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/<span class="w"> </span>
 rm<span class="w"> </span>-rf<span class="w"> </span>*+
@@ -1411,14 +1411,12 @@ rm<span class="w"> </span>-rf<span class="w"> </span>*+
 <li>Participants 3-4 and 6-15 have 2 fMRI runs each (i.e. 12 people x 2 runs = 24 runs)</li>
 </ul>
 <p><b>There are therefore 29 separate analyses that need to be done.</b></p>
-<ul>
-<li>Analyze each of these 29 fMRI runs independently and put the output of each one into a separate, clearly labelled directory as suggested above. </li>
-<li>Try and get all these done before the next fMRI workshop in week 10 on higher level fMRI analysis as you will need this processed data for that workshop. You have two weeks to complete this task. </li>
-</ul>
+<p>Analyze each of these 29 fMRI runs independently and put the output of each one into a separate, clearly labelled directory as suggested above. </p>
+<p>Try and get all these done before the next fMRI workshop in week 10 on higher level fMRI analysis as you will need this processed data for that workshop. You have two weeks to complete this task. </p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Scripting your analysis</p>
-<p>It will seem laborious to re-write and re-run 29 separate FEAT analyses; a much quicker way is by scripting our analyses using <code>bash</code>. If you would like, try scripting your analyses! Contact one of the course TA's or convenors if you are stuck!</p>
+<p>It will seem laborious to re-write and re-run 29 separate FEAT analyses; a much quicker way is by scripting our analyses using <code>bash</code>. If you would like, try scripting your analyses! We will learn more about <code>bash</code> scripting in <a href="https://chbh-opensource.github.io/mri-on-bear-edu/workshop6/workshop6-intro/">the next workshop</a>.</p>
 </div>
 <p>As always, help and further information is also available on the relevant section of the <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index">FSL Wiki</a>.</p>
 

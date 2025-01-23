@@ -1215,7 +1215,7 @@
 <p>A script can be very simple, containing just commands that you already know how to use, with each command put on a separate line. To create a script for automating FSL analysis, the most widely used language is <code>bash</code> (<code>shell</code>). To write a <code>bash</code> script you need a plain text editor (e.g., vim, nano). If you are not familiar with using a text editor in Linux terminal, there is a simple way of creating and/or editing scripts using the BlueBEAR portal.</p>
 <p>You can start a new script by clicking on “New File” and naming it for example “<code>my_script.sh</code>” and next clicking on “Edit” to start typing commands you want to use. You can also use “Edit” to edit existing scripts. </p>
 <p align="center">
- <img src="../../assets/images/workshop6/edit_scripts.png" alt="Edit Scripts" width="900" height="300">
+ <img src="../../assets/images/workshop6/edit_scripts.png" alt="Edit Scripts" width="1000" height="300">
 </p>
 
 <div class="admonition tip">
@@ -1246,12 +1246,12 @@ fslstats<span class="w"> </span>p15/T1_brain<span class="w"> </span>-V
 
 <p>Whether you are editing or creating a new script, you need to save it. After saving, exit the editor. </p>
 <p>Next you need to make the script executable (as below) and remember the script will run in the current directory (<code>pwd</code>). You also need to make the script executable if you copied a script from someone else.</p>
-<p>To make your script executable type in terminal: <code>chmod a+x brainvols.sh</code></p>
+<p>To make your script executable type in your terminal: <code>chmod a+x brainvols.sh</code></p>
 <div class="admonition warning">
 <p class="admonition-title">Running the script without permissions</p>
 <p>If you try to run the script without making it executable, you will get a permission error. </p>
 </div>
-<p>To run the script, type in your terminal <code>./brainvols.sh</code></p>
+<p>To run the script, type in your terminal: <code>./brainvols.sh</code></p>
 <p>You can now tell which participant has the biggest brain.</p>
 <p>The previous script hopefully worked. But it is not very elegant and is not much of an improvement over typing the commands one at a time in a terminal window. <b>However, the <code>bash</code> scripting language that we are using provides an extra layer of simple program commands that we can use in combination with the FSL commands we want to run.</b> In this way we can make our scripts more efficient:</p>
 <ul>
@@ -1262,7 +1262,7 @@ fslstats<span class="w"> </span>p15/T1_brain<span class="w"> </span>-V
 <p>Also, it would be helpful to print out some text so that we know which line of output on the screen relates to which participant. </p>
 </li>
 </ul>
-<p>Bash has a <code>for … do ... done</code> construct to do the former and an <code>echo</code> command to do the latter. So, let's use these to create an improved script with a loop. This is illustrated in the example <code>brainvols2.sh</code>:</p>
+<p>Bash has a <code>for/do/done</code> construct to do the former and an <code>echo</code> command to do the latter. So, let's use these to create an improved script with a loop. This is illustrated in the example <code>brainvols2.sh</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nb">cd</span><span class="w"> </span>rds/projects/c/chechlmy-chbh-mricn/xxx/recon
@@ -1273,7 +1273,7 @@ fslstats<span class="w"> </span>p15/T1_brain<span class="w"> </span>-V
 <span class="k">done</span>
 </code></pre></div>
 
-<p>Both examples above assume that you have already run BET (brain extraction) on T1 scans. But of course, you could also automate the process of brain extraction and complete both tasks, i.e., running bet and calculate volume, using a single script. This is illustrated in the example <code>bet_brainvols.sh</code>:</p>
+<p><b>Both examples above assume that you have already run BET (brain extraction) on T1 scans.</b> But of course, you could also automate the process of brain extraction and complete both tasks, i.e., running bet and calculate volume, using a single script. This is illustrated in the example <code>bet_brainvols.sh</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># navigate to the folder containing the T1 scans</span>
@@ -1308,7 +1308,7 @@ fslstats<span class="w"> </span>p15/T1_brain<span class="w"> </span>-V
 <p>So, if we copy the design file for <code>p01</code>'s first scan (i.e. the file <code>feat/1/p01_s1.feat/design.fsf</code>), open it up in a text editor, search and replace every instance of <code>p01</code> with <code>p02</code> and then save it, we should have the model file for <code>p02</code>'s first scan. The only differences should be in:</p>
 <ul>
 <li>
-<p>The 4d input EPI file: <code>/recon/p01/fmri1</code> → /recon/p02/fmri1</p>
+<p>The 4d input EPI file: <code>/recon/p01/fmri1</code> → <code>/recon/p02/fmri1</code></p>
 </li>
 <li>
 <p>The output directory: <code>/feat/1/p02_s1</code> → <code>/feat/1/p02_s1</code></p>
@@ -1371,7 +1371,7 @@ perl<span class="w"> </span>-i<span class="w"> </span>-p<span class="w"> </span>
 </p>
 
 <p>While the BEAR Portal provides a convenient web-based access to a range of BlueBEAR services, you don’t have to go via this portal, but can instead use the command line to access BlueBEAR through one of the multiple login nodes, available from the address <a href="http://bluebear.bham.ac.uk/">bluebear.bham.ac.uk</a>.</p>
-<p>Exactly how you do that will depend on the type of the operating system your computer uses; you can find detailed information about Accessing BlueBEAR using the command line from <a href="https://docs.bear.bham.ac.uk/bluebear/accessing/">this link</a>.</p>
+<p>Exactly how you do that will depend on the type of the operating system your computer uses; you can find detailed information about accessing BlueBEAR using the command line from <a href="https://docs.bear.bham.ac.uk/bluebear/accessing/">this link</a>.</p>
 <p>The process of submitting and running jobs on the cluster is exactly the same whether using the BlueBEAR terminal via the “Clusters” tab on the BlueBEAR portal or using the command line. To run a job with Slurm (BlueBEAR HPC scheduling system) you first need to prepare a job script and then submit using the command <code>sbatch</code>.</p>
 <p>In the first part of this workshop you have learned how to create <code>bash</code> scripts to automate FSL analyses; in order to turn these scripts into the job script for Slurm, you need to add a few additional command lines. This is illustrated in the example below: <code>bet_brainvols_job.sh</code></p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>

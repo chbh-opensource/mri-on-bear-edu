@@ -1220,7 +1220,7 @@
 <p><code>cd /rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH</code></p>
 <p>To open FSLeyes, type:</p>
 <p><code>module load FSL/6.0.5.1-foss-2021a-fslpython</code></p>
-<p>There are different version of FSL on BlueBEAR, however this is the one which you need to use it together with FSLeyes.</p>
+<p>There are different versions of FSL on BlueBEAR, however this is the one which you need to use it together with FSLeyes.</p>
 <p>Wait for FSL to load and then type:</p>
 <p><code>module load FSLeyes/1.3.3-foss-2021a</code></p>
 <p>Again, wait for FSLeyes to load (it may take a few minutes). After this, to open FSLeyes, type in your terminal:</p>
@@ -1236,8 +1236,10 @@ You should then see the setup below, which is the default FSLeyes viewer without
 </p>
 
 <p>You can now load/open an image to view. Click 'File' → 'Add from file' (and then select the file in your directory e.g., <code>rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code>).</p>
-<p>You can also type directly in the terminal <code>fsleyes file.nii.gz</code> where you replace <code>file.nii.gz</code> with the name of the actual file you want to open. 
-However, you will need to include the full path to the file if you are not in the same directory when you open the terminal window e.g. <code>fsleyes rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code></p>
+<p>You can also type directly in the terminal:</p>
+<p><code>fsleyes file.nii.gz</code> </p>
+<p>where you replace <code>file.nii.gz</code> with the name of the actual file you want to open. </p>
+<p>However, you will need to include the full path to the file if you are not in the same directory when you open the terminal window e.g. <code>fsleyes rds/projects/c/chechlmy-chbh-mricn/xxx/CHBH/visualization/T1.nii</code></p>
 <p>You should now see a T1 scan loaded in ortho view with three canvases corresponding to the sagittal, coronal, and axial planes.</p>
 <p align="center">
   <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_t1.png" alt="FSLeyes T1" width="900" height="300">
@@ -1314,7 +1316,7 @@ You can explore the full list of included atlases <a href="https://open.win.ox.a
 
 <p>You should now see the 'Atlases' panel open as shown below.  </p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_atlas_gui.png" alt="FSLeyes atlas GUI" width="900" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/fsleyes_atlas_gui.png" alt="FSLeyes atlas GUI" width="1000" height="300">
 </p>
 
 <p>The 'Atlases' panel is organized into three sections: </p>
@@ -1391,7 +1393,10 @@ Harvard-Oxford<span class="w"> </span>Subcortical<span class="w"> </span>Structu
 </ul>
 <p>If unsure check your results with someone else, or ask for help! </p>
 </div>
-<p><b>Make sure all overlays are closed (but keep the <code>MNI152_T1_2mm.nii.gz</code> open) before moving to the next section.</b></p>
+<div class="admonition warning">
+<p class="admonition-title">Before continuing</p>
+<p>Make sure all overlays are closed (but keep the <code>MNI152_T1_2mm.nii.gz</code> open) before moving to the next section.</p>
+</div>
 <h2 id="using-atlas-tools-to-find-a-brain-structure">Using atlas tools to find a brain structure<a class="headerlink" href="#using-atlas-tools-to-find-a-brain-structure" title="Permanent link">&para;</a></h2>
 <p><b>It is often helpful to locate where a specific structure is in the brain and to visually assess its size and extent.</b></p>
 <p>Let's suppose we want to visualize where <a href="https://radiopaedia.org/articles/heschls-gyrus-1?lang=gb">Heschl's Gyrus</a> is. In the bottom 'Atlases' window, click on the second tab ('Atlas search').</p>
@@ -1404,7 +1409,7 @@ Harvard-Oxford<span class="w"> </span>Subcortical<span class="w"> </span>Structu
 
 <div class="admonition example">
 <p class="admonition-title">Exercise: Atlas visualization</p>
-<p>Now try this for yourself: </p>
+<p>Now try the following exercises for yourself: </p>
 <ul>
 <li><b>Remove the Heschl's Gyrus visualization.</b> You can tick it off in the 'Atlases' window, or select Heschl's Gyrus in the 'Overlay list' window, and then either toggle its visibility off (click the eye icon) or remove it ('Menu' → 'Overlay' → 'Remove').</li>
 <li><b>Visualize the Lingual Gyrus and Left Hippocampus.</b> To avoid confusion, change the colour of the Lingual Gyrus visualization from red/yellow to green and Left Hippocampus to blue.</li>
@@ -1422,13 +1427,11 @@ This time, in the left panel listing different atlases, tick on the option for o
   <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford.png" alt="Harvard Oxford" width="800" height="300">
 </p>
 
-<p><br></p>
 <p>Now you should see all of the areas covered by the Harvard-Oxford cortical atlas shown on the standard brain. You can click around with the cursor, the labels for the different areas can be seen in the bottom right panel.</p>
 <p align="center">
   <img src="../../assets/images/workshop2/visualizing-mri-data/harvard_oxford_atlas.png" alt="Harvard Oxford Atlas" width="900" height="300">
 </p>
 
-<p><br></p>
 <p>In addition to atlases covering various grey matter structures, <b>there are also two white matter atlases</b>: the JHU ICBM-DTI-81 white-matter labels atlas &amp; JHU white-matter tractography atlas. 
 If you tick (select) these atlases as per previous instructions (hint using the 'Atlas search' tab), you will see a list of all included white matter tracts (pathways) as shown below:</p>
 <p align="center">
@@ -1460,7 +1463,7 @@ fsleyes<span class="w"> </span><span class="p">&amp;</span><span class="w"> </sp
 </ul>
 <p>You should now see the MFG overlay in the overlay list (as below) and have a <code>MFG.nii.gz</code> file in the <code>ROImasks</code> directory. You can check this by typing <code>ls</code> in the terminal.</p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/mfg_roi.png" alt="MFG ROI" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/mfg_roi.png" alt="MFG ROI" width="900" height="300">
 </p>
 
 <p>We will now create a white matter mask. Here are the steps:</p>
@@ -1471,7 +1474,7 @@ fsleyes<span class="w"> </span><span class="p">&amp;</span><span class="w"> </sp
 </ul>
 <p>You should now see the FM overlay in the overlay list (as below) and also have a <code>FM.nii.gz</code> file in the <code>ROImasks</code> directory. </p>
 <p align="center">
-  <img src="../../assets/images/workshop2/visualizing-mri-data/forceps_roi.png" alt="MFG ROI" width="800" height="300">
+  <img src="../../assets/images/workshop2/visualizing-mri-data/forceps_roi.png" alt="MFG ROI" width="900" height="300">
 </p>
 
 <p>You now have two “probabilistic ROI masks”. To use these masks for various analyses, you need to first binarize these images.</p>
