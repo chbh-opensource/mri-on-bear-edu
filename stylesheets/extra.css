@@ -2,6 +2,10 @@
     padding-bottom: 4rem; /* Add space for the navigation buttons */
 }
 
+.md-main__inner {
+    padding-bottom: 14rem;  /* Fix problematic toolbar issue for last page */
+}
+
 .md-footer-nav {
     background-color: white;
     color: var(--md-primary-fg-color);
