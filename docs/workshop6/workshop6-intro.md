@@ -13,5 +13,3 @@ Prior workshops introduced you to running MRI analysis with various FSL tools by
 
 !!! note "More information"
     The [BEAR Technical Docs](https://docs.bear.bham.ac.uk/) provides guidance on submitting jobs to the cluster.
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 06 workshop materials.</b>

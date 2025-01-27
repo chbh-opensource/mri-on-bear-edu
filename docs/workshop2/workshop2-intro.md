@@ -23,5 +23,3 @@ For the purpose of the module we will be using BlueBEAR. You should remember fro
 You have already been given access to the RDS project, `rds/projects/c/chechlmy-chbh-mricn`. Inside the module’s RDS project, you will find that you have a folder labelled `xxx` (`xxx` = University of Birmingham ADF username). 
 
 If you navigate to that folder `(rds/projects/c/chechlmy-chbh-mricn/xxx)`, you will be able to perform the various file operations from there during workshops.
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 02 workshop materials.</b>

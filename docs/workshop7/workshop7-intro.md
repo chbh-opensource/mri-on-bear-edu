@@ -20,5 +20,3 @@ You are encouraged to read the pop-up help throughout (hold your mouse arrow ove
 
 !!! note "More information"
     As always, you can also find more information on running higher-level fMRI analyses on the [FSL website](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/).
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 07 workshop materials.</b>

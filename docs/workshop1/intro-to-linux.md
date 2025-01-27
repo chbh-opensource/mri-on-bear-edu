@@ -318,5 +318,3 @@ The correct commands are provided below. (click to reveal)
     - A useful textbook on essential Linux commands is the [Linux Pocket Guide](https://github.com/kxzk/library/blob/master/command_line/Linux%20Pocket%20Guide%2C%203rd%20Edition.pdf) by Daniel J. Barratt.
     - The Carpentries (an organisation providing free training for various software engineering and data science skills) have an [introduction to UNIX course](https://preview.carpentries.org/lc-shell/).
     - Iowa State University also have a [course](https://www.hpc.iastate.edu/guides/unix-introduction) introducing users to UNIX.
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 01 workshop materials.</b>

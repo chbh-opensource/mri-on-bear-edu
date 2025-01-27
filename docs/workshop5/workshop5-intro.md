@@ -21,5 +21,3 @@ We will also revisit the use of Brain Extraction Tool (BET), and learn how to tr
 We will not go into details as to why and how specific values of the default settings have been chosen.
 Some values should be clear to you from the lectures or resource list readings, please check there or if you are still unclear feel free to ask. 
 We will explore some general examples. Note that for your own projects you are very likely to want to change some of these settings/parameters depending on your study aims and design. 
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 05 workshop materials.</b>

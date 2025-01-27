@@ -28,5 +28,3 @@ In this workshop we will follow basic steps in the diffusion MRI analysis pipeli
 <p align="center">
  <img src="../../assets/images/workshop4/intro/diffusion_mri_pipeline.png" alt="TBSS Pipeline" width="800" height="300">
 </p>
-
-<b>The copy of this workshop notes can be found on Canvas 39058 - LM Magnetic Resonance Imaging in Cognitive Neuroscience in Week 04 workshop materials.</b>
