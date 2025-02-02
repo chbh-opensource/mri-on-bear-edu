@@ -1,9 +1,8 @@
 # MRI on BEAR 
 
 <!-- Visitor Count and Documentation Info -->
-![Visitors](https://pageview.vercel.app/?github_user=chbh-opensource) ![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-![Status](https://img.shields.io/badge/Status-Work%20in%20Progress%20|%20Pre--release-orange)
+![Visitors](https://pageview.vercel.app/?github_user=chbh-opensource&github_repo=mri-on-bear-edu) ![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 [MRI on BEAR](https://github.com/chbh-opensource/mri-on-bear-edu) is a collection of educational resources created by members of the [Centre for Human Brain Health (CHBH)](https://www.birmingham.ac.uk/research/centre-for-human-brain-health), University of Birmingham, to provide a basic introduction to fundamentals in magnetic resonance imaging (MRI) data analysis, using the computational resources available to the University of Birmingham research community.
 
