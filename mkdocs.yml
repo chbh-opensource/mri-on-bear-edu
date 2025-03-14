@@ -76,6 +76,6 @@ nav:
     - Running the higher-level analysis: workshop7/higher-level-analysis.md
     - Advanced fMRI analysis tools: workshop7/advanced-fmri-tools.md
   - Workshop 8 - Functional connectivity:
-    - Functional connectivity analysis of resting-state fMRI data using FSL: workshop8/functional-connectivity.md
+    - Functional connectivity analysis of resting-state fMRI: workshop8/functional-connectivity.md
   - Additional Resources: resources.md
   - Contributors: contributors.md

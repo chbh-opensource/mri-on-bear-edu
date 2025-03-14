@@ -8,7 +8,7 @@ This workshop follows on from the [workshop on first-level fMRI analysis](https:
 
 <b>We will now combine the fMRI data across runs and participants in our second and third-level analyses.</b>
 
-!!! success "Overview of Workshop 6"
+!!! success "Overview of Workshop 7"
     Topics for this workshop include:
 
     - Combining scans when one participant has been scanned multiple-times (e.g., twice) within the same experiment

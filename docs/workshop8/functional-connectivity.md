@@ -1,6 +1,6 @@
-# Functional connectivity analysis of resting-state fMRI data using FSL
+# Functional connectivity analysis of resting-state fMRI
 
-This workshop is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial, which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional content covering [Neurosynth](https://neurosynth.org/).
+This bonus workshop is based upon the excellent [FSL fMRI Resting State Seed-based Connectivity](https://neuroimaging-core-docs.readthedocs.io/en/latest/pages/fsl_fmri_restingstate-sbc.html) tutorial, which has been adapted to run on the BEAR systems at the University of Birmingham, with some additional content covering [Neurosynth](https://neurosynth.org/).
 
 We will run a group-level functional connectivity analysis on resting-state fMRI data of three participants, specifically examining the functional connectivity of the posterior cingulate cortex (PCC), a region of the default mode network (DMN) that is commonly found to be active in resting-state data. 
 
