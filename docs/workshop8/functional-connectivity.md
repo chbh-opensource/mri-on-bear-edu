@@ -273,21 +273,28 @@ set fmri(custom1) "/rds/projects/c/chechlmy-chbh-mricn/xxx/SBC/sub1/sub1_PCC.txt
 To run the script, please copy the `run_feat.sh` script into your own `SBC` directory:
 
 ```
+clear
 cd ..
 pwd # make sure you are in your SBC directory
 cp /rds/projects/c/chechlmy-chbh-mricn/axs2210/SBC/run_feat.sh .
 ```
 
+Now if you list the directory contents `ls`, you should see the script:
+
+```
+run_feat.sh seed sub1 sub1.feat sub2 sub3
+```
+
 !!! tip "Viewing the script"
-    If you would like, you can have a look at the script yourself by typing `cat run_bash.sh`
+    If you would like, you can have a look at the script yourself by typing `cat run_feat.sh`
 
 The first line `#!/bin/bash` is always needed to run `bash` scripts. The rest of the code just replaces the 3 things we wanted to change for the defined subjects, `sub2` and `sub3`.
 
-Run the code (from your SBC directory) by typing `bash run_feat.sh`. (It will ask you for your University account name, this is your ADF username (axs2210 for me)).
+Run the code (from your SBC directory) by typing `bash run_feat.sh`. (It will ask you for your University account name, this is your ADF username (e.g., axs2210).
 
-<b>The script should take about 5-10 minutes to run on BEAR.</b>
+<b>The script should take about 10-15 minutes to run on BEAR.</b> The terminal will become locked, but this just means that the script is running!
 
-After it has finished running, have a look at the `report.html` file for both directories, they should look like this:
+After it has finished, have a look at the `report.html` file for both directories, they should look like this:
 
 <div style="display: flex; justify-content: center; gap: 20px;">
    <div style="text-align: center;">
@@ -334,7 +341,7 @@ If you click the folder again, it should look similar to this (with your ADF use
 <br>
 **Stats**
 
-1. Leave the 'Mixed effects: FLAME 1' and click 'Full model setup'. 
+1. Leave 'Mixed effects: FLAME 1' and click 'Full model setup'. 
 2. In the 'General Linear Model' window, name the model 'PCC' and make sure the 'EVs' are all 1s. 
 
 The interface should look like this:
@@ -343,7 +350,7 @@ The interface should look like this:
   <img src="../../assets/images/workshop8/functional-connectivity/glm.png" alt="GLM" width="600" height="300">
 </p>
 
-After that, click 'Done' and close the GLM design matrix that pops up (you don't need to change anything in the 'Contrasts and F-tests' tab).
+After that, click 'Done' and close the GLM design matrix that pops up, as you don't need to change anything in the 'Contrasts and F-tests' tab.
 
 **Post-stats**
 
@@ -369,7 +376,7 @@ Click on the 'Results' tab, and then on 'Lower-level contrast 1 (PCC)'. When the
 
 <h3>Examining the output</h3>
 
-So, we have just ran our group-level analysis. Let's have a closer look at the outputted data. 
+So, we have just ran our group-level analysis. Let's now have a look at the results. 
 
 Close FEAT and your terminal, open a new terminal, go to your `SBC` directory and open FSLeyes: 
 
@@ -426,7 +433,7 @@ To do this:
   <img src="../../assets/images/workshop8/functional-connectivity/atlas.gif" alt="Atlas GIF" width="900" height="300">
 </p>
 <br>
-By having a look at the 'Location' window (bottom left) we can now see that significant voxels of activity are mainly found in the: 
+By having a look at the 'Location' window (bottom right of the screen) we can now see that significant voxels of activity are mainly found in the: 
 
 <div style="display: flex; justify-content: center; gap: 20px;">
    <div style="text-align: center;">
