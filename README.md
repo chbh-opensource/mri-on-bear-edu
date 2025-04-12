@@ -1,6 +1,6 @@
 # MRI-on-BEAR
 
-![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) ![GitHub contributors](https://img.shields.io/github/contributors/chbh-opensource/mri-on-bear-edu) ![GitHub last commit](https://img.shields.io/github/last-commit/chbh-opensource/mri-on-bear-edu) 
+![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) ![GitHub last commit](https://img.shields.io/github/last-commit/chbh-opensource/mri-on-bear-edu) 
 
 ![GitHub stars](https://img.shields.io/github/stars/chbh-opensource/mri-on-bear-edu) ![GitHub repo size](https://img.shields.io/github/repo-size/chbh-opensource/mri-on-bear-edu)
 
