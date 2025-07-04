@@ -26,6 +26,7 @@ Welcome to the MRI-on-BEAR website, a freely available resource created by resea
   - [Pushing the changes using git](#pushing-the-changes-using-git)
   - [Issues](#issues)
 - [License](#license)
+- [Citation](#citation)
 
 --- 
 
