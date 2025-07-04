@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this website, please cite it as below."
+message: "If you use this website in your work, please cite it as below."
 authors:
 - family-names: Sohail
   given-names: Aamir
@@ -15,7 +15,7 @@ authors:
 - family-names: Chechlacz
   given-names: Magdalena
   orcid: "https://orcid.org/0000-0003-1811-3946"
-title: "MRI on BEAR - Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham"
+title: "MRI on BEAR (Birmingham Environment for Academic Research): Magnetic Resonance Imaging in Cognitive Neuroscience at the Centre for Human Brain Health"
 version: 1.0.0
 doi: 10.5281/zenodo.15804715
 date-released: 2025-07-04
