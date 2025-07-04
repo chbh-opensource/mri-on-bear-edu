@@ -91,7 +91,7 @@ If you use these materials in your own work, please use the citation below:
 APA:
 ```
 Sohail, A., Quinn, A. J., Carpenter, J. J., Hansen, P. C., & Chechlacz, M. (2025). 
-MRI on BEAR: Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham. 
+MRI on BEAR (Birmingham Environment for Academic Research): Magnetic Resonance Imaging in Cognitive Neuroscience at the Centre for Human Brain Health
 Zenodo. https://doi.org/10.5281/zenodo.15804715
 ```
 
@@ -100,7 +100,7 @@ BiBTeX
 @lesson{Sohail_MRI_on_BEAR_2025,
   author = {Sohail, Aamir and Quinn, Andrew J. and Carpenter, James J. and Hansen, Peter C. and Chechlacz, Magdalena},
   doi = {10.5281/zenodo.15804715},
-  title = {{MRI on BEAR - Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham}},
+  title = {{MRI on BEAR (Birmingham Environment for Academic Research): Magnetic Resonance Imaging in Cognitive Neuroscience at the Centre for Human Brain Health}},
   url = {https://github.com/chbh-opensource/mri-on-bear-edu},
   version = {1.0.0},
   year = {2025}
