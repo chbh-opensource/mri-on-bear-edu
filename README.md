@@ -170,5 +170,5 @@ All content in this repository is licensed under the [Creative Commons Attributi
 If you use these materials in your own work, please use the citation below:
 
 > Sohail, A., Quinn, A. J., Carpenter, J. J., Hansen, P. C., & Chechlacz, M. (2025). 
-MRI on BEAR (Birmingham Environment for Academic Research): Magnetic Resonance Imaging in Cognitive Neuroscience at the Centre for Human Brain Health
+MRI on BEAR (Birmingham Environment for Academic Research): Magnetic Resonance Imaging in Cognitive Neuroscience at the Centre for Human Brain Health.
 Zenodo. https://doi.org/10.5281/zenodo.15804715
