@@ -1,5 +1,7 @@
 # MRI-on-BEAR
 
+![Static Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.15804715-blue?style=flat)
+
 ![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) ![GitHub last commit](https://img.shields.io/github/last-commit/chbh-opensource/mri-on-bear-edu) 
 
 ![GitHub stars](https://img.shields.io/github/stars/chbh-opensource/mri-on-bear-edu) ![GitHub repo size](https://img.shields.io/github/repo-size/chbh-opensource/mri-on-bear-edu)
@@ -161,3 +163,11 @@ If you (e.g., students, externals) have an idea for the website, or have highlig
 ## LICENSE
 
 All content in this repository is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA 4.0) license. See the `LICENSE` for more details.
+
+## Citation
+
+If you use these materials in your own work, please use the citation below:
+
+> Sohail, A., Quinn, A. J., Carpenter, J. J., Hansen, P. C., & Chechlacz, M. (2025). 
+MRI on BEAR: Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham. 
+Zenodo. https://doi.org/10.5281/zenodo.15804715

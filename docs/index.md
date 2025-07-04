@@ -2,7 +2,7 @@
 
 <!-- Visitor Count and Documentation Info -->
 
-![Visitors](https://pageview.vercel.app/?github_user=chbh-opensource&github_repo=mri-on-bear-edu) ![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+![Static Badge](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.15804715-blue?style=flat) ![Documentation Status](https://img.shields.io/badge/docs-passing-brightgreen) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 [MRI on BEAR](https://github.com/chbh-opensource/mri-on-bear-edu) is a collection of educational resources created by members of the [Centre for Human Brain Health (CHBH)](https://www.birmingham.ac.uk/research/centre-for-human-brain-health), University of Birmingham, to provide a basic introduction to fundamentals in magnetic resonance imaging (MRI) data analysis, using the computational resources available to the University of Birmingham research community.
 
@@ -83,3 +83,26 @@ MRI on BEAR is hosted on [GitHub](https://github.com/chbh-opensource/mri-on-bear
 <p>
   <img src="assets/images/main_page/cc_by_sa.png" alt="CC-BY-SA" width="100" height="200">
 </p>
+
+## Citation
+
+If you use these materials in your own work, please use the citation below:
+
+APA:
+```
+Sohail, A., Quinn, A. J., Carpenter, J. J., Hansen, P. C., & Chechlacz, M. (2025). 
+MRI on BEAR: Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham. 
+Zenodo. https://doi.org/10.5281/zenodo.15804715
+```
+
+BiBTeX
+```tex
+@lesson{Sohail_MRI_on_BEAR_2025,
+  author = {Sohail, Aamir and Quinn, Andrew J. and Carpenter, James J. and Hansen, Peter C. and Chechlacz, Magdalena},
+  doi = {10.5281/zenodo.15804715},
+  title = {{MRI on BEAR - Magnetic Resonance Imaging in Cognitive Neuroscience at the University of Birmingham}},
+  url = {https://github.com/chbh-opensource/mri-on-bear-edu},
+  version = {1.0.0},
+  year = {2025}
+}
+```
