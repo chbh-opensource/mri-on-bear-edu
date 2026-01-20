@@ -219,7 +219,10 @@ To open FSL in terminal, you first need to load the FSL module. To do this, you 
 
 First, either close the Terminal you have been previously using and open a new one, or simply clean it. Next, type:
 
-`module load FSL/6.0.5.1-foss-2021a`
+```bash
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a
+```
 
 You will see various processes running the terminal. Once these have stopped and you see a system prompt in the terminal, type: 
 

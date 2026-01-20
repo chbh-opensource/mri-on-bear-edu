@@ -17,7 +17,10 @@ Assuming that you have started directly from the previous page, first close your
 
 To open FSLeyes, type:
 
-`module load FSL/6.0.5.1-foss-2021a-fslpython`
+```bash
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a-fslpython
+```
 
 There are different versions of FSL on BlueBEAR, however this is the one which you need to use it together with FSLeyes.
 
@@ -303,11 +306,12 @@ Then do the following:
 Here are the commands to do this:
 
 ```bash
-cd /rds/projects/c/chechlmy-chbh-mricn/xxx/
-mkdir ROImasks
-cd ROImasks
+cd /rds/projects/c/chechlmy-chbh-mricn/xxx/ 
+mkdir ROImasks 
+cd ROImasks 
+module load bear-apps/2021a/live
 module load FSL/6.0.5.1-foss-2021a-fslpython 
-module load FSLeyes/1.3.3-foss-2021a
+module load FSLeyes/1.3.3-foss-2021a 
 fsleyes & 
 ```
 

@@ -29,7 +29,7 @@ To view all files and data you have access to on BlueBEAR, click on 'Files' as i
 You should be able to see `/rds/projects/c/chechlmy-chbh-mricn` (MRICN module’s RDS project). By selecting the 'Home Directory' or any 'RDS project' you will open a second browser tab, displaying the content. In the example below, you see the content of one of Magda's projects.
 
 <p align="center">
-  <img src="../../assets/images/workshop1/intro-to-bluebear/folder_contents.png" alt="BEAR Folder Content" width="900" height="300">
+  <img src="../../assets/images/workshop1/intro-to-bluebear/folder_contents.png" alt="BEAR Folder Content" width="700" height="500">
 </p>
 
 Inside the module’s RDS project, you will find that you have a folder labelled xxx, where xxx is your University of Birmingham ADF username.
