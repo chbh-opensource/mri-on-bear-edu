@@ -251,7 +251,7 @@ Typing the `&` after any command makes it run in the background and keeps the Te
 
 Sometimes you may forget to type `&` after a command. 
 
-- Close all open windows, open a new terminal and type `fsl` (without the &) so that it is running in the foreground. 
+- Close all open windows, open a new terminal, load FSL (by using the two `module load` commands above) and type `fsl` (without the &) so that it is running in the foreground. 
 - Now hold down the CTRL key and the z key together 'CTRL-z'. 
 
 You should get a message like `“[1]+ Stopped fsl”`. You will notice that the FSL GUI is now unresponsive (try clicking on some of the buttons). The `fsl` process has been suspended. 
