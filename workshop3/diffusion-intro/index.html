@@ -1525,7 +1525,8 @@ p02/
 <p>Finally, inside <code>p01</code> and <code>p02</code> there is also subdirectory data with distortion-corrected diffusion images.</p>
 <p><b>We will start with viewing the uncorrected data.</b> Please navigate inside the <code>p01</code> folder, open FSLeyes and then load one of the uncorrected diffusion images:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>p01
-module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>bear-apps/2021a/live
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython<span class="w"> </span>
 module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
 fsleyes<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
@@ -1611,11 +1612,12 @@ The processing with these two tools is time and computing intensive. <b>Therefor
 <p>First close FSLeyes and to make sure you do not have any processes running in the background, close your current terminal.</p>
 <p>Open a new terminal window, navigate to the <code>p02</code> subdirectory, and load FSL and FSLeyes again:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p02
-module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
-module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>bear-apps/2021a/live
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
 </code></pre></div>
 
-<p>Now check the content of the <code>p02</code> subdirectory by typing <code>ls</code>. You should get the response <code>bvals</code>, <code>bvecs</code> and <code>data.nii.gz</code>.</p>
+<p>Now check the content of the <code>p02/data</code> subdirectory by typing <code>ls</code>. You should get the response <code>bvals</code>, <code>bvecs</code> and <code>data.nii.gz</code>.</p>
 <p>From the <code>data.nii.gz</code> (distortion corrected diffusion 4D image) we will extract a single volume without diffusion weighting (e.g. the first volume). You can extract it using one of FSL's utility commands, <code>fslroi</code>. </p>
 <div class="admonition info">
 <p class="admonition-title">What is <code>fslroi</code> used for?</p>
@@ -1627,7 +1629,7 @@ module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-202
 <ul>
 <li><code>data.nii.gz</code> is your input image, </li>
 <li><code>nodif</code> is your output image (3D non-diffusion weighted volume), </li>
-<li>0 and 1 indicate that you are extracting volume 0 and the you only want to extract one (1) volume</li>
+<li>0 and 1 indicate that you are extracting volume 0 and that you only want to extract one (1) volume</li>
 </ul>
 <p>You should have a new file <code>nodif.nii.gz</code> (type <code>ls</code> to confirm) and can now create a binary brain mask using BET.</p>
 <p>To do this, first open BET in terminal. You can open the BET GUI directly in a terminal window by typing:</p>
