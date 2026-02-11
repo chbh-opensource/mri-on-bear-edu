@@ -60,7 +60,8 @@ Finally, inside `p01` and `p02` there is also subdirectory data with distortion-
 
 ```bash
 cd p01
-module load FSL/6.0.5.1-foss-2021a-fslpython
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a-fslpython 
 module load FSLeyes/1.3.3-foss-2021a
 fsleyes &
 ```
@@ -167,11 +168,12 @@ Open a new terminal window, navigate to the `p02` subdirectory, and load FSL and
 
 ``` bash
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p02
-module load FSL/6.0.5.1-foss-2021a-fslpython
-module load FSLeyes/1.3.3-foss-2021a 
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a-fslpython 
+module load FSLeyes/1.3.3-foss-2021a
 ```
  
-Now check the content of the `p02` subdirectory by typing `ls`. You should get the response `bvals`, `bvecs` and `data.nii.gz`.
+Now check the content of the `p02/data` subdirectory by typing `ls`. You should get the response `bvals`, `bvecs` and `data.nii.gz`.
 
 From the `data.nii.gz` (distortion corrected diffusion 4D image) we will extract a single volume without diffusion weighting (e.g. the first volume). You can extract it using one of FSL's utility commands, `fslroi`. 
 
@@ -186,7 +188,7 @@ where:
 
 - `data.nii.gz` is your input image, 
 - `nodif` is your output image (3D non-diffusion weighted volume), 
-- 0 and 1 indicate that you are extracting volume 0 and the you only want to extract one (1) volume
+- 0 and 1 indicate that you are extracting volume 0 and that you only want to extract one (1) volume
 
 You should have a new file `nodif.nii.gz` (type `ls` to confirm) and can now create a binary brain mask using BET.
 
