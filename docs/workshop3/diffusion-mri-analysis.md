@@ -10,6 +10,7 @@ Open a new terminal window, navigate to the `p01` subdirectory, load FSL and FSL
 
 ```bash
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/DTIfit/p01
+module load bear-apps/2021a/live
 module load FSL/6.0.5.1-foss-2021a-fslpython
 module load FSLeyes/1.3.3-foss-2021a
 fsl & 
@@ -144,6 +145,7 @@ Then open a new terminal window, navigate to the subdirectory where pre-processe
 
 ```bash
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/diffusionMRI/TBSS/TBSS_analysis_p2/
+module load bear-apps/2021a/live
 module load FSL/6.0.5.1-foss-2021a-fslpython
 module load FSLeyes/1.3.3-foss-2021a 
 ```
