@@ -9,8 +9,9 @@ Open a terminal and use the commands below to skull-strip the T1:
 
 ```bash
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p01
-module load FSL/6.0.5.1-foss-2021a
-module load FSLeyes/1.3.3-foss-2021a 
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a 
+module load FSLeyes/1.3.3-foss-2021a
 immv T1 T1neck 
 robustfov -i T1neck -r T1 
 bet T1.nii.gz T1_brain -R 
@@ -171,13 +172,23 @@ The model should now be set up with all the correct details and be ready to be a
 
 ## Monitoring and viewing the results
 
-FEAT has a built-in progress watcher, the 'FEAT Report', which you can open in a web browser. 
+FEAT has a built-in progress watcher, the 'FEAT Report’ (`report.html` file), which you can open in a web browser. <b>If you are using one of the desktop computers</b> in the lab, you can paste the link below in the web browser window:
 
-To do that, you need to navigate inside the `p01_s1.feat` folder from the BlueBEAR Portal as below and from there select the `report.html` file, and either open it in a new tab or in a new window. 
+`file://its-rds.bham.ac.uk/rdsprojects/c/chechlmy-chbh mricn/xxx/feat/1/p01_s1.feat/report.html`
+
+[where XXX=your ADF username]
 
 <p align="center">
- <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="700" height="300">
+<img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="900" height="400">
 </p>
+<p align="center"><i style="font-size: 1.4em;">Example output files for a first-level analysis with the report.html file highlighted.</i></p>
+
+However, <b>if you are using your own laptop,</b> you will need to mount the RDS project on your local machine and then open the file directly on your system, which should render it in your default web browser. Please note that to do that you will need to be connected to the University Remote Access Service (VPN).
+
+<b>If you have a Windows laptop,</b> please follow the [BEAR Technical Docs instructions](https://docs.bear.bham.ac.uk/rds/guides/project_dirs/). Your BEAR Project's Directory Path on Windows is: 
+`\\its-rds.bham.ac.uk\rdsprojects\c\chechlmy-chbh-mricn`.
+
+<b>If you have a macOS laptop,</b> open the Finder application, and then in the toolbar, at the top of the desktop, click on the "Go" menu and select "Connect to Server". Paste the directory path (`smb://its-rds.bham.ac.uk/rdsprojects/c/chechlmy-chbh-mricn`) into the field. When you are prompted to log in, you may need to enter 'Name' (your ADF/username) and 'Password' (your university password). Then click 'Connect'.
 
 Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).
 
@@ -196,7 +207,8 @@ After it has completed, first look at the webpage, click on the various links an
 
 ```bash
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p01
-module load FSL/6.0.5.1-foss-2021a-fslpython
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a-fslpython 
 module load FSLeyes/1.3.3-foss-2021a
 fsleyes &
 ```
