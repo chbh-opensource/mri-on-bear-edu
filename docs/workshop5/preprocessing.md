@@ -69,7 +69,8 @@ Type:
 And then load FSL and FSLeyes by typing:
 
 ```bash
-module load FSL/6.0.5.1-foss-2021a
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a 
 module load FSLeyes/1.3.3-foss-2021a
 ```
 
