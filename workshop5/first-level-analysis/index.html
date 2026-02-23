@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -1489,8 +1489,9 @@
 <p>The <code>p01</code> T1 scan was acquired with a large field-of-view (FOV) (you can check this using FSLeyes; it is generally a good practice to explore the data before the start of any analysis, especially if you were not the person who acquired the data). Therefore, we will apply an appropriate method using BET as per the example we explored earlier. <b>This will be likely the right method to be applied to all datasets in the <code>/recon</code> folder but please check.</b></p>
 <p>Open a terminal and use the commands below to skull-strip the T1:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p01
-module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a
-module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>bear-apps/2021a/live
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
 immv<span class="w"> </span>T1<span class="w"> </span>T1neck<span class="w"> </span>
 robustfov<span class="w"> </span>-i<span class="w"> </span>T1neck<span class="w"> </span>-r<span class="w"> </span>T1<span class="w"> </span>
 bet<span class="w"> </span>T1.nii.gz<span class="w"> </span>T1_brain<span class="w"> </span>-R<span class="w"> </span>
@@ -1626,12 +1627,18 @@ If you do, these may cause some programs to crash with errors that may not seem 
 <p>FSL jobs are now submitted in an automated way to a back-end high performance computing cluster on BlueBEAR for execution. Processing time for this analysis will vary but will probably be about 5 mins per run.</p>
 </div>
 <h2 id="monitoring-and-viewing-the-results">Monitoring and viewing the results<a class="headerlink" href="#monitoring-and-viewing-the-results" title="Permanent link">&para;</a></h2>
-<p>FEAT has a built-in progress watcher, the 'FEAT Report', which you can open in a web browser. </p>
-<p>To do that, you need to navigate inside the <code>p01_s1.feat</code> folder from the BlueBEAR Portal as below and from there select the <code>report.html</code> file, and either open it in a new tab or in a new window. </p>
+<p>FEAT has a built-in progress watcher, the 'FEAT Report’ (<code>report.html</code> file), which you can open in a web browser. <b>If you are using one of the desktop computers</b> in the lab, you can paste the link below in the web browser window:</p>
+<p><code>file://its-rds.bham.ac.uk/rdsprojects/c/chechlmy-chbh mricn/xxx/feat/1/p01_s1.feat/report.html</code></p>
+<p>[where XXX=your ADF username]</p>
 <p align="center">
- <img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="700" height="300">
+<img src="../../assets/images/workshop5/first-level/feat_directory.png" alt="FEAT Directory" width="900" height="400">
 </p>
+<p align="center"><i style="font-size: 1.4em;">Example output files for a first-level analysis with the report.html file highlighted.</i></p>
 
+<p>However, <b>if you are using your own laptop,</b> you will need to mount the RDS project on your local machine and then open the file directly on your system, which should render it in your default web browser. Please note that to do that you will need to be connected to the University Remote Access Service (VPN).</p>
+<p><b>If you have a Windows laptop,</b> please follow the <a href="https://docs.bear.bham.ac.uk/rds/guides/project_dirs/">BEAR Technical Docs instructions</a>. Your BEAR Project's Directory Path on Windows is: 
+<code>\\its-rds.bham.ac.uk\rdsprojects\c\chechlmy-chbh-mricn</code>.</p>
+<p><b>If you have a macOS laptop,</b> open the Finder application, and then in the toolbar, at the top of the desktop, click on the "Go" menu and select "Connect to Server". Paste the directory path (<code>smb://its-rds.bham.ac.uk/rdsprojects/c/chechlmy-chbh-mricn</code>) into the field. When you are prompted to log in, you may need to enter 'Name' (your ADF/username) and 'Password' (your university password). Then click 'Connect'.</p>
 <p>Watch the webpage for progress. Refresh the page to update and click the links (the tabs near the top of the page) to see the results when available (the 'STILL RUNNING' message will disappear when the analysis has finished).</p>
 <p align="center">
 <img src="../../assets/images/workshop5/first-level/feat_progress.png" alt="FEAT Progress" width="1000" height="300">
@@ -1645,7 +1652,8 @@ If you do, these may cause some programs to crash with errors that may not seem 
 
 <p><b>Now let's use FSLeyes to look at the output in more detail.</b> To do that you will need to open a separate terminal and load FSLeyes:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/rds/projects/c/chechlmy-chbh-mricn/xxx/recon/p01
-module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython
+module<span class="w"> </span>load<span class="w"> </span>bear-apps/2021a/live
+module<span class="w"> </span>load<span class="w"> </span>FSL/6.0.5.1-foss-2021a-fslpython<span class="w"> </span>
 module<span class="w"> </span>load<span class="w"> </span>FSLeyes/1.3.3-foss-2021a
 fsleyes<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
