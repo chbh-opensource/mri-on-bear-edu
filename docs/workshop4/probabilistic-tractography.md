@@ -217,6 +217,13 @@ We will now explore the results from our tractography ran in MNI space, but to d
 3. You might want to add/load the ROI masks ('motor thalamus' and 'M1')
 4. Adjust the min and max display thresholds to explore the reconstructed tract. Change the Min display thresholds to 50 to remove voxels with low probability of being in the tract. There is no gold standard for thresholding tractography outputs. It will depend on study design, parameter set up and further analysis.
 
+Your window should look like this (but note the specific voxel location: <b>[32, 52, 68]</b>).
+
+<p align="center">
+ <img src="../../assets/images/workshop4/probabilistic-tractography/probtrackx_standard.png" alt="PROBTRACKX Standard" width="900" height="400">
+</p>
+
+
 !!! example "Tractography exercises"
     In your own time, you should try the exercises below to consolidate your tractography skills. If you have any problems completing or any further questions, you can ask for help during one of the upcoming workshops.  
 
