@@ -102,7 +102,7 @@ In the case of T1 images with a large FOV, you can first crop the image (to remo
 Type in your terminal:
 
 ``` bash
-immv T1 T1neck` 
+immv T1 T1neck
 robustfov -i T1neck -r T1 
 bet T1.nii.gz T1_brain3 -R 
 ```
