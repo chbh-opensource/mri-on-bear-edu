@@ -355,4 +355,10 @@ If you followed the instructions in workshop materials, you should be able to re
  <img src="../../assets/images/workshop7/higher-level-analysis/third_level_results.png" alt="Results" width="1000" height="300">
 </p>
 
+Now use the MNI template to display the results from our group analysis, by loading the MNI template and `thresh_zstat1` image as shown below.  You should remember how to complete the above tasks from previous workshops. You can also use the “camera” icon to take a snapshot of the results.
+
+<p align="center">
+ <img src="../../assets/images/workshop7/higher-level-analysis/fsleyes_camera.png" alt="FSL Camera" width="1000" height="300">
+</p>
+
 As always, help and further information is also available on the relevant section of the [FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index).
