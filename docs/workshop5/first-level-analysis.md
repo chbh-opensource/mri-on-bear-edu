@@ -217,11 +217,14 @@ Open the `p01_s1.feat` folder and select the `filtered_func_data` (this is the f
 
 <b>Put FSLeyes into movie mode and see if you can identify areas that change in activity.</b>
 
-<b>Now, add the `thresh_zstat1` image and try to identify the time course of the stimulation in some of the most highly activated voxels.</b> You should remember how to complete the above tasks from [previous workshops](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/visualizing-mri-data/). You can also use the “camera” icon to take a snapshot of the results.
+<b>Now, add the `thresh_zstat1` image and try to identify the time course of the stimulation in some of the most highly activated voxels.</b> You should remember how to complete the above tasks from [previous workshops](https://chbh-opensource.github.io/mri-on-bear-edu/workshop2/visualizing-mri-data/). 
 
 <p align="center">
- <img src="../../assets/images/workshop5/first-level/fsleyes_camera.png" alt="FSL Camera" width="1000" height="300">
+ <img src="../../assets/images/workshop5/first-level/fsleyes_zstat.png"
+      alt="FSL Zstat"
+      style="height:450px;">
 </p>
+<p align="center"><i style="font-size: 1.8em;">Overlaying thresh_zstat1 over the filtered_func_data.</i></p>
 
 <h2>Seeing the effect of other parameters</h2>
 
