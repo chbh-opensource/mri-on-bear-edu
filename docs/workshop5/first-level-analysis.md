@@ -186,7 +186,7 @@ FEAT has a built-in progress watcher, the 'FEAT Report’ (`report.html` file), 
 However, <b>if you are using your own laptop,</b> you will need to mount the RDS project on your local machine and then open the file directly on your system, which should render it in your default web browser. Please note that to do that you will need to be connected to the University Remote Access Service (VPN).
 
 <b>If you have a Windows laptop,</b> please follow the [BEAR Technical Docs instructions](https://docs.bear.bham.ac.uk/rds/guides/project_dirs/). Your BEAR Project's Directory Path on Windows is: 
-`\\its-rds.bham.ac.uk\rds\projects\c\chechlmy-chbh-mricn`.
+`\\its-rds.bham.ac.uk\rds\projects\c\chechlmy-chbh-mricn`
 
 <b>If you have a macOS laptop,</b> open the Finder application, and then in the toolbar, at the top of the desktop, click on the "Go" menu and select "Connect to Server". Paste the directory path (`smb://its-rds.bham.ac.uk/rds/projects/c/chechlmy-chbh-mricn`) into the field. When you are prompted to log in, you may need to enter 'Name' (your ADF/username) and 'Password' (your university password). Then click 'Connect'.
 
