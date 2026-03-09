@@ -174,7 +174,7 @@ The model should now be set up with all the correct details and be ready to be a
 
 FEAT has a built-in progress watcher, the 'FEAT Report’ (`report.html` file), which you can open in a web browser. <b>If you are using one of the desktop computers</b> in the lab, you can paste the link below in the web browser window:
 
-`file://its-rds.bham.ac.uk/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p01_s1.feat/report.html`
+`file://its-rds.bham.ac.uk/rdsprojects/c/chechlmy-chbh-mricn/xxx/feat/1/p01_s1.feat/report.html`
 
 [where XXX=your ADF username]
 
