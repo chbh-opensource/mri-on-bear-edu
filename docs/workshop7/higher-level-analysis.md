@@ -20,7 +20,7 @@ If you would like to use the FEAT Report, select the report (called `report.html
 
 `/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/1/p03_s1.feat/report.html`
 
-and either open it in a new tab or in a new window. 
+and open it as per instructions given in workshop 5. 
 
 <p align="center">
  <img src="../../assets/images/workshop7/higher-level-analysis/feat_report.png" alt="FEAT Report" width="900" height="300">

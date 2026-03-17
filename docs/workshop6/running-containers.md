@@ -22,7 +22,7 @@ To start please copy the entire folder into your module directory. <b>Please not
 
 A script can be very simple, containing just commands that you already know how to use, with each command put on a separate line. To create a script for automating FSL analysis, the most widely used language is `bash` (`shell`). To write a `bash` script you need a plain text editor (e.g., vim, nano). If you are not familiar with using a text editor in Linux terminal, there is a simple way of creating and/or editing scripts using the BlueBEAR portal.
 
-You can start a new script by clicking on “New File” and naming it for example “`my_script.sh`” and next clicking on “Edit” to start typing commands you want to use. You can also use “Edit” to edit existing scripts. 
+You can start a new script by clicking on “New File” and naming it for example “`my_script.sh`” and next clicking on the side icon next to the "Size" column, and selecting "Edit" to start typing commands you want to use. You can also use “Edit” to edit existing scripts. 
 
 <p align="center">
  <img src="../../assets/images/workshop6/edit_scripts.png" alt="Edit Scripts" width="1000" height="300">
