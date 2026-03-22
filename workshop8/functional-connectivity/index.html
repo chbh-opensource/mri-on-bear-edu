@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/chbh_logo.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1546,7 +1546,8 @@ ls
 
 <p>Each of the folders has a single resting-state scan, called <code>sub1.nii.gz</code>,<code>sub2.nii.gz</code> and <code>sub3.nii.gz</code> respectively. </p>
 <p>We will now create our seed region for the PCC. To do this, firstly load FSL and <code>fsleyes</code> in the terminal by running: </p>
-<div class="codehilite"><pre><span></span><code><span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSL</span><span class="o">/</span><span class="mf">6.0</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span>
+<div class="codehilite"><pre><span></span><code><span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">bear</span><span class="o">-</span><span class="n">apps</span><span class="o">/</span><span class="mi">2021</span><span class="n">a</span><span class="o">/</span><span class="n">live</span>
+<span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSL</span><span class="o">/</span><span class="mf">6.0</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span><span class="w"> </span>
 <span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSLeyes</span><span class="o">/</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span>
 </code></pre></div>
 
@@ -1697,15 +1698,8 @@ ls -R
 <p>You are ready to run the first-level analysis. Click 'Go' to run. On BEAR, this should only take a few minutes. </p>
 <h3>Examining the FEAT output</h3>
 
-<p>To actually examine the output, go to the BEAR Portal and at the menu bar select <code>Files ➜ /rds/projects/c/chechlmy-chbh-mricn/</code>
-<br>
-<br></p>
-<p align="center">
-  <img src="../../assets/images/workshop8/functional-connectivity/bear_files.png" alt="BEAR Files" width="900" height="300">
-</p>
-<p><br>
-<br>
-Then go into <code>SBC/sub1.feat</code>, select <code>report.html</code> and click 'View' (top left of the window). Navigate to the 'Post-stats' tab and examine the outputs. It should look like this:
+<p>To actually examine the output, you will need to open the <code>report.html</code> in your browser. Instructions on how to do this for your operating system are provided in Workshop 5.</p>
+<p>Once you have the <code>report.html</code> open, navigate to the 'Post-stats' tab and examine the outputs. It should look like this:
 <br></p>
 <p align="center">
   <img src="../../assets/images/workshop8/functional-connectivity/sub1_brain.png" alt="Sunject 1 Brain" width="500" height="300">
@@ -1824,7 +1818,8 @@ For group-level analyses with more subjects, we would be more strict.</p>
 <p>So, we have just ran our group-level analysis. Let's now have a look at the results. </p>
 <p>Close FEAT and your terminal, open a new terminal, go to your <code>SBC</code> directory and open FSLeyes: </p>
 <div class="codehilite"><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">rds</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">chechlmy</span><span class="o">-</span><span class="n">chbh</span><span class="o">-</span><span class="n">mricn</span><span class="o">/</span><span class="n">xxx</span><span class="o">/</span><span class="n">SBC</span>
-<span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSL</span><span class="o">/</span><span class="mf">6.0</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span>
+<span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">bear</span><span class="o">-</span><span class="n">apps</span><span class="o">/</span><span class="mi">2021</span><span class="n">a</span><span class="o">/</span><span class="n">live</span>
+<span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSL</span><span class="o">/</span><span class="mf">6.0</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span><span class="w"> </span>
 <span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">FSLeyes</span><span class="o">/</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2021</span><span class="n">a</span>
 <span class="n">fsleyes</span><span class="w"> </span><span class="o">&amp;</span>
 </code></pre></div>
