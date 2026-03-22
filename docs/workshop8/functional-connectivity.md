@@ -33,7 +33,8 @@ Each of the folders has a single resting-state scan, called `sub1.nii.gz`,`sub2.
 We will now create our seed region for the PCC. To do this, firstly load FSL and `fsleyes` in the terminal by running: 
 
 ```
-module load FSL/6.0.5.1-foss-2021a
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a 
 module load FSLeyes/1.3.3-foss-2021a
 ```
 
@@ -225,15 +226,9 @@ You are ready to run the first-level analysis. Click 'Go' to run. On BEAR, this 
 
 <h3>Examining the FEAT output</h3>
 
-To actually examine the output, go to the BEAR Portal and at the menu bar select `Files ➜ /rds/projects/c/chechlmy-chbh-mricn/`
-<br>
-<br>
-<p align="center">
-  <img src="../../assets/images/workshop8/functional-connectivity/bear_files.png" alt="BEAR Files" width="900" height="300">
-</p>
-<br>
-<br>
-Then go into `SBC/sub1.feat`, select `report.html` and click 'View' (top left of the window). Navigate to the 'Post-stats' tab and examine the outputs. It should look like this:
+To actually examine the output, you will need to open the `report.html` in your browser. Instructions on how to do this for your operating system are provided in Workshop 5.
+
+Once you have the `report.html` open, navigate to the 'Post-stats' tab and examine the outputs. It should look like this:
 <br>
 <p align="center">
   <img src="../../assets/images/workshop8/functional-connectivity/sub1_brain.png" alt="Sunject 1 Brain" width="500" height="300">
@@ -382,7 +377,8 @@ Close FEAT and your terminal, open a new terminal, go to your `SBC` directory an
 
 ```
 cd /rds/projects/c/chechlmy-chbh-mricn/xxx/SBC
-module load FSL/6.0.5.1-foss-2021a
+module load bear-apps/2021a/live
+module load FSL/6.0.5.1-foss-2021a 
 module load FSLeyes/1.3.3-foss-2021a
 fsleyes &
 ```
