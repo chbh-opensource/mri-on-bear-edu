@@ -246,7 +246,10 @@ As this is a second-level model it should go under the directory:
 
 and should be meaningfully named. For example, you could call it:
 
-`/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2level2all`
+`/rds/projects/c/chechlmy-chbh-mricn/xxx/feat/2/2level2all`
+
+!!! note "Use lower level COPES"
+    Make sure that the 'Use lower-level copes' box is ticked! 
 
 <h3>Stats</h3>
 
